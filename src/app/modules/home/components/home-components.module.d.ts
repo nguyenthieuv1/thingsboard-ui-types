@@ -119,7 +119,7 @@ import * as i117 from "@angular/common";
 import * as i118 from "@app/shared/shared.module";
 import * as i119 from "@home/components/shared-home-components.module";
 import * as i120 from "@home/components/profile/device/lwm2m/lwm2m-profile-components.module";
-import * as i121 from "@home/components/profile/device/snpm/snmp-device-profile-transport.module";
+import * as i121 from "@home/components/profile/device/snmp/snmp-device-profile-transport.module";
 import * as i122 from "@home/components/dashboard-page/states/states-controller.module";
 import * as i123 from "@home/components/device/device-credentials.module";
 import * as i124 from "@home/components/profile/device/common/device-profile-common.module";
