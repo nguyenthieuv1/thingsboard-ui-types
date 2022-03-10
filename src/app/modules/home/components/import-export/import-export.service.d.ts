@@ -57,6 +57,7 @@ export declare class ImportExportService {
     importEntities(entitiesData: ImportEntityData[], entityType: EntityType, updateData: boolean, importEntityCompleted?: () => void, config?: RequestConfig): Observable<ImportEntitiesResultInfo>;
     exportRuleChain(ruleChainId: string): void;
     importRuleChain(expectedRuleChainType: RuleChainType): Observable<RuleChainImport>;
+    private processOldRuleChainConnections;
     exportDeviceProfile(deviceProfileId: string): void;
     importDeviceProfile(): Observable<DeviceProfile>;
     exportTenantProfile(tenantProfileId: string): void;

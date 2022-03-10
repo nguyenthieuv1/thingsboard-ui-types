@@ -44,8 +44,6 @@ export declare enum ImportEntityColumnType {
     lwm2mServerClientSecretKey = "LWM2M_SERVER_CLIENT_SECRET_KEY",
     isGateway = "IS_GATEWAY",
     description = "DESCRIPTION",
-    edgeLicenseKey = "EDGE_LICENSE_KEY",
-    cloudEndpoint = "CLOUD_ENDPOINT",
     routingKey = "ROUTING_KEY",
     secret = "SECRET"
 }

@@ -23,6 +23,7 @@ export declare function formatValue(value: any, dec?: number, units?: string, sh
 export declare function objectValues(obj: any): any[];
 export declare function deleteNullProperties(obj: any): void;
 export declare function objToBase64(obj: any): string;
+export declare function base64toString(b64Encoded: string): string;
 export declare function objToBase64URI(obj: any): string;
 export declare function base64toObj(b64Encoded: string): any;
 export declare function hashCode(str: string): number;
