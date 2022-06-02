@@ -77,6 +77,7 @@ export interface FileType {
     mimeType: string;
     extension: string;
 }
+export declare const TEXT_TYPE: FileType;
 export declare const JSON_TYPE: FileType;
 export declare const ZIP_TYPE: FileType;
 export declare function convertCSVToJson(csvdata: string, config: CsvToJsonConfig, onError: (messageId: string, params?: any) => void): CsvToJsonResult | number;

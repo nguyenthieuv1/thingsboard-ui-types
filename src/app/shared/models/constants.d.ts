@@ -43,6 +43,7 @@ export declare const HelpLinks: {
         smsProviderSettings: string;
         securitySettings: string;
         oauth2Settings: string;
+        twoFactorAuthSettings: string;
         ruleEngine: string;
         ruleNodeCheckRelation: string;
         ruleNodeCheckExistenceFields: string;
@@ -114,6 +115,7 @@ export declare const HelpLinks: {
         widgetsConfigStatic: string;
         ruleNodePushToCloud: string;
         ruleNodePushToEdge: string;
+        queue: string;
     };
 };
 export interface ValueTypeData {

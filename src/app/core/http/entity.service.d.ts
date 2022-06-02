@@ -31,6 +31,7 @@ import { EdgeEvent } from '@shared/models/edge.models';
 import { RuleChainMetaData } from '@shared/models/rule-chain.models';
 import { WidgetService } from '@core/http/widget.service';
 import { DeviceProfileService } from '@core/http/device-profile.service';
+import { QueueService } from '@core/http/queue.service';
 import * as i0 from "@angular/core";
 export declare class EntityService {
     private http;
@@ -50,7 +51,8 @@ export declare class EntityService {
     private widgetService;
     private deviceProfileService;
     private utils;
-    constructor(http: HttpClient, store: Store<AppState>, deviceService: DeviceService, edgeService: EdgeService, assetService: AssetService, entityViewService: EntityViewService, tenantService: TenantService, customerService: CustomerService, userService: UserService, ruleChainService: RuleChainService, dashboardService: DashboardService, entityRelationService: EntityRelationService, attributeService: AttributeService, otaPackageService: OtaPackageService, widgetService: WidgetService, deviceProfileService: DeviceProfileService, utils: UtilsService);
+    private queueService;
+    constructor(http: HttpClient, store: Store<AppState>, deviceService: DeviceService, edgeService: EdgeService, assetService: AssetService, entityViewService: EntityViewService, tenantService: TenantService, customerService: CustomerService, userService: UserService, ruleChainService: RuleChainService, dashboardService: DashboardService, entityRelationService: EntityRelationService, attributeService: AttributeService, otaPackageService: OtaPackageService, widgetService: WidgetService, deviceProfileService: DeviceProfileService, utils: UtilsService, queueService: QueueService);
     private getEntityObservable;
     getEntity(entityType: EntityType, entityId: string, config?: RequestConfig): Observable<BaseData<EntityId>>;
     private getEntitiesByIdsObservable;

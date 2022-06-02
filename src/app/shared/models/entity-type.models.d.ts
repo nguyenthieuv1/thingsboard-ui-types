@@ -19,7 +19,8 @@ export declare enum EntityType {
     API_USAGE_STATE = "API_USAGE_STATE",
     TB_RESOURCE = "TB_RESOURCE",
     OTA_PACKAGE = "OTA_PACKAGE",
-    RPC = "RPC"
+    RPC = "RPC",
+    QUEUE = "QUEUE"
 }
 export declare enum AliasEntityType {
     CURRENT_CUSTOMER = "CURRENT_CUSTOMER",

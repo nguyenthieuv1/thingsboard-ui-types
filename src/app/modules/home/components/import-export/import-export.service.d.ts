@@ -9,7 +9,7 @@ import { DashboardUtilsService } from '@core/services/dashboard-utils.service';
 import { EntityService } from '@core/http/entity.service';
 import { Widget, WidgetType } from '@shared/models/widget.models';
 import { ItemBufferService } from '@core/services/item-buffer.service';
-import { ImportWidgetResult, BulkImportRequest, BulkImportResult } from './import-export.models';
+import { BulkImportRequest, BulkImportResult, ImportWidgetResult } from './import-export.models';
 import { EntityType } from '@shared/models/entity-type.models';
 import { UtilsService } from '@core/services/utils.service';
 import { WidgetService } from '@core/http/widget.service';
@@ -62,6 +62,7 @@ export declare class ImportExportService {
     importDeviceProfile(): Observable<DeviceProfile>;
     exportTenantProfile(tenantProfileId: string): void;
     importTenantProfile(): Observable<TenantProfile>;
+    exportText(data: string | Array<string>, filename: string): void;
     exportJSZip(data: object, filename: string): void;
     private prepareRuleChain;
     private prepareRuleChainMetaData;
