@@ -127,6 +127,7 @@ export interface LegendConfig {
     showMax: boolean;
     showAvg: boolean;
     showTotal: boolean;
+    showLatest: boolean;
 }
 export declare function defaultLegendConfig(wType: widgetType): LegendConfig;
 export interface KeyInfo {
@@ -217,6 +218,7 @@ export interface LegendKeyData {
     max: string;
     avg: string;
     total: string;
+    latest: string;
     hidden: boolean;
 }
 export interface LegendData {

@@ -7,4 +7,9 @@ export interface BaseData<T extends HasId> {
     name?: string;
     label?: string;
 }
+export interface ExportableEntity<T extends EntityId> {
+    createdTime?: number;
+    id?: T;
+    externalId?: T;
+}
 export declare function hasIdEquals(id1: HasId, id2: HasId): boolean;

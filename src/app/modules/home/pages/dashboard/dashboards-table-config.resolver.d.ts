@@ -14,6 +14,7 @@ import { DashboardService } from '@app/core/http/dashboard.service';
 import { ManageDashboardCustomersActionType } from './manage-dashboard-customers-dialog.component';
 import { ImportExportService } from '@home/components/import-export/import-export.service';
 import { EdgeService } from '@core/http/edge.service';
+import { HomeDialogsService } from '@home/dialogs/home-dialogs.service';
 import * as i0 from "@angular/core";
 export declare class DashboardsTableConfigResolver implements Resolve<EntityTableConfig<DashboardInfo | Dashboard>> {
     private store;
@@ -21,13 +22,14 @@ export declare class DashboardsTableConfigResolver implements Resolve<EntityTabl
     private customerService;
     private edgeService;
     private dialogService;
+    private homeDialogs;
     private importExport;
     private translate;
     private datePipe;
     private router;
     private dialog;
     private readonly config;
-    constructor(store: Store<AppState>, dashboardService: DashboardService, customerService: CustomerService, edgeService: EdgeService, dialogService: DialogService, importExport: ImportExportService, translate: TranslateService, datePipe: DatePipe, router: Router, dialog: MatDialog);
+    constructor(store: Store<AppState>, dashboardService: DashboardService, customerService: CustomerService, edgeService: EdgeService, dialogService: DialogService, homeDialogs: HomeDialogsService, importExport: ImportExportService, translate: TranslateService, datePipe: DatePipe, router: Router, dialog: MatDialog);
     resolve(route: ActivatedRouteSnapshot): Observable<EntityTableConfig<DashboardInfo | Dashboard>>;
     configureColumns(dashboardScope: string): Array<EntityTableColumn<DashboardInfo>>;
     configureEntityFunctions(dashboardScope: string): void;

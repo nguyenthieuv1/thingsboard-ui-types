@@ -7,6 +7,8 @@ import { EntitiesTableComponent } from '@home/components/entity/entities-table.c
 import { DialogService } from '@core/services/dialog.service';
 import { AlarmTableConfig } from './alarm-table-config';
 import { AlarmService } from '@app/core/http/alarm.service';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
 import * as i0 from "@angular/core";
 export declare class AlarmTableComponent implements OnInit {
     private alarmService;
@@ -14,6 +16,7 @@ export declare class AlarmTableComponent implements OnInit {
     private translate;
     private datePipe;
     private dialog;
+    private store;
     activeValue: boolean;
     dirtyValue: boolean;
     entityIdValue: EntityId;
@@ -21,7 +24,7 @@ export declare class AlarmTableComponent implements OnInit {
     set entityId(entityId: EntityId);
     entitiesTable: EntitiesTableComponent;
     alarmTableConfig: AlarmTableConfig;
-    constructor(alarmService: AlarmService, dialogService: DialogService, translate: TranslateService, datePipe: DatePipe, dialog: MatDialog);
+    constructor(alarmService: AlarmService, dialogService: DialogService, translate: TranslateService, datePipe: DatePipe, dialog: MatDialog, store: Store<AppState>);
     ngOnInit(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AlarmTableComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<AlarmTableComponent, "tb-alarm-table", never, { "active": "active"; "entityId": "entityId"; }, {}, never, never>;

@@ -21,6 +21,8 @@ export interface DefaultTenantProfileConfiguration {
     transportDeviceMsgRateLimit?: string;
     transportDeviceTelemetryMsgRateLimit?: string;
     transportDeviceTelemetryDataPointsRateLimit?: string;
+    tenantEntityExportRateLimit?: string;
+    tenantEntityImportRateLimit?: string;
     maxTransportMessages: number;
     maxTransportDataPoints: number;
     maxREExecutions: number;
@@ -30,6 +32,19 @@ export interface DefaultTenantProfileConfiguration {
     maxEmails: number;
     maxSms: number;
     maxCreatedAlarms: number;
+    tenantServerRestLimitsConfiguration: string;
+    customerServerRestLimitsConfiguration: string;
+    maxWsSessionsPerTenant: number;
+    maxWsSessionsPerCustomer: number;
+    maxWsSessionsPerRegularUser: number;
+    maxWsSessionsPerPublicUser: number;
+    wsMsgQueueLimitPerSession: number;
+    maxWsSubscriptionsPerTenant: number;
+    maxWsSubscriptionsPerCustomer: number;
+    maxWsSubscriptionsPerRegularUser: number;
+    maxWsSubscriptionsPerPublicUser: number;
+    wsUpdatesPerSessionRateLimit: string;
+    cassandraQueryTenantRateLimitsConfiguration: string;
     defaultStorageTtlDays: number;
     alarmsTtlDays: number;
     rpcTtlDays: number;

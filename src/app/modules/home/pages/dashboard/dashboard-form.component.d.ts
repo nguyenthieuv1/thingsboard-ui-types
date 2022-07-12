@@ -29,6 +29,7 @@ export declare class DashboardFormComponent extends EntityComponent<Dashboard> {
     updateForm(entity: Dashboard): void;
     prepareFormValue(formValue: any): any;
     onPublicLinkCopied($event: any): void;
+    onDashboardIdCopied($event: any): void;
     private updateFields;
     static ɵfac: i0.ɵɵFactoryDeclaration<DashboardFormComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<DashboardFormComponent, "tb-dashboard-form", never, {}, {}, never, never>;

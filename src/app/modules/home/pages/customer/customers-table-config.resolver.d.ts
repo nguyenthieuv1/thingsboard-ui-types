@@ -7,15 +7,17 @@ import { Customer } from '@app/shared/models/customer.model';
 import { CustomerService } from '@app/core/http/customer.service';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
+import { HomeDialogsService } from '@home/dialogs/home-dialogs.service';
 import * as i0 from "@angular/core";
 export declare class CustomersTableConfigResolver implements Resolve<EntityTableConfig<Customer>> {
     private customerService;
+    private homeDialogs;
     private translate;
     private datePipe;
     private router;
     private store;
     private readonly config;
-    constructor(customerService: CustomerService, translate: TranslateService, datePipe: DatePipe, router: Router, store: Store<AppState>);
+    constructor(customerService: CustomerService, homeDialogs: HomeDialogsService, translate: TranslateService, datePipe: DatePipe, router: Router, store: Store<AppState>);
     resolve(): EntityTableConfig<Customer>;
     private openCustomer;
     manageCustomerUsers($event: Event, customer: Customer): void;

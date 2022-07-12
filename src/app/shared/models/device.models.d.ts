@@ -1,4 +1,4 @@
-import { BaseData } from '@shared/models/base-data';
+import { BaseData, ExportableEntity } from '@shared/models/base-data';
 import { DeviceId } from './id/device-id';
 import { TenantId } from '@shared/models/id/tenant-id';
 import { CustomerId } from '@shared/models/id/customer-id';
@@ -12,7 +12,6 @@ import { TimeUnit } from '@shared/models/time/time.models';
 import { AbstractControl, ValidationErrors } from '@angular/forms';
 import { OtaPackageId } from '@shared/models/id/ota-package-id';
 import { DashboardId } from '@shared/models/id/dashboard-id';
-import { QueueId } from '@shared/models/id/queue-id';
 import { DataType } from '@shared/models/constants';
 import { PowerMode } from '@home/components/profile/device/lwm2m/lwm2m-profile-config.models';
 export declare enum DeviceProfileType {
@@ -152,6 +151,10 @@ export declare enum AlarmScheduleType {
 }
 export declare const AlarmScheduleTypeTranslationMap: Map<AlarmScheduleType, string>;
 export interface AlarmSchedule {
+    dynamicValue?: {
+        sourceAttribute: string;
+        sourceType: string;
+    };
     type: AlarmScheduleType;
     timezone?: string;
     daysOfWeek?: number[];
@@ -191,7 +194,7 @@ export interface DeviceProfileData {
     alarms?: Array<DeviceProfileAlarm>;
     provisionConfiguration?: DeviceProvisionConfiguration;
 }
-export interface DeviceProfile extends BaseData<DeviceProfileId> {
+export interface DeviceProfile extends BaseData<DeviceProfileId>, ExportableEntity<DeviceProfileId> {
     tenantId?: TenantId;
     name: string;
     description?: string;
@@ -203,7 +206,7 @@ export interface DeviceProfile extends BaseData<DeviceProfileId> {
     provisionDeviceKey?: string;
     defaultRuleChainId?: RuleChainId;
     defaultDashboardId?: DashboardId;
-    defaultQueueId?: QueueId;
+    defaultQueueName?: string;
     firmwareId?: OtaPackageId;
     softwareId?: OtaPackageId;
     profileData: DeviceProfileData;
@@ -282,7 +285,7 @@ export interface DeviceData {
     configuration: DeviceConfiguration;
     transportConfiguration: DeviceTransportConfiguration;
 }
-export interface Device extends BaseData<DeviceId> {
+export interface Device extends BaseData<DeviceId>, ExportableEntity<DeviceId> {
     tenantId?: TenantId;
     customerId?: CustomerId;
     name: string;

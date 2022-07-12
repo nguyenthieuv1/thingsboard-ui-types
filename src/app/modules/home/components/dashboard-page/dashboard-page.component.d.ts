@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, ElementRef, NgZone, OnDestroy, OnInit, ViewContainerRef } from '@angular/core';
+import { ChangeDetectorRef, ElementRef, EventEmitter, NgZone, OnDestroy, OnInit, Renderer2, ViewContainerRef } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -29,6 +29,8 @@ import { DashboardWidgetSelectComponent } from '@home/components/dashboard-page/
 import { MobileService } from '@core/services/mobile.service';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { IAliasController } from '@core/api/widget-api.models';
+import { MatButton } from '@angular/material/button';
+import { TbPopoverService } from '@shared/components/popover.service';
 import * as i0 from "@angular/core";
 export declare class DashboardPageComponent extends PageComponent implements IDashboardController, OnInit, OnDestroy {
     protected store: Store<AppState>;
@@ -50,6 +52,8 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
     private fb;
     private dialog;
     private translate;
+    private popoverService;
+    private renderer;
     private ngZone;
     private embeddedValue;
     private overlay;
@@ -108,6 +112,7 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
     dashboardCtx: DashboardContext;
     layouts: DashboardPageLayouts;
     addWidgetFabButtons: FooterFabButtons;
+    updateBreadcrumbs: EventEmitter<any>;
     private rxSubscriptions;
     get toolbarOpened(): boolean;
     set toolbarOpened(toolbarOpened: boolean);
@@ -115,7 +120,7 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
     set rightLayoutOpened(rightLayoutOpened: boolean);
     editWidgetComponent: EditWidgetComponent;
     dashboardWidgetSelectComponent: DashboardWidgetSelectComponent;
-    constructor(store: Store<AppState>, window: Window, document: Document, breakpointObserver: BreakpointObserver, route: ActivatedRoute, router: Router, utils: UtilsService, dashboardUtils: DashboardUtilsService, authService: AuthService, entityService: EntityService, dialogService: DialogService, widgetComponentService: WidgetComponentService, dashboardService: DashboardService, itembuffer: ItemBufferService, importExport: ImportExportService, mobileService: MobileService, fb: FormBuilder, dialog: MatDialog, translate: TranslateService, ngZone: NgZone, embeddedValue: any, overlay: Overlay, viewContainerRef: ViewContainerRef, cd: ChangeDetectorRef, sanitizer: DomSanitizer);
+    constructor(store: Store<AppState>, window: Window, document: Document, breakpointObserver: BreakpointObserver, route: ActivatedRoute, router: Router, utils: UtilsService, dashboardUtils: DashboardUtilsService, authService: AuthService, entityService: EntityService, dialogService: DialogService, widgetComponentService: WidgetComponentService, dashboardService: DashboardService, itembuffer: ItemBufferService, importExport: ImportExportService, mobileService: MobileService, fb: FormBuilder, dialog: MatDialog, translate: TranslateService, popoverService: TbPopoverService, renderer: Renderer2, ngZone: NgZone, embeddedValue: any, overlay: Overlay, viewContainerRef: ViewContainerRef, cd: ChangeDetectorRef, sanitizer: DomSanitizer);
     ngOnInit(): void;
     private init;
     private updateDashboardCss;
@@ -197,6 +202,7 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
     editWidgetsTypesToDisplay($event: Event): void;
     onCloseSearchBundle(): void;
     updateDashboardImage($event: Event): void;
-    static ɵfac: i0.ɵɵFactoryDeclaration<DashboardPageComponent, [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, { optional: true; }, null, null, null, null]>;
+    toggleVersionControl($event: Event, versionControlButton: MatButton): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<DashboardPageComponent, [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, { optional: true; }, null, null, null, null]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<DashboardPageComponent, "tb-dashboard-page", never, { "embedded": "embedded"; "currentState": "currentState"; "hideToolbar": "hideToolbar"; "syncStateWithQueryParam": "syncStateWithQueryParam"; "dashboard": "dashboard"; "parentDashboard": "parentDashboard"; "parentAliasController": "parentAliasController"; }, {}, never, never>;
 }

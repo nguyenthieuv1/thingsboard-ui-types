@@ -20,6 +20,7 @@ export declare const Constants: {
         nonTokenBased: string;
     };
 };
+export declare const serverErrorCodesTranslations: Map<number, string>;
 export declare const MediaBreakpoints: {
     xs: string;
     sm: string;
@@ -116,6 +117,8 @@ export declare const HelpLinks: {
         ruleNodePushToCloud: string;
         ruleNodePushToEdge: string;
         queue: string;
+        repositorySettings: string;
+        autoCommitSettings: string;
     };
 };
 export interface ValueTypeData {

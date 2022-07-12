@@ -18,8 +18,9 @@ import * as i16 from "@modules/home/pages/audit-log/audit-log.module";
 import * as i17 from "@home/pages/api-usage/api-usage.module";
 import * as i18 from "@home/pages/ota-update/ota-update.module";
 import * as i19 from "@modules/home/pages/user/user.module";
+import * as i20 from "@home/pages/vc/vc.module";
 export declare class HomePagesModule {
     static ɵfac: i0.ɵɵFactoryDeclaration<HomePagesModule, never>;
-    static ɵmod: i0.ɵɵNgModuleDeclaration<HomePagesModule, never, never, [typeof i1.AdminModule, typeof i2.HomeLinksModule, typeof i3.ProfileModule, typeof i4.SecurityModule, typeof i5.TenantProfileModule, typeof i6.TenantModule, typeof i7.DeviceProfileModule, typeof i8.DeviceModule, typeof i9.AssetModule, typeof i10.EdgeModule, typeof i11.EntityViewModule, typeof i12.CustomerModule, typeof i13.RuleChainModule, typeof i14.WidgetLibraryModule, typeof i15.DashboardModule, typeof i16.AuditLogModule, typeof i17.ApiUsageModule, typeof i18.OtaUpdateModule, typeof i19.UserModule]>;
+    static ɵmod: i0.ɵɵNgModuleDeclaration<HomePagesModule, never, never, [typeof i1.AdminModule, typeof i2.HomeLinksModule, typeof i3.ProfileModule, typeof i4.SecurityModule, typeof i5.TenantProfileModule, typeof i6.TenantModule, typeof i7.DeviceProfileModule, typeof i8.DeviceModule, typeof i9.AssetModule, typeof i10.EdgeModule, typeof i11.EntityViewModule, typeof i12.CustomerModule, typeof i13.RuleChainModule, typeof i14.WidgetLibraryModule, typeof i15.DashboardModule, typeof i16.AuditLogModule, typeof i17.ApiUsageModule, typeof i18.OtaUpdateModule, typeof i19.UserModule, typeof i20.VcModule]>;
     static ɵinj: i0.ɵɵInjectorDeclaration<HomePagesModule>;
 }

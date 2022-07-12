@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, OnDestroy, OnInit } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Subject, Subscription } from 'rxjs';
 import { BreadCrumb } from './breadcrumb';
 import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
@@ -12,9 +12,10 @@ export declare class BreadcrumbComponent implements OnInit, OnDestroy {
     private cd;
     private translate;
     activeComponentValue: any;
+    updateBreadcrumbsSubscription: Subscription;
     set activeComponent(activeComponent: any);
     breadcrumbs$: Subject<Array<BreadCrumb>>;
-    routerEventsSubscription: import("rxjs").Subscription;
+    routerEventsSubscription: Subscription;
     lastBreadcrumb$: import("rxjs").Observable<BreadCrumb>;
     constructor(router: Router, activatedRoute: ActivatedRoute, broadcast: BroadcastService, cd: ChangeDetectorRef, translate: TranslateService);
     ngOnInit(): void;

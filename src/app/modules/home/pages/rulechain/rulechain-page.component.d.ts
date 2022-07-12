@@ -1,5 +1,5 @@
 /// <reference types="tooltipster" />
-import { AfterViewInit, ElementRef, OnDestroy, OnInit, QueryList } from '@angular/core';
+import { AfterViewInit, ElementRef, EventEmitter, OnDestroy, OnInit, QueryList, Renderer2, ViewContainerRef } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -26,6 +26,8 @@ import { MatMenuTrigger } from '@angular/material/menu';
 import { ItemBufferService } from '@core/services/item-buffer.service';
 import { Hotkey } from 'angular2-hotkeys';
 import { DebugEventType, EventType } from '@shared/models/event.models';
+import { MatButton } from '@angular/material/button';
+import { TbPopoverService } from '@shared/components/popover.service';
 import * as i0 from "@angular/core";
 export declare class RuleChainPageComponent extends PageComponent implements AfterViewInit, OnInit, OnDestroy, HasDirtyFlag, ISearchableComponent {
     protected store: Store<AppState>;
@@ -35,10 +37,14 @@ export declare class RuleChainPageComponent extends PageComponent implements Aft
     private authService;
     private translate;
     private itembuffer;
+    private popoverService;
+    private renderer;
+    private viewContainerRef;
     dialog: MatDialog;
     dialogService: DialogService;
     fb: FormBuilder;
     get isDirty(): boolean;
+    set isDirty(value: boolean);
     width: string;
     height: string;
     ruleNodeSearchInputField: ElementRef;
@@ -122,9 +128,10 @@ export declare class RuleChainPageComponent extends PageComponent implements Aft
         canvasResizeThreshold: number;
         canvasResizeStep: number;
     };
+    updateBreadcrumbs: EventEmitter<any>;
     private rxSubscription;
     private tooltipTimeout;
-    constructor(store: Store<AppState>, route: ActivatedRoute, router: Router, ruleChainService: RuleChainService, authService: AuthService, translate: TranslateService, itembuffer: ItemBufferService, dialog: MatDialog, dialogService: DialogService, fb: FormBuilder);
+    constructor(store: Store<AppState>, route: ActivatedRoute, router: Router, ruleChainService: RuleChainService, authService: AuthService, translate: TranslateService, itembuffer: ItemBufferService, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, dialog: MatDialog, dialogService: DialogService, fb: FormBuilder);
     ngOnInit(): void;
     ngAfterViewInit(): void;
     ngOnDestroy(): void;
@@ -167,12 +174,14 @@ export declare class RuleChainPageComponent extends PageComponent implements Aft
     isDebugModeEnabled(): boolean;
     resetDebugModeInAllNodes(): void;
     validate(): void;
-    saveRuleChain(): void;
+    saveRuleChain(): Observable<any>;
+    reloadRuleChain(): void;
     revertRuleChain(): void;
     addRuleNode(ruleNode: FcRuleNode): void;
     addRuleNodeLink(link: FcRuleEdge, labels: {
         [label: string]: LinkLabel;
     }, allowCustomLabels: boolean, sourceRuleChainId: string): Observable<FcRuleEdge>;
+    toggleVersionControl($event: Event, versionControlButton: MatButton): void;
     private updateNodeErrorTooltip;
     private updateErrorTooltips;
     private displayTooltip;

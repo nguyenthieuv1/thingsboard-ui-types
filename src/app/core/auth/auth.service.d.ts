@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { LoginRequest, LoginResponse } from '@shared/models/login.models';
 import { ActivatedRoute, Router, UrlTree } from '@angular/router';
+import { RequestConfig } from '../http/http-utils';
 import { UserService } from '../http/user.service';
 import { Store } from '@ngrx/store';
 import { AppState } from '../core.state';
@@ -15,6 +16,7 @@ import { AdminService } from '@core/http/admin.service';
 import { MatDialog } from '@angular/material/dialog';
 import { OAuth2ClientInfo } from '@shared/models/oauth2.models';
 import { TwoFactorAuthProviderType, TwoFaProviderInfo } from '@shared/models/two-factor-auth.models';
+import { UserPasswordPolicy } from '@shared/models/settings.models';
 import * as i0 from "@angular/core";
 export declare class AuthService {
     private store;
@@ -47,7 +49,8 @@ export declare class AuthService {
     sendResetPasswordLink(email: string): Observable<Object>;
     activate(activateToken: string, password: string, sendActivationMail: boolean): Observable<LoginResponse>;
     resetPassword(resetToken: string, password: string): Observable<LoginResponse>;
-    changePassword(currentPassword: string, newPassword: string): Observable<LoginResponse>;
+    changePassword(currentPassword: string, newPassword: string, config?: RequestConfig): Observable<LoginResponse>;
+    getUserPasswordPolicy(): Observable<UserPasswordPolicy>;
     activateByEmailCode(emailCode: string): Observable<LoginResponse>;
     resendEmailActivation(email: string): Observable<Object>;
     loginAsUser(userId: string): Observable<LoginResponse>;
@@ -63,6 +66,7 @@ export declare class AuthService {
     private procceedJwtTokenValidate;
     private loadIsUserTokenAccessEnabled;
     loadIsEdgesSupportEnabled(): Observable<boolean>;
+    private loadHasRepository;
     private loadSystemParams;
     refreshJwtToken(loadUserElseStoreJwtToken?: boolean): Observable<LoginResponse>;
     private validateJwtToken;
