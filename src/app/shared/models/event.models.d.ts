@@ -33,7 +33,7 @@ export interface StatsEventBody extends BaseEventBody {
 export interface DebugRuleNodeEventBody extends BaseEventBody {
     type: string;
     entityId: string;
-    entityName: string;
+    entityType: string;
     msgId: string;
     msgType: string;
     relationType: string;
@@ -42,7 +42,11 @@ export interface DebugRuleNodeEventBody extends BaseEventBody {
     metadata: string;
     error: string;
 }
-export declare type EventBody = ErrorEventBody & LcEventEventBody & StatsEventBody & DebugRuleNodeEventBody;
+export interface DebugRuleChainEventBody extends BaseEventBody {
+    message: string;
+    error?: string;
+}
+export declare type EventBody = ErrorEventBody & LcEventEventBody & StatsEventBody & DebugRuleNodeEventBody & DebugRuleChainEventBody;
 export interface Event extends BaseData<EventId> {
     tenantId: TenantId;
     entityId: EntityId;

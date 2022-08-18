@@ -21,6 +21,7 @@ export declare class EntityTypesVersionLoadComponent extends PageComponent imple
     private propagateChange;
     entityTypesVersionLoadFormGroup: FormGroup;
     entityTypes: typeof EntityType;
+    loading: boolean;
     constructor(store: Store<AppState>, translate: TranslateService, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, fb: FormBuilder);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
