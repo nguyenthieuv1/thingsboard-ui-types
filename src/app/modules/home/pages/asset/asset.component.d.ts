@@ -24,6 +24,7 @@ export declare class AssetComponent extends EntityComponent<AssetInfo> {
     buildForm(entity: AssetInfo): FormGroup;
     updateForm(entity: AssetInfo): void;
     onAssetIdCopied($event: any): void;
+    onAssetProfileUpdated(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AssetComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<AssetComponent, "tb-asset", never, {}, {}, never, never>;
 }

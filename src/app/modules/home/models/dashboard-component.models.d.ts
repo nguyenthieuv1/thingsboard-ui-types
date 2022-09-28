@@ -110,6 +110,8 @@ export declare class DashboardWidget implements GridsterItem, IDashboardWidget {
     enableFullscreen: boolean;
     hasTimewindow: boolean;
     hasAggregation: boolean;
+    onlyQuickInterval: boolean;
+    onlyHistoryTimewindow: boolean;
     style: {
         [klass: string]: any;
     };

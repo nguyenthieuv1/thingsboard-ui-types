@@ -11,7 +11,9 @@ export declare class AssetService {
     private http;
     constructor(http: HttpClient);
     getTenantAssetInfos(pageLink: PageLink, type?: string, config?: RequestConfig): Observable<PageData<AssetInfo>>;
+    getTenantAssetInfosByAssetProfileId(pageLink: PageLink, assetProfileId?: string, config?: RequestConfig): Observable<PageData<AssetInfo>>;
     getCustomerAssetInfos(customerId: string, pageLink: PageLink, type?: string, config?: RequestConfig): Observable<PageData<AssetInfo>>;
+    getCustomerAssetInfosByAssetProfileId(customerId: string, pageLink: PageLink, assetProfileId?: string, config?: RequestConfig): Observable<PageData<AssetInfo>>;
     getAsset(assetId: string, config?: RequestConfig): Observable<Asset>;
     getAssets(assetIds: Array<string>, config?: RequestConfig): Observable<Array<Asset>>;
     getAssetInfo(assetId: string, config?: RequestConfig): Observable<AssetInfo>;
