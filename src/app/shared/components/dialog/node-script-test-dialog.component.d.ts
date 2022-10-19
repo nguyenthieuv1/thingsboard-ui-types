@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 import { DialogComponent } from '@shared/components/dialog.component';
 import { ContentType } from '@shared/models/constants';
 import { JsonContentComponent } from '@shared/components/json-content.component';
+import { ScriptLanguage } from '@shared/models/rule-node.models';
 import { RuleChainService } from '@core/http/rule-chain.service';
 import * as i0 from "@angular/core";
 export interface NodeScriptTestDialogData {
@@ -16,6 +17,7 @@ export interface NodeScriptTestDialogData {
     functionTitle: string;
     functionName: string;
     argNames: string[];
+    scriptLang?: ScriptLanguage;
     msg?: any;
     metadata?: {
         [key: string]: string;

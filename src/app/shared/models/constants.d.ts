@@ -93,6 +93,7 @@ export declare const HelpLinks: {
         ruleNodeRestApiCall: string;
         ruleNodeSendEmail: string;
         ruleNodeSendSms: string;
+        ruleNodeMath: string;
         tenants: string;
         tenantProfiles: string;
         customers: string;

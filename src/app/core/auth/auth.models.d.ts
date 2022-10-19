@@ -4,6 +4,7 @@ export interface SysParamsState {
     allowedDashboardIds: string[];
     edgesSupportEnabled: boolean;
     hasRepository: boolean;
+    mvelEnabled: boolean;
 }
 export interface AuthPayload extends SysParamsState {
     authUser: AuthUser;

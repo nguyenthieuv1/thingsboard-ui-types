@@ -17,6 +17,7 @@ import { MatMenuTrigger } from '@angular/material/menu';
 import { SafeStyle } from '@angular/platform-browser';
 import { UtilsService } from '@core/services/utils.service';
 import { WidgetComponentAction } from '@home/components/widget/widget-container.component';
+import { TbPopoverComponent } from '@shared/components/popover.component';
 import * as i0 from "@angular/core";
 export declare class DashboardComponent extends PageComponent implements IDashboardComponent, DoCheck, OnInit, OnDestroy, AfterViewInit, OnChanges {
     protected store: Store<AppState>;
@@ -54,6 +55,7 @@ export declare class DashboardComponent extends PageComponent implements IDashbo
     ignoreLoading: boolean;
     dashboardTimewindow: Timewindow;
     parentDashboard?: IDashboardComponent;
+    popoverComponent?: TbPopoverComponent;
     dashboardTimewindowChangedSubject: Subject<Timewindow>;
     dashboardTimewindowChanged: import("rxjs").Observable<Timewindow>;
     originalDashboardTimewindow: Timewindow;
@@ -114,5 +116,5 @@ export declare class DashboardComponent extends PageComponent implements IDashbo
     private detectRowSize;
     private checkIsMobileSize;
     static ɵfac: i0.ɵɵFactoryDeclaration<DashboardComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardComponent, "tb-dashboard", never, { "widgets": "widgets"; "widgetLayouts": "widgetLayouts"; "callbacks": "callbacks"; "aliasController": "aliasController"; "stateController": "stateController"; "columns": "columns"; "margin": "margin"; "isEdit": "isEdit"; "autofillHeight": "autofillHeight"; "mobileAutofillHeight": "mobileAutofillHeight"; "mobileRowHeight": "mobileRowHeight"; "isMobile": "isMobile"; "isMobileDisabled": "isMobileDisabled"; "isEditActionEnabled": "isEditActionEnabled"; "isExportActionEnabled": "isExportActionEnabled"; "isRemoveActionEnabled": "isRemoveActionEnabled"; "disableWidgetInteraction": "disableWidgetInteraction"; "dashboardStyle": "dashboardStyle"; "backgroundImage": "backgroundImage"; "dashboardClass": "dashboardClass"; "ignoreLoading": "ignoreLoading"; "dashboardTimewindow": "dashboardTimewindow"; "parentDashboard": "parentDashboard"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardComponent, "tb-dashboard", never, { "widgets": "widgets"; "widgetLayouts": "widgetLayouts"; "callbacks": "callbacks"; "aliasController": "aliasController"; "stateController": "stateController"; "columns": "columns"; "margin": "margin"; "isEdit": "isEdit"; "autofillHeight": "autofillHeight"; "mobileAutofillHeight": "mobileAutofillHeight"; "mobileRowHeight": "mobileRowHeight"; "isMobile": "isMobile"; "isMobileDisabled": "isMobileDisabled"; "isEditActionEnabled": "isEditActionEnabled"; "isExportActionEnabled": "isExportActionEnabled"; "isRemoveActionEnabled": "isRemoveActionEnabled"; "disableWidgetInteraction": "disableWidgetInteraction"; "dashboardStyle": "dashboardStyle"; "backgroundImage": "backgroundImage"; "dashboardClass": "dashboardClass"; "ignoreLoading": "ignoreLoading"; "dashboardTimewindow": "dashboardTimewindow"; "parentDashboard": "parentDashboard"; "popoverComponent": "popoverComponent"; }, {}, never, never>;
 }

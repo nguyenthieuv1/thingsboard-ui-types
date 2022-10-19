@@ -31,6 +31,7 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { IAliasController } from '@core/api/widget-api.models';
 import { MatButton } from '@angular/material/button';
 import { TbPopoverService } from '@shared/components/popover.service';
+import { TbPopoverComponent } from '@shared/components/popover.component';
 import * as i0 from "@angular/core";
 export declare class DashboardPageComponent extends PageComponent implements IDashboardController, OnInit, OnDestroy {
     protected store: Store<AppState>;
@@ -72,6 +73,7 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
     dashboard: Dashboard;
     dashboardConfiguration: DashboardConfiguration;
     parentDashboard?: IDashboardComponent;
+    popoverComponent?: TbPopoverComponent;
     parentAliasController?: IAliasController;
     dashboardContainer: ElementRef<HTMLElement>;
     prevDashboard: Dashboard;
@@ -204,5 +206,5 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
     updateDashboardImage($event: Event): void;
     toggleVersionControl($event: Event, versionControlButton: MatButton): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DashboardPageComponent, [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, { optional: true; }, null, null, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardPageComponent, "tb-dashboard-page", never, { "embedded": "embedded"; "currentState": "currentState"; "hideToolbar": "hideToolbar"; "syncStateWithQueryParam": "syncStateWithQueryParam"; "dashboard": "dashboard"; "parentDashboard": "parentDashboard"; "parentAliasController": "parentAliasController"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardPageComponent, "tb-dashboard-page", never, { "embedded": "embedded"; "currentState": "currentState"; "hideToolbar": "hideToolbar"; "syncStateWithQueryParam": "syncStateWithQueryParam"; "dashboard": "dashboard"; "parentDashboard": "parentDashboard"; "popoverComponent": "popoverComponent"; "parentAliasController": "parentAliasController"; }, {}, never, never>;
 }
