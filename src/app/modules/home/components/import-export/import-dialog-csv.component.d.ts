@@ -1,4 +1,4 @@
-import { AfterViewInit, ElementRef, Renderer2 } from '@angular/core';
+import { AfterViewInit, ElementRef, OnDestroy, Renderer2 } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -11,13 +11,14 @@ import { MatVerticalStepper } from '@angular/material/stepper';
 import { BulkImportResult, CSVDelimiter } from '@home/components/import-export/import-export.models';
 import { ImportExportService } from '@home/components/import-export/import-export.service';
 import { TableColumnsAssignmentComponent } from '@home/components/import-export/table-columns-assignment.component';
+import { Ace } from 'ace-builds';
 import * as i0 from "@angular/core";
 export interface ImportDialogCsvData {
     entityType: EntityType;
     importTitle: string;
     importFileLabel: string;
 }
-export declare class ImportDialogCsvComponent extends DialogComponent<ImportDialogCsvComponent, boolean> implements AfterViewInit {
+export declare class ImportDialogCsvComponent extends DialogComponent<ImportDialogCsvComponent, boolean> implements AfterViewInit, OnDestroy {
     protected store: Store<AppState>;
     protected router: Router;
     data: ImportDialogCsvData;
@@ -42,11 +43,13 @@ export declare class ImportDialogCsvComponent extends DialogComponent<ImportDial
     columnTypesFormGroup: FormGroup;
     isImportData: boolean;
     statistical: BulkImportResult;
+    aceEditor: Ace.Editor;
     private allowAssignColumn;
     private initEditorComponent;
     private parseData;
     constructor(store: Store<AppState>, router: Router, data: ImportDialogCsvData, dialogRef: MatDialogRef<ImportDialogCsvComponent, boolean>, translate: TranslateService, importExport: ImportExportService, fb: FormBuilder, renderer: Renderer2);
     ngAfterViewInit(): void;
+    ngOnDestroy(): void;
     cancel(): void;
     previousStep(): void;
     nextStep(step: number): void;

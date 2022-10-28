@@ -46,6 +46,8 @@ export declare class NodeScriptTestDialogComponent extends DialogComponent<NodeS
     functionTitle: string;
     submitted: boolean;
     contentTypes: typeof ContentType;
+    scriptLanguage: typeof ScriptLanguage;
+    scriptLang: ScriptLanguage;
     constructor(store: Store<AppState>, router: Router, data: NodeScriptTestDialogData, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<NodeScriptTestDialogComponent, string>, fb: FormBuilder, ruleChainService: RuleChainService);
     ngOnInit(): void;
     ngAfterViewInit(): void;
