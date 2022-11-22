@@ -15,10 +15,12 @@ import { BranchAutocompleteComponent } from '@shared/components/vc/branch-autoco
 import { TbPopoverService } from '@shared/components/popover.service';
 import { MatButton } from '@angular/material/button';
 import { TbPopoverComponent } from '@shared/components/popover.component';
+import { AdminService } from "@core/http/admin.service";
 import * as i0 from "@angular/core";
 export declare class EntityVersionsTableComponent extends PageComponent implements OnInit, AfterViewInit, OnDestroy {
     protected store: Store<AppState>;
     private entitiesVersionControlService;
+    private adminService;
     private popoverService;
     private renderer;
     private cd;
@@ -38,6 +40,7 @@ export declare class EntityVersionsTableComponent extends PageComponent implemen
     dirtyValue: boolean;
     externalEntityIdValue: EntityId;
     viewsInited: boolean;
+    isReadOnly: Observable<boolean>;
     private componentResize$;
     set active(active: boolean);
     set externalEntityId(externalEntityId: EntityId);
@@ -47,7 +50,7 @@ export declare class EntityVersionsTableComponent extends PageComponent implemen
     searchInputField: ElementRef;
     paginator: MatPaginator;
     sort: MatSort;
-    constructor(store: Store<AppState>, entitiesVersionControlService: EntitiesVersionControlService, popoverService: TbPopoverService, renderer: Renderer2, cd: ChangeDetectorRef, viewContainerRef: ViewContainerRef, elementRef: ElementRef);
+    constructor(store: Store<AppState>, entitiesVersionControlService: EntitiesVersionControlService, adminService: AdminService, popoverService: TbPopoverService, renderer: Renderer2, cd: ChangeDetectorRef, viewContainerRef: ViewContainerRef, elementRef: ElementRef);
     ngOnInit(): void;
     ngOnDestroy(): void;
     branchChanged(newBranch: string): void;

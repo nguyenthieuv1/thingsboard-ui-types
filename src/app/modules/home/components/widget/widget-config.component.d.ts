@@ -56,7 +56,8 @@ export declare class WidgetConfigComponent extends PageComponent implements OnIn
     layoutSettings: FormGroup;
     advancedSettings: FormGroup;
     actionsSettings: FormGroup;
-    dataError: string;
+    openExtensionPanel: boolean;
+    timeseriesKeyError: boolean;
     datasourceError: string[];
     private dataSettingsChangesSubscription;
     private targetDeviceSettingsSubscription;
@@ -192,6 +193,7 @@ export declare class WidgetConfigComponent extends PageComponent implements OnIn
         datasources?: undefined;
         timeseriesDataKeys?: undefined;
     };
+    extensionPanelIsOpen(value: any): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetConfigComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<WidgetConfigComponent, "tb-widget-config", never, { "forceExpandDatasources": "forceExpandDatasources"; "aliasController": "aliasController"; "dashboard": "dashboard"; "widget": "widget"; "functionsOnly": "functionsOnly"; "disabled": "disabled"; }, {}, never, never>;
 }

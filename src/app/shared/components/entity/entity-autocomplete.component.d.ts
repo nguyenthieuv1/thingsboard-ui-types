@@ -1,4 +1,5 @@
 import { AfterViewInit, ElementRef, EventEmitter, OnInit } from '@angular/core';
+import { MatFormFieldAppearance } from '@angular/material/form-field/form-field';
 import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
@@ -23,6 +24,7 @@ export declare class EntityAutocompleteComponent implements ControlValueAccessor
     excludeEntityIds: Array<string>;
     labelText: string;
     requiredText: string;
+    appearance: MatFormFieldAppearance;
     private requiredValue;
     get required(): boolean;
     set required(value: boolean);
@@ -54,5 +56,5 @@ export declare class EntityAutocompleteComponent implements ControlValueAccessor
     clear(): void;
     checkEntityType(entityType: EntityType | AliasEntityType): EntityType;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityAutocompleteComponent, "tb-entity-autocomplete", never, { "entityType": "entityType"; "entitySubtype": "entitySubtype"; "excludeEntityIds": "excludeEntityIds"; "labelText": "labelText"; "requiredText": "requiredText"; "required": "required"; "disabled": "disabled"; }, { "entityChanged": "entityChanged"; }, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityAutocompleteComponent, "tb-entity-autocomplete", never, { "entityType": "entityType"; "entitySubtype": "entitySubtype"; "excludeEntityIds": "excludeEntityIds"; "labelText": "labelText"; "requiredText": "requiredText"; "appearance": "appearance"; "required": "required"; "disabled": "disabled"; }, { "entityChanged": "entityChanged"; }, never, never>;
 }

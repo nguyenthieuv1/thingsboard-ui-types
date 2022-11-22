@@ -38,6 +38,12 @@ export interface UserPasswordPolicy {
 export interface SecuritySettings {
     passwordPolicy: UserPasswordPolicy;
 }
+export interface JwtSettings {
+    tokenIssuer: string;
+    tokenSigningKey: string;
+    tokenExpirationTime: number;
+    refreshTokenExpTime: number;
+}
 export interface UpdateMessage {
     message: string;
     updateAvailable: boolean;
@@ -154,6 +160,10 @@ export interface RepositorySettings {
     privateKeyFileName: string;
     privateKey: string;
     privateKeyPassword: string;
+}
+export interface RepositorySettingsInfo {
+    configured: boolean;
+    readOnly: boolean;
 }
 export interface AutoVersionCreateConfig extends VersionCreateConfig {
     branch: string;

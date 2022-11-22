@@ -7,6 +7,7 @@ import { AdminService } from '@core/http/admin.service';
 import { AutoCommitSettings } from '@shared/models/settings.models';
 import { TranslateService } from '@ngx-translate/core';
 import { DialogService } from '@core/services/dialog.service';
+import { Observable } from 'rxjs';
 import { EntityType } from '@shared/models/entity-type.models';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import * as i0 from "@angular/core";
@@ -20,6 +21,7 @@ export declare class AutoCommitSettingsComponent extends PageComponent implement
     autoCommitSettingsForm: FormGroup;
     settings: AutoCommitSettings;
     entityTypes: typeof EntityType;
+    isReadOnly: Observable<boolean>;
     constructor(store: Store<AppState>, adminService: AdminService, dialogService: DialogService, sanitizer: DomSanitizer, translate: TranslateService, fb: FormBuilder);
     ngOnInit(): void;
     entityTypesFormGroupArray(): FormGroup[];

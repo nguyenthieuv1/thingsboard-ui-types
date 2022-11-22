@@ -17,6 +17,7 @@ export declare class LoginComponent extends PageComponent implements OnInit {
     constructor(store: Store<AppState>, authService: AuthService, fb: FormBuilder, router: Router);
     ngOnInit(): void;
     login(): void;
+    getOAuth2Uri(oauth2Client: OAuth2ClientInfo): string;
     static ɵfac: i0.ɵɵFactoryDeclaration<LoginComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<LoginComponent, "tb-login", never, {}, {}, never, never>;
 }
