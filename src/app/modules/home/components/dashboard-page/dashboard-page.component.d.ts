@@ -61,6 +61,7 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
     private viewContainerRef;
     private cd;
     private sanitizer;
+    elRef: ElementRef;
     authState: AuthState;
     authUser: AuthUser;
     dashboardPageClass: string;
@@ -122,7 +123,7 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
     set rightLayoutOpened(rightLayoutOpened: boolean);
     editWidgetComponent: EditWidgetComponent;
     dashboardWidgetSelectComponent: DashboardWidgetSelectComponent;
-    constructor(store: Store<AppState>, window: Window, document: Document, breakpointObserver: BreakpointObserver, route: ActivatedRoute, router: Router, utils: UtilsService, dashboardUtils: DashboardUtilsService, authService: AuthService, entityService: EntityService, dialogService: DialogService, widgetComponentService: WidgetComponentService, dashboardService: DashboardService, itembuffer: ItemBufferService, importExport: ImportExportService, mobileService: MobileService, fb: FormBuilder, dialog: MatDialog, translate: TranslateService, popoverService: TbPopoverService, renderer: Renderer2, ngZone: NgZone, embeddedValue: any, overlay: Overlay, viewContainerRef: ViewContainerRef, cd: ChangeDetectorRef, sanitizer: DomSanitizer);
+    constructor(store: Store<AppState>, window: Window, document: Document, breakpointObserver: BreakpointObserver, route: ActivatedRoute, router: Router, utils: UtilsService, dashboardUtils: DashboardUtilsService, authService: AuthService, entityService: EntityService, dialogService: DialogService, widgetComponentService: WidgetComponentService, dashboardService: DashboardService, itembuffer: ItemBufferService, importExport: ImportExportService, mobileService: MobileService, fb: FormBuilder, dialog: MatDialog, translate: TranslateService, popoverService: TbPopoverService, renderer: Renderer2, ngZone: NgZone, embeddedValue: any, overlay: Overlay, viewContainerRef: ViewContainerRef, cd: ChangeDetectorRef, sanitizer: DomSanitizer, elRef: ElementRef);
     ngOnInit(): void;
     private init;
     private updateDashboardCss;
@@ -206,6 +207,6 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
     onCloseSearchBundle(): void;
     updateDashboardImage($event: Event): void;
     toggleVersionControl($event: Event, versionControlButton: MatButton): void;
-    static ɵfac: i0.ɵɵFactoryDeclaration<DashboardPageComponent, [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, { optional: true; }, null, null, null, null]>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<DashboardPageComponent, [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, { optional: true; }, null, null, null, null, null]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<DashboardPageComponent, "tb-dashboard-page", never, { "embedded": "embedded"; "currentState": "currentState"; "hideToolbar": "hideToolbar"; "syncStateWithQueryParam": "syncStateWithQueryParam"; "dashboard": "dashboard"; "parentDashboard": "parentDashboard"; "popoverComponent": "popoverComponent"; "parentAliasController": "parentAliasController"; }, {}, never, never>;
 }
