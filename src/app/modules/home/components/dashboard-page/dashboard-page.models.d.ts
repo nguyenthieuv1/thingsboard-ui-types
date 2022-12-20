@@ -6,6 +6,12 @@ import { ILayoutController } from './layout/layout.models';
 import { DashboardContextMenuItem, WidgetContextMenuItem } from '@home/models/dashboard-component.models';
 import { Observable } from 'rxjs';
 export declare type DashboardPageScope = 'tenant' | 'customer';
+export interface DashboardPageInitData {
+    dashboard: Dashboard;
+    currentDashboardId?: string;
+    widgetEditMode?: boolean;
+    singlePageMode?: boolean;
+}
 export interface DashboardContext {
     instanceId: string;
     state: string;
