@@ -19,7 +19,6 @@ export declare class WidgetComponentService {
     private resources;
     private translate;
     private cssParser;
-    private widgetsInfoInMemoryCache;
     private widgetsInfoFetchQueue;
     private init$;
     private missingWidgetType;
@@ -36,11 +35,6 @@ export declare class WidgetComponentService {
     private createWidgetControllerDescriptor;
     private processWidgetLoadError;
     private resolveWidgetsInfoFetchQueue;
-    private createWidgetInfoCacheKey;
-    private getWidgetInfoFromCache;
-    private putWidgetInfoToCache;
-    private deleteWidgetInfoFromCache;
-    private deleteWidgetsBundleFromCache;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetComponentService, [null, { optional: true; }, null, null, null, null, null, null]>;
     static ɵprov: i0.ɵɵInjectableDeclaration<WidgetComponentService>;
 }

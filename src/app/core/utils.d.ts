@@ -63,3 +63,4 @@ export declare function parseHttpErrorMessage(errorResponse: HttpErrorResponse, 
     message: string;
     timeout: number;
 };
+export declare function genNextLabel(name: string, datasources: Datasource[]): string;
