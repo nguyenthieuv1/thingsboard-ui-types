@@ -20,10 +20,10 @@ export declare class SettingsEffects {
     private titleService;
     private translate;
     constructor(actions$: Actions<SettingsActions>, store: Store<AppState>, authService: AuthService, utils: UtilsService, router: Router, localStorageService: LocalStorageService, titleService: TitleService, translate: TranslateService);
-    persistSettings: import("rxjs").Observable<[import("./settings.actions").ActionSettingsChangeLanguage, import("./settings.models").SettingsState]>;
-    setTranslateServiceLanguage: import("rxjs").Observable<string>;
-    setTitle: import("rxjs").Observable<import("@angular/router").Event>;
-    setPublicId: import("rxjs").Observable<import("@angular/router").Event>;
+    persistSettings: import("rxjs").Observable<[import("./settings.actions").ActionSettingsChangeLanguage, import("./settings.models").SettingsState]> & import("@ngrx/effects").CreateEffectMetadata;
+    setTranslateServiceLanguage: import("rxjs").Observable<string> & import("@ngrx/effects").CreateEffectMetadata;
+    setTitle: import("rxjs").Observable<import("@angular/router").Event | import("./settings.actions").ActionSettingsChangeLanguage> & import("@ngrx/effects").CreateEffectMetadata;
+    setPublicId: import("rxjs").Observable<import("@angular/router").Event> & import("@ngrx/effects").CreateEffectMetadata;
     static ɵfac: i0.ɵɵFactoryDeclaration<SettingsEffects, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<SettingsEffects>;
 }

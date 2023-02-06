@@ -11,5 +11,5 @@ export declare class MenuToggleComponent implements OnInit {
     sectionHeight(): string;
     trackBySectionPages(index: number, section: MenuSection): string;
     static ɵfac: i0.ɵɵFactoryDeclaration<MenuToggleComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MenuToggleComponent, "tb-menu-toggle", never, { "section": "section"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MenuToggleComponent, "tb-menu-toggle", never, { "section": "section"; }, {}, never, never, false>;
 }

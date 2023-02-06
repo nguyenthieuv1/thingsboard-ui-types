@@ -1,5 +1,5 @@
 import { OnInit } from '@angular/core';
-import { ControlValueAccessor, FormArray, FormBuilder, FormControl, FormGroup, Validator } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -12,12 +12,12 @@ export declare class KeyValMapComponent extends PageComponent implements Control
     keyPlaceholderText: string;
     valuePlaceholderText: string;
     noDataText: string;
-    kvListFormGroup: FormGroup;
+    kvListFormGroup: UntypedFormGroup;
     private propagateChange;
     private valueChangeSubscription;
-    constructor(store: Store<AppState>, fb: FormBuilder);
+    constructor(store: Store<AppState>, fb: UntypedFormBuilder);
     ngOnInit(): void;
-    keyValsFormArray(): FormArray;
+    keyValsFormArray(): UntypedFormArray;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     setDisabledState?(isDisabled: boolean): void;
@@ -26,12 +26,12 @@ export declare class KeyValMapComponent extends PageComponent implements Control
     }): void;
     removeKeyVal(index: number): void;
     addKeyVal(): void;
-    validate(c: FormControl): {
+    validate(c: UntypedFormControl): {
         keyVals: {
             valid: boolean;
         };
     };
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<KeyValMapComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<KeyValMapComponent, "tb-key-val-map", never, { "disabled": "disabled"; "titleText": "titleText"; "keyPlaceholderText": "keyPlaceholderText"; "valuePlaceholderText": "valuePlaceholderText"; "noDataText": "noDataText"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<KeyValMapComponent, "tb-key-val-map", never, { "disabled": "disabled"; "titleText": "titleText"; "keyPlaceholderText": "keyPlaceholderText"; "valuePlaceholderText": "valuePlaceholderText"; "noDataText": "noDataText"; }, {}, never, never, false>;
 }

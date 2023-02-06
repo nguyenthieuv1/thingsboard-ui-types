@@ -45,6 +45,7 @@ export declare class EdgesTableConfigResolver implements Resolve<EntityTableConf
     unassignFromCustomer($event: Event, edge: EdgeInfo): void;
     unassignEdgesFromCustomer($event: Event, edges: Array<EdgeInfo>): void;
     syncEdge($event: any, edge: any): void;
+    openInstructions($event: any, edge: any): void;
     onEdgeAction(action: EntityAction<EdgeInfo>, config: EntityTableConfig<EdgeInfo>): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<EdgesTableConfigResolver, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<EdgesTableConfigResolver>;

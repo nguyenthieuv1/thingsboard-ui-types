@@ -8,5 +8,5 @@ export declare class DeviceTabsComponent extends EntityTabsComponent<DeviceInfo>
     constructor(store: Store<AppState>);
     ngOnInit(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceTabsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceTabsComponent, "tb-device-tabs", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceTabsComponent, "tb-device-tabs", never, {}, {}, never, never, false>;
 }

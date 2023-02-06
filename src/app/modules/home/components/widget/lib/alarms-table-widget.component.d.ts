@@ -116,7 +116,7 @@ export declare class AlarmsTableWidgetComponent extends PageComponent implements
     isSorting(column: EntityColumn): boolean;
     private clearCache;
     static ɵfac: i0.ɵɵFactoryDeclaration<AlarmsTableWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmsTableWidgetComponent, "tb-alarms-table-widget", never, { "ctx": "ctx"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmsTableWidgetComponent, "tb-alarms-table-widget", never, { "ctx": "ctx"; }, {}, never, never, false>;
 }
 declare class AlarmsDatasource implements DataSource<AlarmDataInfo> {
     private subscription;

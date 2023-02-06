@@ -43,5 +43,5 @@ export declare class ImageInputComponent extends PageComponent implements AfterV
     private updateModel;
     clearImage(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ImageInputComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ImageInputComponent, "tb-image-input", never, { "label": "label"; "maxSizeByte": "maxSizeByte"; "required": "required"; "disabled": "disabled"; "showClearButton": "showClearButton"; "showPreview": "showPreview"; "inputId": "inputId"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ImageInputComponent, "tb-image-input", never, { "label": "label"; "maxSizeByte": "maxSizeByte"; "required": "required"; "disabled": "disabled"; "showClearButton": "showClearButton"; "showPreview": "showPreview"; "inputId": "inputId"; }, {}, never, never, false>;
 }

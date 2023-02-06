@@ -3,7 +3,7 @@ import { AuthService } from '@core/auth/auth.service';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { PageComponent } from '@shared/components/page.component';
-import { FormBuilder } from '@angular/forms';
+import { UntypedFormBuilder } from '@angular/forms';
 import { TwoFactorAuthenticationService } from '@core/http/two-factor-authentication.service';
 import { TwoFactorAuthProviderType } from '@shared/models/two-factor-auth.models';
 import { TranslateService } from '@ngx-translate/core';
@@ -29,8 +29,8 @@ export declare class TwoFactorAuthLoginComponent extends PageComponent implement
     maxLengthInput: number;
     inputMode: string;
     pattern: string;
-    verificationForm: import("@angular/forms").FormGroup;
-    constructor(store: Store<AppState>, twoFactorAuthService: TwoFactorAuthenticationService, authService: AuthService, translate: TranslateService, fb: FormBuilder);
+    verificationForm: import("@angular/forms").UntypedFormGroup;
+    constructor(store: Store<AppState>, twoFactorAuthService: TwoFactorAuthenticationService, authService: AuthService, translate: TranslateService, fb: UntypedFormBuilder);
     ngOnInit(): void;
     ngOnDestroy(): void;
     sendVerificationCode(): void;
@@ -39,5 +39,5 @@ export declare class TwoFactorAuthLoginComponent extends PageComponent implement
     cancelLogin(): void;
     private updatedTime;
     static ɵfac: i0.ɵɵFactoryDeclaration<TwoFactorAuthLoginComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TwoFactorAuthLoginComponent, "tb-two-factor-auth-login", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TwoFactorAuthLoginComponent, "tb-two-factor-auth-login", never, {}, {}, never, never, false>;
 }

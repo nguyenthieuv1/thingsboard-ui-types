@@ -11,5 +11,5 @@ export declare class DeviceTableHeaderComponent extends EntityTableHeaderCompone
     constructor(store: Store<AppState>);
     deviceProfileChanged(deviceProfileId: DeviceProfileId): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceTableHeaderComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceTableHeaderComponent, "tb-device-table-header", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceTableHeaderComponent, "tb-device-table-header", never, {}, {}, never, never, false>;
 }

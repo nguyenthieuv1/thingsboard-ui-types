@@ -88,7 +88,7 @@ export declare class EntitiesTableWidgetComponent extends PageComponent implemen
     onActionButtonClick($event: Event, entity: EntityData, actionDescriptor: WidgetActionDescriptor): void;
     private clearCache;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntitiesTableWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntitiesTableWidgetComponent, "tb-entities-table-widget", never, { "ctx": "ctx"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntitiesTableWidgetComponent, "tb-entities-table-widget", never, { "ctx": "ctx"; }, {}, never, never, false>;
 }
 declare class EntityDatasource implements DataSource<EntityData> {
     private translate;

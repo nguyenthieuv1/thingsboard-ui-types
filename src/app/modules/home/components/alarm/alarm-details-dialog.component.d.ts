@@ -2,7 +2,7 @@ import { OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Observable, ReplaySubject } from 'rxjs';
 import { Router } from '@angular/router';
 import { DialogComponent } from '@app/shared/components/dialog.component';
@@ -26,9 +26,9 @@ export declare class AlarmDetailsDialogComponent extends DialogComponent<AlarmDe
     data: AlarmDetailsDialogData;
     private alarmService;
     dialogRef: MatDialogRef<AlarmDetailsDialogComponent, boolean>;
-    fb: FormBuilder;
+    fb: UntypedFormBuilder;
     alarmId: string;
-    alarmFormGroup: FormGroup;
+    alarmFormGroup: UntypedFormGroup;
     allowAcknowledgment: boolean;
     allowClear: boolean;
     displayDetails: boolean;
@@ -37,7 +37,7 @@ export declare class AlarmDetailsDialogComponent extends DialogComponent<AlarmDe
     alarmSeverityColorsMap: Map<import("@app/shared/models/alarm.models").AlarmSeverity, string>;
     alarmStatuses: typeof AlarmStatus;
     alarmUpdated: boolean;
-    constructor(store: Store<AppState>, router: Router, datePipe: DatePipe, translate: TranslateService, data: AlarmDetailsDialogData, alarmService: AlarmService, dialogRef: MatDialogRef<AlarmDetailsDialogComponent, boolean>, fb: FormBuilder);
+    constructor(store: Store<AppState>, router: Router, datePipe: DatePipe, translate: TranslateService, data: AlarmDetailsDialogData, alarmService: AlarmService, dialogRef: MatDialogRef<AlarmDetailsDialogComponent, boolean>, fb: UntypedFormBuilder);
     loadAlarm(): void;
     loadAlarmFields(alarm: AlarmInfo): void;
     ngOnInit(): void;
@@ -45,5 +45,5 @@ export declare class AlarmDetailsDialogComponent extends DialogComponent<AlarmDe
     acknowledge(): void;
     clear(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AlarmDetailsDialogComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmDetailsDialogComponent, "tb-alarm-details-dialog", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmDetailsDialogComponent, "tb-alarm-details-dialog", never, {}, {}, never, never, false>;
 }

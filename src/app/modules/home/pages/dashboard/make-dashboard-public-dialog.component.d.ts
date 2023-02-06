@@ -2,7 +2,7 @@ import { OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { FormBuilder } from '@angular/forms';
+import { UntypedFormBuilder } from '@angular/forms';
 import { DashboardService } from '@core/http/dashboard.service';
 import { DashboardInfo } from '@app/shared/models/dashboard.models';
 import { TranslateService } from '@ngx-translate/core';
@@ -19,13 +19,13 @@ export declare class MakeDashboardPublicDialogComponent extends DialogComponent<
     translate: TranslateService;
     private dashboardService;
     dialogRef: MatDialogRef<MakeDashboardPublicDialogComponent>;
-    fb: FormBuilder;
+    fb: UntypedFormBuilder;
     dashboard: DashboardInfo;
     publicLink: string;
-    constructor(store: Store<AppState>, router: Router, data: MakeDashboardPublicDialogData, translate: TranslateService, dashboardService: DashboardService, dialogRef: MatDialogRef<MakeDashboardPublicDialogComponent>, fb: FormBuilder);
+    constructor(store: Store<AppState>, router: Router, data: MakeDashboardPublicDialogData, translate: TranslateService, dashboardService: DashboardService, dialogRef: MatDialogRef<MakeDashboardPublicDialogComponent>, fb: UntypedFormBuilder);
     ngOnInit(): void;
     close(): void;
     onPublicLinkCopied($event: any): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<MakeDashboardPublicDialogComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MakeDashboardPublicDialogComponent, "tb-make-dashboard-public-dialog", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MakeDashboardPublicDialogComponent, "tb-make-dashboard-public-dialog", never, {}, {}, never, never, false>;
 }

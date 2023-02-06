@@ -1,5 +1,5 @@
 import { AfterViewInit, ElementRef, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
@@ -16,7 +16,7 @@ export declare class EntityListComponent implements ControlValueAccessor, OnInit
     translate: TranslateService;
     private entityService;
     private fb;
-    entityListFormGroup: FormGroup;
+    entityListFormGroup: UntypedFormGroup;
     modelValue: Array<string> | null;
     entityType: EntityType;
     subType: string;
@@ -32,7 +32,7 @@ export declare class EntityListComponent implements ControlValueAccessor, OnInit
     searchText: string;
     private dirty;
     private propagateChange;
-    constructor(store: Store<AppState>, translate: TranslateService, entityService: EntityService, fb: FormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, entityService: EntityService, fb: UntypedFormBuilder);
     updateValidators(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
@@ -49,5 +49,5 @@ export declare class EntityListComponent implements ControlValueAccessor, OnInit
     onFocus(): void;
     clear(value?: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityListComponent, "tb-entity-list", never, { "entityType": "entityType"; "subType": "subType"; "required": "required"; "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityListComponent, "tb-entity-list", never, { "entityType": "entityType"; "subType": "subType"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false>;
 }

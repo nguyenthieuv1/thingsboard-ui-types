@@ -1,5 +1,5 @@
 import { ElementRef, EventEmitter, NgZone, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
@@ -19,7 +19,7 @@ export declare class AssetProfileAutocompleteComponent implements ControlValueAc
     private fb;
     private zone;
     private dialog;
-    selectAssetProfileFormGroup: FormGroup;
+    selectAssetProfileFormGroup: UntypedFormGroup;
     modelValue: AssetProfileId | null;
     selectDefaultProfile: boolean;
     selectFirstProfile: boolean;
@@ -43,7 +43,7 @@ export declare class AssetProfileAutocompleteComponent implements ControlValueAc
     private ignoreClosedPanel;
     private allAssetProfile;
     private propagateChange;
-    constructor(store: Store<AppState>, translate: TranslateService, truncate: TruncatePipe, assetProfileService: AssetProfileService, fb: FormBuilder, zone: NgZone, dialog: MatDialog);
+    constructor(store: Store<AppState>, translate: TranslateService, truncate: TruncatePipe, assetProfileService: AssetProfileService, fb: UntypedFormBuilder, zone: NgZone, dialog: MatDialog);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
@@ -63,5 +63,5 @@ export declare class AssetProfileAutocompleteComponent implements ControlValueAc
     editAssetProfile($event: Event): void;
     openAssetProfileDialog(assetProfile: AssetProfile, isAdd: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AssetProfileAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AssetProfileAutocompleteComponent, "tb-asset-profile-autocomplete", never, { "selectDefaultProfile": "selectDefaultProfile"; "selectFirstProfile": "selectFirstProfile"; "displayAllOnEmpty": "displayAllOnEmpty"; "editProfileEnabled": "editProfileEnabled"; "addNewProfile": "addNewProfile"; "showDetailsPageLink": "showDetailsPageLink"; "required": "required"; "disabled": "disabled"; "hint": "hint"; }, { "assetProfileUpdated": "assetProfileUpdated"; "assetProfileChanged": "assetProfileChanged"; }, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AssetProfileAutocompleteComponent, "tb-asset-profile-autocomplete", never, { "selectDefaultProfile": "selectDefaultProfile"; "selectFirstProfile": "selectFirstProfile"; "displayAllOnEmpty": "displayAllOnEmpty"; "editProfileEnabled": "editProfileEnabled"; "addNewProfile": "addNewProfile"; "showDetailsPageLink": "showDetailsPageLink"; "required": "required"; "disabled": "disabled"; "hint": "hint"; }, { "assetProfileUpdated": "assetProfileUpdated"; "assetProfileChanged": "assetProfileChanged"; }, never, never, false>;
 }

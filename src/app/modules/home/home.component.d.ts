@@ -42,5 +42,5 @@ export declare class HomeComponent extends PageComponent implements AfterViewIni
     closeSearch(): void;
     private searchTextUpdated;
     static ɵfac: i0.ɵɵFactoryDeclaration<HomeComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<HomeComponent, "tb-home", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<HomeComponent, "tb-home", never, {}, {}, never, never, false>;
 }
