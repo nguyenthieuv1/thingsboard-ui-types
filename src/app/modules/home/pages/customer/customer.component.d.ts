@@ -24,5 +24,5 @@ export declare class CustomerComponent extends ContactBasedComponent<Customer> {
     onCustomerIdCopied(event: any): void;
     edgesSupportEnabled(): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<CustomerComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<CustomerComponent, "tb-customer", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CustomerComponent, "tb-customer", never, {}, {}, never, never, false, never>;
 }

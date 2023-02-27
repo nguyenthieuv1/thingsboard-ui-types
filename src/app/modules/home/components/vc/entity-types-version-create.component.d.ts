@@ -46,5 +46,5 @@ export declare class EntityTypesVersionCreateComponent extends PageComponent imp
     allowedEntityTypes(entityTypeControl?: AbstractControl): Array<EntityType>;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityTypesVersionCreateComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityTypesVersionCreateComponent, "tb-entity-types-version-create", never, { "disabled": "disabled"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityTypesVersionCreateComponent, "tb-entity-types-version-create", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
 }

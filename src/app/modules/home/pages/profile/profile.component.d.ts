@@ -29,5 +29,5 @@ export declare class ProfileComponent extends PageComponent implements OnInit, H
     confirmForm(): UntypedFormGroup;
     isSysAdmin(): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<ProfileComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ProfileComponent, "tb-profile", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ProfileComponent, "tb-profile", never, {}, {}, never, never, false, never>;
 }

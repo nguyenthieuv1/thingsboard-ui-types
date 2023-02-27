@@ -40,5 +40,5 @@ export declare class AssignToCustomerDialogComponent extends DialogComponent<Ass
     assign(): void;
     private getAssignToCustomerTask;
     static ɵfac: i0.ɵɵFactoryDeclaration<AssignToCustomerDialogComponent, [null, null, null, null, null, null, null, { skipSelf: true; }, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AssignToCustomerDialogComponent, "tb-assign-to-customer-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AssignToCustomerDialogComponent, "tb-assign-to-customer-dialog", never, {}, {}, never, never, false, never>;
 }

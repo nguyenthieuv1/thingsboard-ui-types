@@ -11,5 +11,5 @@ export declare class AssetTableHeaderComponent extends EntityTableHeaderComponen
     constructor(store: Store<AppState>);
     assetProfileChanged(assetProfileId: AssetProfileId): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AssetTableHeaderComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AssetTableHeaderComponent, "tb-asset-table-header", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AssetTableHeaderComponent, "tb-asset-table-header", never, {}, {}, never, never, false, never>;
 }

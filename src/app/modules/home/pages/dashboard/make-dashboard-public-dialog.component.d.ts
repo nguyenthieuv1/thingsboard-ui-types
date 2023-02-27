@@ -27,5 +27,5 @@ export declare class MakeDashboardPublicDialogComponent extends DialogComponent<
     close(): void;
     onPublicLinkCopied($event: any): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<MakeDashboardPublicDialogComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MakeDashboardPublicDialogComponent, "tb-make-dashboard-public-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MakeDashboardPublicDialogComponent, "tb-make-dashboard-public-dialog", never, {}, {}, never, never, false, never>;
 }

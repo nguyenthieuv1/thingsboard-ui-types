@@ -32,5 +32,5 @@ export declare class MailServerComponent extends PageComponent implements OnInit
     confirmForm(): UntypedFormGroup;
     private get mailSettingsFormValue();
     static ɵfac: i0.ɵɵFactoryDeclaration<MailServerComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MailServerComponent, "tb-mail-server", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MailServerComponent, "tb-mail-server", never, {}, {}, never, never, false, never>;
 }

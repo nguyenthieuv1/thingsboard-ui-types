@@ -96,5 +96,5 @@ export declare class EntitiesTableComponent extends PageComponent implements IEn
     trackByEntityId(index: number, entity: BaseData<HasId>): string;
     protected updatedRouterParamsAndData(queryParams: object, queryParamsHandling?: QueryParamsHandling): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntitiesTableComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntitiesTableComponent, "tb-entities-table", never, { "entitiesTableConfig": "entitiesTableConfig"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntitiesTableComponent, "tb-entities-table", never, { "entitiesTableConfig": "entitiesTableConfig"; }, {}, never, never, false, never>;
 }

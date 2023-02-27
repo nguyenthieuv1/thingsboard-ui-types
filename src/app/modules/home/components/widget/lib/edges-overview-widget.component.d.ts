@@ -35,5 +35,5 @@ export declare class EdgesOverviewWidgetComponent extends PageComponent implemen
     private initializeConfig;
     private updateTitle;
     static ɵfac: i0.ɵɵFactoryDeclaration<EdgesOverviewWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EdgesOverviewWidgetComponent, "tb-edges-overview-widget", never, { "ctx": "ctx"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EdgesOverviewWidgetComponent, "tb-edges-overview-widget", never, { "ctx": "ctx"; }, {}, never, never, false, never>;
 }

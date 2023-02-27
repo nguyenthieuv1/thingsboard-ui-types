@@ -8,5 +8,5 @@ export declare class CustomerTabsComponent extends EntityTabsComponent<Customer>
     constructor(store: Store<AppState>);
     ngOnInit(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<CustomerTabsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<CustomerTabsComponent, "tb-customer-tabs", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CustomerTabsComponent, "tb-customer-tabs", never, {}, {}, never, never, false, never>;
 }

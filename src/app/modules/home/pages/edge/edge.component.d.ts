@@ -28,5 +28,5 @@ export declare class EdgeComponent extends EntityComponent<EdgeInfo> {
     onEdgeInfoCopied(type: string): void;
     private generateRoutingKeyAndSecret;
     static ɵfac: i0.ɵɵFactoryDeclaration<EdgeComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EdgeComponent, "tb-edge", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EdgeComponent, "tb-edge", never, {}, {}, never, never, false, never>;
 }

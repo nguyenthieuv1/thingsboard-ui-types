@@ -27,5 +27,5 @@ export declare class AlarmTableComponent implements OnInit {
     constructor(alarmService: AlarmService, dialogService: DialogService, translate: TranslateService, datePipe: DatePipe, dialog: MatDialog, store: Store<AppState>);
     ngOnInit(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AlarmTableComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmTableComponent, "tb-alarm-table", never, { "active": "active"; "entityId": "entityId"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmTableComponent, "tb-alarm-table", never, { "active": "active"; "entityId": "entityId"; }, {}, never, never, false, never>;
 }

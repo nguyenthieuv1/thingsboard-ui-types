@@ -93,5 +93,5 @@ export declare class AttributeTableComponent extends PageComponent implements Af
     addWidgetToDashboard(): void;
     exitWidgetMode(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AttributeTableComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AttributeTableComponent, "tb-attribute-table", never, { "disableAttributeScopeSelection": "disableAttributeScopeSelection"; "defaultAttributeScope": "defaultAttributeScope"; "active": "active"; "entityId": "entityId"; "entityName": "entityName"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AttributeTableComponent, "tb-attribute-table", never, { "disableAttributeScopeSelection": "disableAttributeScopeSelection"; "defaultAttributeScope": "defaultAttributeScope"; "active": "active"; "entityId": "entityId"; "entityName": "entityName"; }, {}, never, never, false, never>;
 }

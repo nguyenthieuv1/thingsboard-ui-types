@@ -18,5 +18,5 @@ export declare class HomeLinksComponent implements OnInit {
     private updateColumnCount;
     sectionColspan(section: HomeSection): number;
     static ɵfac: i0.ɵɵFactoryDeclaration<HomeLinksComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<HomeLinksComponent, "tb-home-links", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<HomeLinksComponent, "tb-home-links", never, {}, {}, never, never, false, never>;
 }

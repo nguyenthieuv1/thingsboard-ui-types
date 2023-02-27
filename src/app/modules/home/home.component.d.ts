@@ -37,10 +37,11 @@ export declare class HomeComponent extends PageComponent implements AfterViewIni
     isFullscreen(): boolean;
     goBack(): void;
     activeComponentChanged(activeComponent: any): void;
+    private updateActiveComponent;
     displaySearchMode(): boolean;
     openSearch(): void;
     closeSearch(): void;
     private searchTextUpdated;
     static ɵfac: i0.ɵɵFactoryDeclaration<HomeComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<HomeComponent, "tb-home", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<HomeComponent, "tb-home", never, {}, {}, never, never, false, never>;
 }

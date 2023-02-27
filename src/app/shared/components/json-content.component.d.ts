@@ -62,5 +62,5 @@ export declare class JsonContentComponent implements OnInit, ControlValueAccesso
     minifyJSON(): void;
     onFullscreen(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<JsonContentComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<JsonContentComponent, "tb-json-content", never, { "label": "label"; "contentType": "contentType"; "disabled": "disabled"; "fillHeight": "fillHeight"; "editorStyle": "editorStyle"; "readonly": "readonly"; "validateContent": "validateContent"; "validateOnChange": "validateOnChange"; "required": "required"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<JsonContentComponent, "tb-json-content", never, { "label": "label"; "contentType": "contentType"; "disabled": "disabled"; "fillHeight": "fillHeight"; "editorStyle": "editorStyle"; "readonly": "readonly"; "validateContent": "validateContent"; "validateOnChange": "validateOnChange"; "required": "required"; }, {}, never, never, false, never>;
 }

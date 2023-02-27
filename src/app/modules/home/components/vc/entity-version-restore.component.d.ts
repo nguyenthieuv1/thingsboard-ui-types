@@ -34,5 +34,5 @@ export declare class EntityVersionRestoreComponent extends PageComponent impleme
     cancel(): void;
     restore(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityVersionRestoreComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityVersionRestoreComponent, "tb-entity-version-restore", never, { "versionName": "versionName"; "versionId": "versionId"; "externalEntityId": "externalEntityId"; "onClose": "onClose"; "popoverComponent": "popoverComponent"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityVersionRestoreComponent, "tb-entity-version-restore", never, { "versionName": "versionName"; "versionId": "versionId"; "externalEntityId": "externalEntityId"; "onClose": "onClose"; "popoverComponent": "popoverComponent"; }, {}, never, never, false, never>;
 }

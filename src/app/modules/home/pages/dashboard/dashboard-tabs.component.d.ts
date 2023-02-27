@@ -8,5 +8,5 @@ export declare class DashboardTabsComponent extends EntityTabsComponent<Dashboar
     constructor(store: Store<AppState>);
     ngOnInit(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DashboardTabsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardTabsComponent, "tb-dashboard-tabs", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardTabsComponent, "tb-dashboard-tabs", never, {}, {}, never, never, false, never>;
 }

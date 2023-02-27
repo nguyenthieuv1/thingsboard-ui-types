@@ -10,6 +10,7 @@ import { MatAutocomplete } from '@angular/material/autocomplete';
 import { AssetProfileId } from '@shared/models/id/asset-profile-id';
 import { AssetProfile, AssetProfileInfo } from '@shared/models/asset.models';
 import { AssetProfileService } from '@core/http/asset-profile.service';
+import { SubscriptSizing } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 export declare class AssetProfileAutocompleteComponent implements ControlValueAccessor, OnInit {
     private store;
@@ -21,6 +22,7 @@ export declare class AssetProfileAutocompleteComponent implements ControlValueAc
     private dialog;
     selectAssetProfileFormGroup: UntypedFormGroup;
     modelValue: AssetProfileId | null;
+    subscriptSizing: SubscriptSizing;
     selectDefaultProfile: boolean;
     selectFirstProfile: boolean;
     displayAllOnEmpty: boolean;
@@ -63,5 +65,5 @@ export declare class AssetProfileAutocompleteComponent implements ControlValueAc
     editAssetProfile($event: Event): void;
     openAssetProfileDialog(assetProfile: AssetProfile, isAdd: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AssetProfileAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AssetProfileAutocompleteComponent, "tb-asset-profile-autocomplete", never, { "selectDefaultProfile": "selectDefaultProfile"; "selectFirstProfile": "selectFirstProfile"; "displayAllOnEmpty": "displayAllOnEmpty"; "editProfileEnabled": "editProfileEnabled"; "addNewProfile": "addNewProfile"; "showDetailsPageLink": "showDetailsPageLink"; "required": "required"; "disabled": "disabled"; "hint": "hint"; }, { "assetProfileUpdated": "assetProfileUpdated"; "assetProfileChanged": "assetProfileChanged"; }, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AssetProfileAutocompleteComponent, "tb-asset-profile-autocomplete", never, { "subscriptSizing": "subscriptSizing"; "selectDefaultProfile": "selectDefaultProfile"; "selectFirstProfile": "selectFirstProfile"; "displayAllOnEmpty": "displayAllOnEmpty"; "editProfileEnabled": "editProfileEnabled"; "addNewProfile": "addNewProfile"; "showDetailsPageLink": "showDetailsPageLink"; "required": "required"; "disabled": "disabled"; "hint": "hint"; }, { "assetProfileUpdated": "assetProfileUpdated"; "assetProfileChanged": "assetProfileChanged"; }, never, never, false, never>;
 }

@@ -41,5 +41,5 @@ export declare class AddEntitiesToCustomerDialogComponent extends DialogComponen
     assign(): void;
     private getAssignToCustomerTask;
     static ɵfac: i0.ɵɵFactoryDeclaration<AddEntitiesToCustomerDialogComponent, [null, null, null, null, null, null, null, null, { skipSelf: true; }, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AddEntitiesToCustomerDialogComponent, "tb-add-entities-to-customer-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AddEntitiesToCustomerDialogComponent, "tb-add-entities-to-customer-dialog", never, {}, {}, never, never, false, never>;
 }

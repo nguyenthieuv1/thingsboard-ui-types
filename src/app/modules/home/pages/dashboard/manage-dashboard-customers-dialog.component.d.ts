@@ -37,5 +37,5 @@ export declare class ManageDashboardCustomersDialogComponent extends DialogCompo
     submit(): void;
     private getManageDashboardCustomersTask;
     static ɵfac: i0.ɵɵFactoryDeclaration<ManageDashboardCustomersDialogComponent, [null, null, null, null, { skipSelf: true; }, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ManageDashboardCustomersDialogComponent, "tb-manage-dashboard-customers-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ManageDashboardCustomersDialogComponent, "tb-manage-dashboard-customers-dialog", never, {}, {}, never, never, false, never>;
 }

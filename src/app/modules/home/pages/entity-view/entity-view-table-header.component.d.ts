@@ -10,5 +10,5 @@ export declare class EntityViewTableHeaderComponent extends EntityTableHeaderCom
     constructor(store: Store<AppState>);
     entityViewTypeChanged(entityViewType: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityViewTableHeaderComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityViewTableHeaderComponent, "tb-entity-view-table-header", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityViewTableHeaderComponent, "tb-entity-view-table-header", never, {}, {}, never, never, false, never>;
 }

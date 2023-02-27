@@ -9,5 +9,5 @@ export declare class SideMenuComponent implements OnInit {
     trackByMenuSection(index: number, section: MenuSection): string;
     ngOnInit(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<SideMenuComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SideMenuComponent, "tb-side-menu", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SideMenuComponent, "tb-side-menu", never, {}, {}, never, never, false, never>;
 }
