@@ -57,7 +57,7 @@ export declare const deviceTransportTypeConfigurationInfoMap: Map<DeviceTranspor
 export interface DefaultDeviceProfileConfiguration {
     [key: string]: any;
 }
-export declare type DeviceProfileConfigurations = DefaultDeviceProfileConfiguration;
+export type DeviceProfileConfigurations = DefaultDeviceProfileConfiguration;
 export interface DeviceProfileConfiguration extends DeviceProfileConfigurations {
     type: DeviceProfileType;
 }
@@ -67,6 +67,7 @@ export interface DefaultDeviceProfileTransportConfiguration {
 export interface MqttDeviceProfileTransportConfiguration {
     deviceTelemetryTopic?: string;
     deviceAttributesTopic?: string;
+    sparkplug?: boolean;
     sendAckOnValidationException?: boolean;
     transportPayloadTypeConfiguration?: {
         transportPayloadType?: TransportPayloadType;
@@ -116,7 +117,7 @@ export interface SnmpMapping {
     key: string;
     dataType: DataType;
 }
-export declare type DeviceProfileTransportConfigurations = DefaultDeviceProfileTransportConfiguration & MqttDeviceProfileTransportConfiguration & CoapDeviceProfileTransportConfiguration & Lwm2mDeviceProfileTransportConfiguration & SnmpDeviceProfileTransportConfiguration;
+export type DeviceProfileTransportConfigurations = DefaultDeviceProfileTransportConfiguration & MqttDeviceProfileTransportConfiguration & CoapDeviceProfileTransportConfiguration & Lwm2mDeviceProfileTransportConfiguration & SnmpDeviceProfileTransportConfiguration;
 export interface DeviceProfileTransportConfiguration extends DeviceProfileTransportConfigurations {
     type: DeviceTransportType;
 }
@@ -168,12 +169,13 @@ export interface CustomTimeSchedulerItem {
     startsOn: number;
     endsOn: number;
 }
-export interface AlarmRule {
+interface AlarmRule {
     condition: AlarmCondition;
     alarmDetails?: string;
     dashboardId?: DashboardId;
     schedule?: AlarmSchedule;
 }
+export { AlarmRule as DeviceProfileAlarmRule };
 export declare function alarmRuleValidator(control: AbstractControl): ValidationErrors | null;
 export interface DeviceProfileAlarm {
     id: string;
@@ -213,6 +215,7 @@ export interface DeviceProfile extends BaseData<DeviceProfileId>, ExportableEnti
     defaultEdgeRuleChainId?: RuleChainId;
 }
 export interface DeviceProfileInfo extends EntityInfoData {
+    tenantId?: TenantId;
     type: DeviceProfileType;
     transportType: DeviceTransportType;
     image?: string;
@@ -221,7 +224,7 @@ export interface DeviceProfileInfo extends EntityInfoData {
 export interface DefaultDeviceConfiguration {
     [key: string]: any;
 }
-export declare type DeviceConfigurations = DefaultDeviceConfiguration;
+export type DeviceConfigurations = DefaultDeviceConfiguration;
 export interface DeviceConfiguration extends DeviceConfigurations {
     type: DeviceProfileType;
 }
@@ -278,7 +281,7 @@ export interface SnmpDeviceTransportConfiguration {
     privacyPassphrase?: string;
     engineId?: string;
 }
-export declare type DeviceTransportConfigurations = DefaultDeviceTransportConfiguration & MqttDeviceTransportConfiguration & CoapDeviceTransportConfiguration & Lwm2mDeviceTransportConfiguration & SnmpDeviceTransportConfiguration;
+export type DeviceTransportConfigurations = DefaultDeviceTransportConfiguration & MqttDeviceTransportConfiguration & CoapDeviceTransportConfiguration & Lwm2mDeviceTransportConfiguration & SnmpDeviceTransportConfiguration;
 export interface DeviceTransportConfiguration extends DeviceTransportConfigurations {
     type: DeviceTransportType;
 }

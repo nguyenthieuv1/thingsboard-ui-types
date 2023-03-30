@@ -11,4 +11,4 @@ export declare class ActionSettingsChangeLanguage implements Action {
         userLang: string;
     });
 }
-export declare type SettingsActions = ActionSettingsChangeLanguage;
+export type SettingsActions = ActionSettingsChangeLanguage;

@@ -23,6 +23,7 @@ export interface DefaultTenantProfileConfiguration {
     transportDeviceTelemetryDataPointsRateLimit?: string;
     tenantEntityExportRateLimit?: string;
     tenantEntityImportRateLimit?: string;
+    tenantNotificationRequestsRateLimit?: string;
     maxTransportMessages: number;
     maxTransportDataPoints: number;
     maxREExecutions: number;
@@ -49,7 +50,7 @@ export interface DefaultTenantProfileConfiguration {
     alarmsTtlDays: number;
     rpcTtlDays: number;
 }
-export declare type TenantProfileConfigurations = DefaultTenantProfileConfiguration;
+export type TenantProfileConfigurations = DefaultTenantProfileConfiguration;
 export interface TenantProfileConfiguration extends TenantProfileConfigurations {
     type: TenantProfileType;
 }

@@ -46,7 +46,7 @@ export interface DebugRuleChainEventBody extends BaseEventBody {
     message: string;
     error?: string;
 }
-export declare type EventBody = ErrorEventBody & LcEventEventBody & StatsEventBody & DebugRuleNodeEventBody & DebugRuleChainEventBody;
+export type EventBody = ErrorEventBody & LcEventEventBody & StatsEventBody & DebugRuleNodeEventBody & DebugRuleChainEventBody;
 export interface Event extends BaseData<EventId> {
     tenantId: TenantId;
     entityId: EntityId;
@@ -82,4 +82,4 @@ export interface DebugFilterRuleNodeEventBody extends BaseFilterEventBody {
     isError?: boolean;
     errorStr?: string;
 }
-export declare type FilterEventBody = ErrorFilterEventBody & LcFilterEventEventBody & StatsFilterEventBody & DebugFilterRuleNodeEventBody;
+export type FilterEventBody = ErrorFilterEventBody & LcFilterEventEventBody & StatsFilterEventBody & DebugFilterRuleNodeEventBody;

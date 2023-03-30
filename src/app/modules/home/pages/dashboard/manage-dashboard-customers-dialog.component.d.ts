@@ -9,7 +9,7 @@ import { DashboardService } from '@core/http/dashboard.service';
 import { DialogComponent } from '@shared/components/dialog.component';
 import { Router } from '@angular/router';
 import * as i0 from "@angular/core";
-export declare type ManageDashboardCustomersActionType = 'assign' | 'manage' | 'unassign';
+export type ManageDashboardCustomersActionType = 'assign' | 'manage' | 'unassign';
 export interface ManageDashboardCustomersDialogData {
     actionType: ManageDashboardCustomersActionType;
     dashboardIds: Array<string>;

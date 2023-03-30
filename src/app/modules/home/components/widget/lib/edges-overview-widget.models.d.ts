@@ -14,7 +14,7 @@ export declare const edgeGroupsTypes: EntityType[];
 export interface EdgeOverviewNode extends NavTreeNode {
     data?: EdgeOverviewNodeData;
 }
-export declare type EdgeOverviewNodeData = EdgeGroupNodeData | EntityNodeData;
+export type EdgeOverviewNodeData = EdgeGroupNodeData | EntityNodeData;
 export interface EdgeGroupNodeData extends BaseEdgeOverviewNodeData {
     entityType: EntityType;
     entity: BaseData<HasId>;

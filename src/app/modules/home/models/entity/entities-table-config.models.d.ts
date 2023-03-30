@@ -14,22 +14,22 @@ import { ActivatedRoute } from '@angular/router';
 import { EntityTabsComponent } from '../../components/entity/entity-tabs.component';
 import { IEntitiesTableComponent } from '@home/models/entity/entity-table-component.models';
 import { IEntityDetailsPageComponent } from '@home/models/entity/entity-details-page-component.models';
-export declare type EntityBooleanFunction<T extends BaseData<HasId>> = (entity: T) => boolean;
-export declare type EntityStringFunction<T extends BaseData<HasId>> = (entity: T) => string;
-export declare type EntityVoidFunction<T extends BaseData<HasId>> = (entity: T) => void;
-export declare type EntityIdsVoidFunction<T extends BaseData<HasId>> = (ids: HasUUID[]) => void;
-export declare type EntityCountStringFunction = (count: number) => string;
-export declare type EntityTwoWayOperation<T extends BaseData<HasId>> = (entity: T, originalEntity?: T) => Observable<T>;
-export declare type EntityByIdOperation<T extends BaseData<HasId>> = (id: HasUUID) => Observable<T>;
-export declare type EntityIdOneWayOperation = (id: HasUUID) => Observable<any>;
-export declare type EntityActionFunction<T extends BaseData<HasId>> = (action: EntityAction<T>) => boolean;
-export declare type CreateEntityOperation<T extends BaseData<HasId>> = () => Observable<T>;
-export declare type EntityRowClickFunction<T extends BaseData<HasId>> = (event: Event, entity: T) => boolean;
-export declare type CellContentFunction<T extends BaseData<HasId>> = (entity: T, key: string) => string;
-export declare type CellTooltipFunction<T extends BaseData<HasId>> = (entity: T, key: string) => string | undefined;
-export declare type HeaderCellStyleFunction<T extends BaseData<HasId>> = (key: string) => object;
-export declare type CellStyleFunction<T extends BaseData<HasId>> = (entity: T, key: string) => object;
-export declare type CopyCellContent<T extends BaseData<HasId>> = (entity: T, key: string, length: number) => object;
+export type EntityBooleanFunction<T extends BaseData<HasId>> = (entity: T) => boolean;
+export type EntityStringFunction<T extends BaseData<HasId>> = (entity: T) => string;
+export type EntityVoidFunction<T extends BaseData<HasId>> = (entity: T) => void;
+export type EntityIdsVoidFunction<T extends BaseData<HasId>> = (ids: HasUUID[]) => void;
+export type EntityCountStringFunction = (count: number) => string;
+export type EntityTwoWayOperation<T extends BaseData<HasId>> = (entity: T, originalEntity?: T) => Observable<T>;
+export type EntityByIdOperation<T extends BaseData<HasId>> = (id: HasUUID) => Observable<T>;
+export type EntityIdOneWayOperation = (id: HasUUID) => Observable<any>;
+export type EntityActionFunction<T extends BaseData<HasId>> = (action: EntityAction<T>) => boolean;
+export type CreateEntityOperation<T extends BaseData<HasId>> = () => Observable<T>;
+export type EntityRowClickFunction<T extends BaseData<HasId>> = (event: Event, entity: T) => boolean;
+export type CellContentFunction<T extends BaseData<HasId>> = (entity: T, key: string) => string;
+export type CellTooltipFunction<T extends BaseData<HasId>> = (entity: T, key: string) => string | undefined;
+export type HeaderCellStyleFunction<T extends BaseData<HasId>> = (key: string) => object;
+export type CellStyleFunction<T extends BaseData<HasId>> = (entity: T, key: string) => object;
+export type CopyCellContent<T extends BaseData<HasId>> = (entity: T, key: string, length: number) => object;
 export declare enum CellActionDescriptorType {
     'DEFAULT' = 0,
     'COPY_BUTTON' = 1
@@ -57,7 +57,7 @@ export interface HeaderActionDescriptor {
     isEnabled: () => boolean;
     onAction: ($event: MouseEvent) => void;
 }
-export declare type EntityTableColumnType = 'content' | 'action';
+export type EntityTableColumnType = 'content' | 'action';
 export declare class BaseEntityTableColumn<T extends BaseData<HasId>> {
     type: EntityTableColumnType;
     key: string;
@@ -91,7 +91,7 @@ export declare class EntityActionTableColumn<T extends BaseData<HasId>> extends 
 export declare class DateEntityTableColumn<T extends BaseData<HasId>> extends EntityTableColumn<T> {
     constructor(key: string, title: string, datePipe: DatePipe, width?: string, dateFormat?: string, cellStyleFunction?: CellStyleFunction<T>);
 }
-export declare type EntityColumn<T extends BaseData<HasId>> = EntityTableColumn<T> | EntityActionTableColumn<T>;
+export type EntityColumn<T extends BaseData<HasId>> = EntityTableColumn<T> | EntityActionTableColumn<T>;
 export declare class EntityTableConfig<T extends BaseData<HasId>, P extends PageLink = PageLink, L extends BaseData<HasId> = T> {
     constructor();
     private table;

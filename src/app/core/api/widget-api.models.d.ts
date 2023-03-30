@@ -20,6 +20,7 @@ import { AlarmDataService } from '@core/api/alarm-data.service';
 import { IDashboardController } from '@home/components/dashboard-page/dashboard-page.models';
 import { PopoverPlacement } from '@shared/components/popover.models';
 import { PersistentRpc } from '@shared/models/rpc.models';
+import { EventEmitter } from '@angular/core';
 export interface TimewindowFunctions {
     onUpdateTimewindow: (startTimeMs: number, endTimeMs: number, interval?: number) => void;
     onResetTimewindow: () => void;
@@ -94,7 +95,7 @@ export interface StateParams {
     entityId?: EntityId;
     [key: string]: any | null;
 }
-export declare type StateControllerHolder = () => IStateController;
+export type StateControllerHolder = () => IStateController;
 export interface IStateController {
     dashboardCtrl: IDashboardController;
     getStateParams(): StateParams;
@@ -106,7 +107,7 @@ export interface IStateController {
     openRightLayout(): void;
     preserveState(): void;
     cleanupPreservedStates(): void;
-    navigatePrevState(index: number): void;
+    navigatePrevState(index: number, params?: StateParams): void;
     getStateId(): string;
     getStateIndex(): number;
     getStateIdAtIndex(index: number): string;
@@ -146,7 +147,7 @@ export declare class WidgetSubscriptionContext {
     widgetUtils: IWidgetUtils;
     getServerTimeDiff: () => Observable<number>;
 }
-export declare type SubscriptionMessageSeverity = 'info' | 'warn' | 'error' | 'success';
+export type SubscriptionMessageSeverity = 'info' | 'warn' | 'error' | 'success';
 export interface SubscriptionMessage {
     severity: SubscriptionMessageSeverity;
     message: string;
@@ -246,6 +247,7 @@ export interface IWidgetSubscription {
     subscribe(): void;
     subscribeAllForPaginatedData(pageLink: EntityDataPageLink, keyFilters: KeyFilter[]): void;
     subscribeForPaginatedData(datasourceIndex: number, pageLink: EntityDataPageLink, keyFilters: KeyFilter[]): Observable<any>;
+    paginatedDataSubscriptionUpdated: EventEmitter<void>;
     subscribeForAlarms(pageLink: AlarmDataPageLink, keyFilters: KeyFilter[]): void;
     isDataResolved(): boolean;
     destroy(): void;

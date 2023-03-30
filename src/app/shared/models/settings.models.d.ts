@@ -135,7 +135,7 @@ export declare enum CodingSchemes {
     KoreanGraphicCharacterSet = "KoreanGraphicCharacterSet"
 }
 export declare const codingSchemesMap: Map<CodingSchemes, TypeDescriptor>;
-export declare type SmsProviderConfigurations = Partial<SmppSmsProviderConfiguration> & AwsSnsSmsProviderConfiguration & TwilioSmsProviderConfiguration;
+export type SmsProviderConfigurations = Partial<SmppSmsProviderConfiguration> & AwsSnsSmsProviderConfiguration & TwilioSmsProviderConfiguration;
 export interface SmsProviderConfiguration extends SmsProviderConfigurations {
     type: SmsProviderType;
 }
@@ -169,6 +169,6 @@ export interface RepositorySettingsInfo {
 export interface AutoVersionCreateConfig extends VersionCreateConfig {
     branch: string;
 }
-export declare type AutoCommitSettings = {
+export type AutoCommitSettings = {
     [entityType: string]: AutoVersionCreateConfig;
 };

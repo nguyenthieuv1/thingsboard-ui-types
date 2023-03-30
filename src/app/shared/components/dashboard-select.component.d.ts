@@ -1,4 +1,4 @@
-import { OnInit, ViewContainerRef } from '@angular/core';
+import { ElementRef, OnInit, ViewContainerRef } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { DashboardInfo } from '@app/shared/models/dashboard.models';
@@ -15,6 +15,7 @@ export declare class DashboardSelectComponent implements ControlValueAccessor, O
     private overlay;
     private breakpointObserver;
     private viewContainerRef;
+    private nativeElement;
     private document;
     private window;
     dashboardsScope: 'customer' | 'tenant';
@@ -28,7 +29,7 @@ export declare class DashboardSelectComponent implements ControlValueAccessor, O
     dashboardId: string | null;
     dashboardSelectPanelOrigin: CdkOverlayOrigin;
     private propagateChange;
-    constructor(store: Store<AppState>, dashboardService: DashboardService, overlay: Overlay, breakpointObserver: BreakpointObserver, viewContainerRef: ViewContainerRef, document: Document, window: Window);
+    constructor(store: Store<AppState>, dashboardService: DashboardService, overlay: Overlay, breakpointObserver: BreakpointObserver, viewContainerRef: ViewContainerRef, nativeElement: ElementRef, document: Document, window: Window);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
@@ -36,7 +37,6 @@ export declare class DashboardSelectComponent implements ControlValueAccessor, O
     writeValue(value: string | null): void;
     dashboardIdChanged(): void;
     openDashboardSelectPanel(): void;
-    private _createDashboardSelectPanelInjector;
     private updateView;
     private getDashboards;
     static ɵfac: i0.ɵɵFactoryDeclaration<DashboardSelectComponent, never>;

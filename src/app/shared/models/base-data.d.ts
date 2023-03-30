@@ -7,6 +7,7 @@ export interface BaseData<T extends HasId> {
     name?: string;
     label?: string;
 }
+export declare function sortEntitiesByIds<I extends HasId, T extends BaseData<I>>(entities: T[], entityIds: string[]): T[];
 export interface ExportableEntity<T extends EntityId> {
     createdTime?: number;
     id?: T;

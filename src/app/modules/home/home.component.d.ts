@@ -1,17 +1,17 @@
 import { AfterViewInit, ElementRef, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { BreakpointObserver } from '@angular/cdk/layout';
-import { User } from '@shared/models/user.model';
 import { PageComponent } from '@shared/components/page.component';
 import { AppState } from '@core/core.state';
 import { MatSidenav } from '@angular/material/sidenav';
 import { AuthState } from '@core/auth/auth.models';
 import { ISearchableComponent } from '@home/models/searchable-component.models';
+import { ActiveComponentService } from '@core/services/active-component.service';
 import * as i0 from "@angular/core";
 export declare class HomeComponent extends PageComponent implements AfterViewInit, OnInit {
     protected store: Store<AppState>;
     private window;
+    private activeComponentService;
     breakpointObserver: BreakpointObserver;
     authState: AuthState;
     forceFullscreen: boolean;
@@ -23,13 +23,11 @@ export declare class HomeComponent extends PageComponent implements AfterViewIni
     sidenav: MatSidenav;
     searchInputField: ElementRef;
     fullscreenEnabled: boolean;
-    authUser$: Observable<any>;
-    userDetails$: Observable<User>;
-    userDetailsString: Observable<string>;
     searchEnabled: boolean;
     showSearch: boolean;
     searchText: string;
-    constructor(store: Store<AppState>, window: Window, breakpointObserver: BreakpointObserver);
+    hideLoadingBar: boolean;
+    constructor(store: Store<AppState>, window: Window, activeComponentService: ActiveComponentService, breakpointObserver: BreakpointObserver);
     ngOnInit(): void;
     ngAfterViewInit(): void;
     sidenavClicked(): void;

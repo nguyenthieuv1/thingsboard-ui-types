@@ -40,6 +40,7 @@ export declare class UtilsService {
     createKey(keyInfo: KeyInfo, type: DataKeyType, index?: number): DataKey;
     createLabelFromDatasource(datasource: Datasource, pattern: string): string;
     generateColors(datasources: Array<Datasource>): void;
+    stringToHslColor(str: string, saturationPercentage: number, lightnessPercentage: number): string;
     currentPerfTime(): number;
     getQueryParam(name: string): string;
     removeQueryParams(keys: Array<string>): void;
@@ -52,6 +53,10 @@ export declare class UtilsService {
     defaultValue(value: any, defaultValue: any): any;
     private getEntityIdFromDatasource;
     subscribeToEntityTelemetry(ctx: WidgetContext, entityId?: EntityId, type?: TelemetryType, keys?: string[]): Observable<Array<AttributeData>>;
+    objToBase64(obj: any): string;
+    base64toString(b64Encoded: string): string;
+    objToBase64URI(obj: any): string;
+    base64toObj(b64Encoded: string): any;
     static ɵfac: i0.ɵɵFactoryDeclaration<UtilsService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<UtilsService>;
 }

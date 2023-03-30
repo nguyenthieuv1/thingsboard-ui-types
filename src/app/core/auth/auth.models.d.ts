@@ -1,10 +1,12 @@
 import { AuthUser, User } from '@shared/models/user.model';
+import { UserSettings } from '@shared/models/user-settings.models';
 export interface SysParamsState {
     userTokenAccessEnabled: boolean;
     allowedDashboardIds: string[];
     edgesSupportEnabled: boolean;
     hasRepository: boolean;
     tbelEnabled: boolean;
+    userSettings: UserSettings;
 }
 export interface AuthPayload extends SysParamsState {
     authUser: AuthUser;

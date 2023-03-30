@@ -10,6 +10,7 @@ import { AlarmInfo, AlarmStatus } from '@app/shared/models/alarm.models';
 import { AlarmService } from '@core/http/alarm.service';
 import { DatePipe } from '@angular/common';
 import { TranslateService } from '@ngx-translate/core';
+import { AlarmCommentComponent } from '@home/components/alarm/alarm-comment.component';
 import * as i0 from "@angular/core";
 export interface AlarmDetailsDialogData {
     alarmId?: string;
@@ -37,6 +38,7 @@ export declare class AlarmDetailsDialogComponent extends DialogComponent<AlarmDe
     alarmSeverityColorsMap: Map<import("@app/shared/models/alarm.models").AlarmSeverity, string>;
     alarmStatuses: typeof AlarmStatus;
     alarmUpdated: boolean;
+    alarmCommentComponent: AlarmCommentComponent;
     constructor(store: Store<AppState>, router: Router, datePipe: DatePipe, translate: TranslateService, data: AlarmDetailsDialogData, alarmService: AlarmService, dialogRef: MatDialogRef<AlarmDetailsDialogComponent, boolean>, fb: UntypedFormBuilder);
     loadAlarm(): void;
     loadAlarmFields(alarm: AlarmInfo): void;
@@ -44,6 +46,7 @@ export declare class AlarmDetailsDialogComponent extends DialogComponent<AlarmDe
     close(): void;
     acknowledge(): void;
     clear(): void;
+    onReassign(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AlarmDetailsDialogComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<AlarmDetailsDialogComponent, "tb-alarm-details-dialog", never, {}, {}, never, never, false, never>;
 }

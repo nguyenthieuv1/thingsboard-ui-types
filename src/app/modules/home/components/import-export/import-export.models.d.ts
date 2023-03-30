@@ -17,7 +17,7 @@ export interface CsvToJsonResult {
     headers?: string[];
     rows?: any[][];
 }
-export declare type CSVDelimiter = ',' | ';' | '|' | '\t';
+export type CSVDelimiter = ',' | ';' | '|' | '\t';
 export declare enum ImportEntityColumnType {
     name = "NAME",
     type = "TYPE",

@@ -64,6 +64,7 @@ export declare class EntitiesTableComponent extends PageComponent implements IEn
     private updateDataSubscription;
     private viewInited;
     private widgetResize$;
+    private rxSubscriptions;
     constructor(store: Store<AppState>, route: ActivatedRoute, translate: TranslateService, dialog: MatDialog, dialogService: DialogService, domSanitizer: DomSanitizer, cd: ChangeDetectorRef, router: Router, componentFactoryResolver: ComponentFactoryResolver, elementRef: ElementRef);
     ngOnInit(): void;
     ngOnDestroy(): void;
@@ -95,6 +96,7 @@ export declare class EntitiesTableComponent extends PageComponent implements IEn
     trackByColumnKey(index: any, column: EntityTableColumn<BaseData<HasId>>): string;
     trackByEntityId(index: number, entity: BaseData<HasId>): string;
     protected updatedRouterParamsAndData(queryParams: object, queryParamsHandling?: QueryParamsHandling): void;
+    detectChanges(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntitiesTableComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<EntitiesTableComponent, "tb-entities-table", never, { "entitiesTableConfig": "entitiesTableConfig"; }, {}, never, never, false, never>;
 }

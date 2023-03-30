@@ -33,6 +33,8 @@ import { WidgetService } from '@core/http/widget.service';
 import { DeviceProfileService } from '@core/http/device-profile.service';
 import { QueueService } from '@core/http/queue.service';
 import { AssetProfileService } from '@core/http/asset-profile.service';
+import { NotificationService } from '@core/http/notification.service';
+import { TenantProfileService } from '@core/http/tenant-profile.service';
 import * as i0 from "@angular/core";
 export declare class EntityService {
     private http;
@@ -51,10 +53,12 @@ export declare class EntityService {
     private otaPackageService;
     private widgetService;
     private deviceProfileService;
+    private tenantProfileService;
     private assetProfileService;
     private utils;
     private queueService;
-    constructor(http: HttpClient, store: Store<AppState>, deviceService: DeviceService, edgeService: EdgeService, assetService: AssetService, entityViewService: EntityViewService, tenantService: TenantService, customerService: CustomerService, userService: UserService, ruleChainService: RuleChainService, dashboardService: DashboardService, entityRelationService: EntityRelationService, attributeService: AttributeService, otaPackageService: OtaPackageService, widgetService: WidgetService, deviceProfileService: DeviceProfileService, assetProfileService: AssetProfileService, utils: UtilsService, queueService: QueueService);
+    private notificationService;
+    constructor(http: HttpClient, store: Store<AppState>, deviceService: DeviceService, edgeService: EdgeService, assetService: AssetService, entityViewService: EntityViewService, tenantService: TenantService, customerService: CustomerService, userService: UserService, ruleChainService: RuleChainService, dashboardService: DashboardService, entityRelationService: EntityRelationService, attributeService: AttributeService, otaPackageService: OtaPackageService, widgetService: WidgetService, deviceProfileService: DeviceProfileService, tenantProfileService: TenantProfileService, assetProfileService: AssetProfileService, utils: UtilsService, queueService: QueueService, notificationService: NotificationService);
     private getEntityObservable;
     getEntity(entityType: EntityType, entityId: string, config?: RequestConfig): Observable<BaseData<EntityId>>;
     private getEntitiesByIdsObservable;

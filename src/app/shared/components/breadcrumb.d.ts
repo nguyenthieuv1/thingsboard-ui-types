@@ -10,7 +10,7 @@ export interface BreadCrumb extends HasUUID {
     link: any[];
     queryParams: Params;
 }
-export declare type BreadCrumbLabelFunction<C> = (route: ActivatedRouteSnapshot, translate: TranslateService, component: C, data?: any) => string;
+export type BreadCrumbLabelFunction<C> = (route: ActivatedRouteSnapshot, translate: TranslateService, component: C, data?: any) => string;
 export interface BreadCrumbConfig<C> {
     labelFunction: BreadCrumbLabelFunction<C>;
     label: string;

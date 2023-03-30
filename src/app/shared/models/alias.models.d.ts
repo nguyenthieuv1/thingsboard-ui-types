@@ -89,7 +89,7 @@ export interface EdgeSearchQueryFilter extends EntitySearchQueryFilter {
 export interface EntityViewSearchQueryFilter extends EntitySearchQueryFilter {
     entityViewTypes?: string[];
 }
-export declare type EntityFilters = SingleEntityFilter & EntityListFilter & EntityNameFilter & EntityTypeFilter & StateEntityFilter & AssetTypeFilter & DeviceTypeFilter & EdgeTypeFilter & EntityViewFilter & RelationsQueryFilter & AssetSearchQueryFilter & DeviceSearchQueryFilter & EntityViewSearchQueryFilter & EntitySearchQueryFilter & EdgeSearchQueryFilter;
+export type EntityFilters = SingleEntityFilter & EntityListFilter & EntityNameFilter & EntityTypeFilter & StateEntityFilter & AssetTypeFilter & DeviceTypeFilter & EdgeTypeFilter & EntityViewFilter & RelationsQueryFilter & AssetSearchQueryFilter & DeviceSearchQueryFilter & EntityViewSearchQueryFilter & EntitySearchQueryFilter & EdgeSearchQueryFilter;
 export interface EntityAliasFilter extends EntityFilters {
     type?: AliasFilterType;
     resolveMultiple?: boolean;

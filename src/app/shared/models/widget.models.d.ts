@@ -216,7 +216,7 @@ export interface ReplaceInfo {
     valDec?: number;
     dataKeyName: string;
 }
-export declare type DataSet = [number, any][];
+export type DataSet = [number, any][];
 export interface DataSetHolder {
     data: DataSet;
 }
@@ -274,7 +274,7 @@ export interface MobileLocationResult {
     latitude: number;
     longitude: number;
 }
-export declare type MobileActionResult = MobileLaunchResult & MobileImageResult & MobileQrCodeResult & MobileLocationResult;
+export type MobileActionResult = MobileLaunchResult & MobileImageResult & MobileQrCodeResult & MobileLocationResult;
 export interface WidgetMobileActionResult<T extends MobileActionResult> {
     result?: T;
     hasResult: boolean;
@@ -299,7 +299,7 @@ export interface MakePhoneCallDescriptor extends ProcessLaunchResultDescriptor {
 export interface GetLocationDescriptor {
     processLocationFunction: string;
 }
-export declare type WidgetMobileActionDescriptors = ProcessImageDescriptor & LaunchMapDescriptor & ScanQrCodeDescriptor & MakePhoneCallDescriptor & GetLocationDescriptor;
+export type WidgetMobileActionDescriptors = ProcessImageDescriptor & LaunchMapDescriptor & ScanQrCodeDescriptor & MakePhoneCallDescriptor & GetLocationDescriptor;
 export interface WidgetMobileActionDescriptor extends WidgetMobileActionDescriptors {
     type: WidgetMobileActionType;
     handleErrorFunction?: string;

@@ -10,6 +10,7 @@ import { EntityId } from '@shared/models/id/entity-id';
 import { EntityService } from '@core/http/entity.service';
 import { MatAutocomplete } from '@angular/material/autocomplete';
 import { MatChipGrid } from '@angular/material/chips';
+import { SubscriptSizing } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 export declare class EntityListComponent implements ControlValueAccessor, OnInit, AfterViewInit, OnChanges {
     private store;
@@ -20,10 +21,15 @@ export declare class EntityListComponent implements ControlValueAccessor, OnInit
     modelValue: Array<string> | null;
     entityType: EntityType;
     subType: string;
+    labelText: string;
+    placeholderText: any;
+    requiredText: any;
     private requiredValue;
     get required(): boolean;
     set required(value: boolean);
     disabled: boolean;
+    subscriptSizing: SubscriptSizing;
+    hint: string;
     entityInput: ElementRef<HTMLInputElement>;
     matAutocomplete: MatAutocomplete;
     chipList: MatChipGrid;
@@ -49,5 +55,5 @@ export declare class EntityListComponent implements ControlValueAccessor, OnInit
     onFocus(): void;
     clear(value?: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityListComponent, "tb-entity-list", never, { "entityType": "entityType"; "subType": "subType"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityListComponent, "tb-entity-list", never, { "entityType": "entityType"; "subType": "subType"; "labelText": "labelText"; "placeholderText": "placeholderText"; "requiredText": "requiredText"; "required": "required"; "disabled": "disabled"; "subscriptSizing": "subscriptSizing"; "hint": "hint"; }, {}, never, ["[matSuffix]"], false, never>;
 }

@@ -1,10 +1,11 @@
-import { OnInit } from '@angular/core';
+import { OnDestroy, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
+import { SubscriptSizing } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
-export declare class KeyValMapComponent extends PageComponent implements ControlValueAccessor, OnInit, Validator {
+export declare class KeyValMapComponent extends PageComponent implements ControlValueAccessor, OnInit, OnDestroy, Validator {
     protected store: Store<AppState>;
     private fb;
     disabled: boolean;
@@ -12,11 +13,13 @@ export declare class KeyValMapComponent extends PageComponent implements Control
     keyPlaceholderText: string;
     valuePlaceholderText: string;
     noDataText: string;
+    subscriptSizing: SubscriptSizing;
     kvListFormGroup: UntypedFormGroup;
+    private destroy$;
     private propagateChange;
-    private valueChangeSubscription;
     constructor(store: Store<AppState>, fb: UntypedFormBuilder);
     ngOnInit(): void;
+    ngOnDestroy(): void;
     keyValsFormArray(): UntypedFormArray;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
@@ -33,5 +36,5 @@ export declare class KeyValMapComponent extends PageComponent implements Control
     };
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<KeyValMapComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<KeyValMapComponent, "tb-key-val-map", never, { "disabled": "disabled"; "titleText": "titleText"; "keyPlaceholderText": "keyPlaceholderText"; "valuePlaceholderText": "valuePlaceholderText"; "noDataText": "noDataText"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<KeyValMapComponent, "tb-key-val-map", never, { "disabled": "disabled"; "titleText": "titleText"; "keyPlaceholderText": "keyPlaceholderText"; "valuePlaceholderText": "valuePlaceholderText"; "noDataText": "noDataText"; "subscriptSizing": "subscriptSizing"; }, {}, never, never, false, never>;
 }
