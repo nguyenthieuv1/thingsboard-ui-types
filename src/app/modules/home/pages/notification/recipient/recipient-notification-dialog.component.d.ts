@@ -34,6 +34,7 @@ export declare class RecipientNotificationDialogComponent extends DialogComponen
     entityType: typeof EntityType;
     isAdd: boolean;
     private readonly destroy$;
+    private userFilterFormControls;
     constructor(store: Store<AppState>, router: Router, dialogRef: MatDialogRef<RecipientNotificationDialogComponent, NotificationTarget>, data: RecipientNotificationDialogData, fb: FormBuilder, notificationService: NotificationService);
     ngOnDestroy(): void;
     cancel(): void;

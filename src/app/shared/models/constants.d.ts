@@ -42,6 +42,7 @@ export declare const HelpLinks: {
     linksMap: {
         outgoingMailSettings: string;
         smsProviderSettings: string;
+        slackSettings: string;
         securitySettings: string;
         oauth2Settings: string;
         twoFactorAuthSettings: string;
