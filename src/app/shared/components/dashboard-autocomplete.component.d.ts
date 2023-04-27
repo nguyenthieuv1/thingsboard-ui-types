@@ -8,7 +8,7 @@ import { DashboardService } from '@core/http/dashboard.service';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
 import { TranslateService } from '@ngx-translate/core';
-import { FloatLabelType } from '@angular/material/form-field';
+import { FloatLabelType, MatFormFieldAppearance, SubscriptSizing } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 export declare class DashboardAutocompleteComponent implements ControlValueAccessor, OnInit, AfterViewInit {
     private store;
@@ -26,6 +26,8 @@ export declare class DashboardAutocompleteComponent implements ControlValueAcces
     tenantId: string;
     customerId: string;
     floatLabel: FloatLabelType;
+    appearance: MatFormFieldAppearance;
+    subscriptSizing: SubscriptSizing;
     private requiredValue;
     get required(): boolean;
     set required(value: boolean);
@@ -49,5 +51,5 @@ export declare class DashboardAutocompleteComponent implements ControlValueAcces
     onFocus(): void;
     clear(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DashboardAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardAutocompleteComponent, "tb-dashboard-autocomplete", never, { "useIdValue": "useIdValue"; "selectFirstDashboard": "selectFirstDashboard"; "label": "label"; "placeholder": "placeholder"; "dashboardsScope": "dashboardsScope"; "tenantId": "tenantId"; "customerId": "customerId"; "floatLabel": "floatLabel"; "required": "required"; "disabled": "disabled"; }, {}, never, ["[tb-error]", "[tb-hint]"], false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardAutocompleteComponent, "tb-dashboard-autocomplete", never, { "useIdValue": "useIdValue"; "selectFirstDashboard": "selectFirstDashboard"; "label": "label"; "placeholder": "placeholder"; "dashboardsScope": "dashboardsScope"; "tenantId": "tenantId"; "customerId": "customerId"; "floatLabel": "floatLabel"; "appearance": "appearance"; "subscriptSizing": "subscriptSizing"; "required": "required"; "disabled": "disabled"; }, {}, never, ["[tb-error]", "[tb-hint]"], false, never>;
 }

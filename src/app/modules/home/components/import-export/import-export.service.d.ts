@@ -67,6 +67,10 @@ export declare class ImportExportService {
     importAssetProfile(): Observable<AssetProfile>;
     exportTenantProfile(tenantProfileId: string): void;
     importTenantProfile(): Observable<TenantProfile>;
+    private processCSVCell;
+    exportCsv(data: {
+        [key: string]: any;
+    }[], filename: string): void;
     exportText(data: string | Array<string>, filename: string): void;
     exportJSZip(data: object, filename: string): void;
     private prepareRuleChain;

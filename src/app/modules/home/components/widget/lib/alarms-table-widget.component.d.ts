@@ -20,12 +20,13 @@ import { MatDialog } from '@angular/material/dialog';
 import { DialogService } from '@core/services/dialog.service';
 import { AlarmService } from '@core/http/alarm.service';
 import { AlarmData, AlarmDataPageLink, KeyFilter } from '@app/shared/models/query/query.models';
+import { EntityService } from '@core/http/entity.service';
 import * as i0 from "@angular/core";
 interface AlarmWidgetActionDescriptor extends TableCellButtonActionDescriptor {
     details?: boolean;
     acknowledge?: boolean;
     clear?: boolean;
-    comments?: boolean;
+    activity?: boolean;
 }
 export declare class AlarmsTableWidgetComponent extends PageComponent implements OnInit, AfterViewInit {
     protected store: Store<AppState>;
@@ -39,6 +40,7 @@ export declare class AlarmsTableWidgetComponent extends PageComponent implements
     private datePipe;
     private dialog;
     private dialogService;
+    private entityService;
     private alarmService;
     private cd;
     ctx: WidgetContext;
@@ -67,7 +69,7 @@ export declare class AlarmsTableWidgetComponent extends PageComponent implements
     private subscription;
     private widgetResize$;
     private alarmsTitlePattern;
-    private displayComments;
+    private displayActivity;
     private displayDetails;
     allowAcknowledgment: boolean;
     private allowClear;
@@ -84,7 +86,7 @@ export declare class AlarmsTableWidgetComponent extends PageComponent implements
     private searchAction;
     private columnDisplayAction;
     private alarmFilterAction;
-    constructor(store: Store<AppState>, elementRef: ElementRef, ngZone: NgZone, overlay: Overlay, viewContainerRef: ViewContainerRef, utils: UtilsService, translate: TranslateService, domSanitizer: DomSanitizer, datePipe: DatePipe, dialog: MatDialog, dialogService: DialogService, alarmService: AlarmService, cd: ChangeDetectorRef);
+    constructor(store: Store<AppState>, elementRef: ElementRef, ngZone: NgZone, overlay: Overlay, viewContainerRef: ViewContainerRef, utils: UtilsService, translate: TranslateService, domSanitizer: DomSanitizer, datePipe: DatePipe, dialog: MatDialog, dialogService: DialogService, entityService: EntityService, alarmService: AlarmService, cd: ChangeDetectorRef);
     ngOnInit(): void;
     ngOnDestroy(): void;
     ngAfterViewInit(): void;
@@ -114,7 +116,7 @@ export declare class AlarmsTableWidgetComponent extends PageComponent implements
     ackAlarms($event: Event): void;
     private clearAlarm;
     clearAlarms($event: Event): void;
-    private openAlarmComments;
+    private openAlarmActivity;
     private defaultContent;
     private defaultStyle;
     isSorting(column: EntityColumn): boolean;

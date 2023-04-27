@@ -36,6 +36,7 @@ export declare const MediaBreakpoints: {
     'gt-md': string;
     'gt-lg': string;
     'gt-xl': string;
+    'md-lg': string;
 };
 export declare const helpBaseUrl = "https://thingsboard.io";
 export declare const HelpLinks: {
@@ -98,6 +99,7 @@ export declare const HelpLinks: {
         ruleNodeSendEmail: string;
         ruleNodeSendSms: string;
         ruleNodeMath: string;
+        ruleNodeCalculateDelta: string;
         tenants: string;
         tenantProfiles: string;
         customers: string;
@@ -126,6 +128,10 @@ export declare const HelpLinks: {
         repositorySettings: string;
         autoCommitSettings: string;
         twoFactorAuthentication: string;
+        sentNotification: string;
+        templateNotifications: string;
+        recipientNotifications: string;
+        ruleNotifications: string;
     };
 };
 export interface ValueTypeData {

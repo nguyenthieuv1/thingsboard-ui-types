@@ -19,6 +19,7 @@ export interface RuleNode extends BaseData<RuleNodeId> {
     type: string;
     name: string;
     debugMode: boolean;
+    singletonMode: boolean;
     configuration: RuleNodeConfiguration;
     additionalInfo?: any;
 }
@@ -109,6 +110,7 @@ export interface RuleNodeComponentDescriptor extends ComponentDescriptor {
 }
 export interface FcRuleNodeType extends FcNode {
     component?: RuleNodeComponentDescriptor;
+    singletonMode?: boolean;
     nodeClass?: string;
     icon?: string;
     iconUrl?: string;
@@ -170,6 +172,10 @@ export declare enum MessageType {
     ATTRIBUTES_DELETED = "ATTRIBUTES_DELETED",
     ALARM_ACKNOWLEDGED = "ALARM_ACKNOWLEDGED",
     ALARM_CLEARED = "ALARM_CLEARED",
+    ALARM_ASSIGNED = "ALARM_ASSIGNED",
+    ALARM_UNASSIGNED = "ALARM_UNASSIGNED",
+    COMMENT_CREATED = "COMMENT_CREATED",
+    COMMENT_UPDATED = "COMMENT_UPDATED",
     ENTITY_ASSIGNED_FROM_TENANT = "ENTITY_ASSIGNED_FROM_TENANT",
     ENTITY_ASSIGNED_TO_TENANT = "ENTITY_ASSIGNED_TO_TENANT",
     TIMESERIES_UPDATED = "TIMESERIES_UPDATED",

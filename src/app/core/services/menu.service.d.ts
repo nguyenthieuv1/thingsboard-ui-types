@@ -10,6 +10,7 @@ export declare class MenuService {
     currentMenuSections: Array<MenuSection>;
     menuSections$: Subject<Array<MenuSection>>;
     homeSections$: Subject<Array<HomeSection>>;
+    availableMenuLinks$: Observable<MenuSection[]>;
     constructor(store: Store<AppState>, router: Router);
     private buildMenu;
     private updateOpenedMenuSections;
@@ -19,8 +20,12 @@ export declare class MenuService {
     private buildTenantAdminHome;
     private buildCustomerUserMenu;
     private buildCustomerUserHome;
+    private allMenuLinks;
     menuSections(): Observable<Array<MenuSection>>;
     homeSections(): Observable<Array<HomeSection>>;
+    availableMenuLinks(): Observable<Array<MenuSection>>;
+    menuLinkById(id: string): Observable<MenuSection | undefined>;
+    menuLinksByIds(ids: string[]): Observable<Array<MenuSection>>;
     static ɵfac: i0.ɵɵFactoryDeclaration<MenuService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<MenuService>;
 }

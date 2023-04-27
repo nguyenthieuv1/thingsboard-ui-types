@@ -45,8 +45,12 @@ export interface JwtSettings {
     refreshTokenExpTime: number;
 }
 export interface UpdateMessage {
-    message: string;
     updateAvailable: boolean;
+    currentVersion: string;
+    latestVersion: string;
+    upgradeInstructionsUrl: string;
+    currentVersionReleaseNotesUrl: string;
+    latestVersionReleaseNotesUrl: string;
 }
 export declare const phoneNumberPattern: RegExp;
 export declare const phoneNumberPatternTwilio: RegExp;
@@ -172,3 +176,10 @@ export interface AutoVersionCreateConfig extends VersionCreateConfig {
 export type AutoCommitSettings = {
     [entityType: string]: AutoVersionCreateConfig;
 };
+export interface FeaturesInfo {
+    emailEnabled: boolean;
+    smsEnabled: boolean;
+    notificationEnabled: boolean;
+    oauthEnabled: boolean;
+    twoFaEnabled: boolean;
+}

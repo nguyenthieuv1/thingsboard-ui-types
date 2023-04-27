@@ -12,10 +12,12 @@ import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { Overlay } from '@angular/cdk/overlay';
 import { UtilsService } from '@core/services/utils.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { EntityService } from '@core/http/entity.service';
 import * as i0 from "@angular/core";
 export declare class AlarmTableComponent implements OnInit {
     private alarmService;
+    private entityService;
     private dialogService;
     private translate;
     private datePipe;
@@ -26,6 +28,7 @@ export declare class AlarmTableComponent implements OnInit {
     private cd;
     private utilsService;
     private route;
+    private router;
     activeValue: boolean;
     dirtyValue: boolean;
     entityIdValue: EntityId;
@@ -35,7 +38,7 @@ export declare class AlarmTableComponent implements OnInit {
     set entityId(entityId: EntityId);
     entitiesTable: EntitiesTableComponent;
     alarmTableConfig: AlarmTableConfig;
-    constructor(alarmService: AlarmService, dialogService: DialogService, translate: TranslateService, datePipe: DatePipe, dialog: MatDialog, store: Store<AppState>, overlay: Overlay, viewContainerRef: ViewContainerRef, cd: ChangeDetectorRef, utilsService: UtilsService, route: ActivatedRoute);
+    constructor(alarmService: AlarmService, entityService: EntityService, dialogService: DialogService, translate: TranslateService, datePipe: DatePipe, dialog: MatDialog, store: Store<AppState>, overlay: Overlay, viewContainerRef: ViewContainerRef, cd: ChangeDetectorRef, utilsService: UtilsService, route: ActivatedRoute, router: Router);
     ngOnInit(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AlarmTableComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<AlarmTableComponent, "tb-alarm-table", never, { "active": "active"; "entityId": "entityId"; }, {}, never, never, false, never>;

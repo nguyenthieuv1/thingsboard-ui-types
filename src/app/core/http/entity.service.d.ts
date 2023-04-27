@@ -24,7 +24,7 @@ import { AliasFilterType, EntityAlias, EntityAliasFilter, EntityAliasFilterResul
 import { EntitiesKeysByQuery, EntityInfo, ImportEntitiesResultInfo, ImportEntityData } from '@shared/models/entity.models';
 import { EntityRelationService } from '@core/http/entity-relation.service';
 import { AttributeService } from '@core/http/attribute.service';
-import { AlarmData, AlarmDataQuery, EntityData, EntityDataQuery, EntityFilter } from '@shared/models/query/query.models';
+import { AlarmData, AlarmDataQuery, AlarmFilter, AlarmFilterConfig, EntityData, EntityDataQuery, EntityFilter } from '@shared/models/query/query.models';
 import { OtaPackageService } from '@core/http/ota-package.service';
 import { EdgeService } from '@core/http/edge.service';
 import { EdgeEvent } from '@shared/models/edge.models';
@@ -88,6 +88,7 @@ export declare class EntityService {
     resolveAlias(entityAlias: EntityAlias, stateParams: StateParams): Observable<AliasInfo>;
     resolveAliasFilter(filter: EntityAliasFilter, stateParams: StateParams): Observable<EntityAliasFilterResult>;
     checkEntityAlias(entityAlias: EntityAlias): Observable<boolean>;
+    resolveAlarmFilter(alarmFilterConfig?: AlarmFilterConfig, searchPropagatedByDefault?: boolean): AlarmFilter;
     saveEntityParameters(entityType: EntityType, entityData: ImportEntityData, update: boolean, config?: RequestConfig): Observable<ImportEntitiesResultInfo>;
     private getSaveEntityObservable;
     private getUpdateEntityTasks;

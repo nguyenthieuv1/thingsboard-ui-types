@@ -11,6 +11,7 @@ import { AlarmService } from '@core/http/alarm.service';
 import { DatePipe } from '@angular/common';
 import { TranslateService } from '@ngx-translate/core';
 import { AlarmCommentComponent } from '@home/components/alarm/alarm-comment.component';
+import { MillisecondsToTimeStringPipe } from '@shared/pipe/milliseconds-to-time-string.pipe';
 import * as i0 from "@angular/core";
 export interface AlarmDetailsDialogData {
     alarmId?: string;
@@ -18,11 +19,13 @@ export interface AlarmDetailsDialogData {
     allowAcknowledgment: boolean;
     allowClear: boolean;
     displayDetails: boolean;
+    allowAssign: boolean;
 }
 export declare class AlarmDetailsDialogComponent extends DialogComponent<AlarmDetailsDialogComponent, boolean> implements OnInit {
     protected store: Store<AppState>;
     protected router: Router;
     private datePipe;
+    private millisecondsToTimeStringPipe;
     private translate;
     data: AlarmDetailsDialogData;
     private alarmService;
@@ -33,13 +36,14 @@ export declare class AlarmDetailsDialogComponent extends DialogComponent<AlarmDe
     allowAcknowledgment: boolean;
     allowClear: boolean;
     displayDetails: boolean;
+    allowAssign: boolean;
     loadAlarmSubject: ReplaySubject<AlarmInfo>;
     alarm$: Observable<AlarmInfo>;
     alarmSeverityColorsMap: Map<import("@app/shared/models/alarm.models").AlarmSeverity, string>;
     alarmStatuses: typeof AlarmStatus;
     alarmUpdated: boolean;
     alarmCommentComponent: AlarmCommentComponent;
-    constructor(store: Store<AppState>, router: Router, datePipe: DatePipe, translate: TranslateService, data: AlarmDetailsDialogData, alarmService: AlarmService, dialogRef: MatDialogRef<AlarmDetailsDialogComponent, boolean>, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, router: Router, datePipe: DatePipe, millisecondsToTimeStringPipe: MillisecondsToTimeStringPipe, translate: TranslateService, data: AlarmDetailsDialogData, alarmService: AlarmService, dialogRef: MatDialogRef<AlarmDetailsDialogComponent, boolean>, fb: UntypedFormBuilder);
     loadAlarm(): void;
     loadAlarmFields(alarm: AlarmInfo): void;
     ngOnInit(): void;

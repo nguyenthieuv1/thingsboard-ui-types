@@ -40,3 +40,4 @@ export * from './user-settings.models';
 export * from './widget.models';
 export * from './widgets-bundle.model';
 export * from './window-message.model';
+export * from './usage.models';

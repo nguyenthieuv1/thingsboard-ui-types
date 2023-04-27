@@ -43,6 +43,7 @@ export declare class RuleNotificationDialogComponent extends DialogComponent<Rul
     ruleEngineEventsTemplateForm: FormGroup;
     entitiesLimitTemplateForm: FormGroup;
     apiUsageLimitTemplateForm: FormGroup;
+    newPlatformVersionTemplateForm: FormGroup;
     triggerType: typeof TriggerType;
     triggerTypes: TriggerType[];
     triggerTypeTranslationMap: Map<TriggerType, string>;

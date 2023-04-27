@@ -3,11 +3,10 @@ import { TenantId } from '@shared/models/id/tenant-id';
 import { WidgetTypeId } from '@shared/models/id/widget-type-id';
 import { AggregationType, ComparisonDuration, Timewindow } from '@shared/models/time/time.models';
 import { EntityType } from '@shared/models/entity-type.models';
-import { AlarmSearchStatus, AlarmSeverity } from '@shared/models/alarm.models';
 import { DataKeyType } from './telemetry/telemetry.models';
 import { EntityId } from '@shared/models/id/entity-id';
 import * as moment_ from 'moment';
-import { EntityDataPageLink, EntityFilter, KeyFilter } from '@shared/models/query/query.models';
+import { AlarmFilter, AlarmFilterConfig, EntityDataPageLink, EntityFilter, KeyFilter } from '@shared/models/query/query.models';
 import { PopoverPlacement } from '@shared/components/popover.models';
 import { PageComponent } from '@shared/components/page.component';
 import { AfterViewInit, EventEmitter, OnInit } from '@angular/core';
@@ -166,7 +165,8 @@ export interface DataKey extends KeyInfo {
 export declare enum DatasourceType {
     function = "function",
     entity = "entity",
-    entityCount = "entityCount"
+    entityCount = "entityCount",
+    alarmCount = "alarmCount"
 }
 export declare const datasourceTypeTranslationMap: Map<DatasourceType, string>;
 export interface Datasource {
@@ -191,6 +191,8 @@ export interface Datasource {
     pageLink?: EntityDataPageLink;
     keyFilters?: Array<KeyFilter>;
     entityFilter?: EntityFilter;
+    alarmFilterConfig?: AlarmFilterConfig;
+    alarmFilter?: AlarmFilter;
     dataKeyStartIndex?: number;
     latestDataKeyStartIndex?: number;
     [key: string]: any;
@@ -388,10 +390,7 @@ export interface WidgetConfig {
     };
     settings?: WidgetSettings;
     alarmSource?: Datasource;
-    alarmStatusList?: AlarmSearchStatus[];
-    alarmSeverityList?: AlarmSeverity[];
-    alarmTypeList?: string[];
-    searchPropagatedAlarms?: boolean;
+    alarmFilterConfig?: AlarmFilterConfig;
     datasources?: Array<Datasource>;
     targetDeviceAliasIds?: Array<string>;
     [key: string]: any;
