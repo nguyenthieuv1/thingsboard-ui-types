@@ -29,6 +29,7 @@ export declare class RecentDashboardsWidgetComponent extends PageComponent imple
     lastVisitedDashboardsDataSource: LastVisitedDashboardsDataSource;
     lastVisitedDashboardsPageLink: PageLink;
     starredDashboardValue: any;
+    hasDashboardsAccess: boolean;
     dirty: boolean;
     constructor(store: Store<AppState>, cd: ChangeDetectorRef, userSettingService: UserSettingsService);
     ngOnInit(): void;

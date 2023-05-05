@@ -112,7 +112,7 @@ export declare const HelpLinks: {
         entityViews: string;
         entitiesImport: string;
         rulechains: string;
-        resources: string;
+        lwm2mResourceLibrary: string;
         dashboards: string;
         otaUpdates: string;
         widgetsBundles: string;

@@ -11,13 +11,10 @@ import { AuthState } from '@core/auth/auth.models';
 import { TranslateService } from '@ngx-translate/core';
 import { TimeService } from '@core/services/time.service';
 import { UtilsService } from '@core/services/utils.service';
-import { DashboardService } from '@core/http/dashboard.service';
-import { AdminService } from '@core/http/admin.service';
 import { MatDialog } from '@angular/material/dialog';
 import { OAuth2ClientInfo } from '@shared/models/oauth2.models';
 import { TwoFactorAuthProviderType, TwoFaProviderInfo } from '@shared/models/two-factor-auth.models';
 import { UserPasswordPolicy } from '@shared/models/settings.models';
-import { UserSettingsService } from '@core/http/user-settings.service';
 import * as i0 from "@angular/core";
 export declare class AuthService {
     private store;
@@ -28,12 +25,9 @@ export declare class AuthService {
     private route;
     private zone;
     private utils;
-    private dashboardService;
-    private adminService;
     private translate;
-    private userSettingsService;
     private dialog;
-    constructor(store: Store<AppState>, http: HttpClient, userService: UserService, timeService: TimeService, router: Router, route: ActivatedRoute, zone: NgZone, utils: UtilsService, dashboardService: DashboardService, adminService: AdminService, translate: TranslateService, userSettingsService: UserSettingsService, dialog: MatDialog);
+    constructor(store: Store<AppState>, http: HttpClient, userService: UserService, timeService: TimeService, router: Router, route: ActivatedRoute, zone: NgZone, utils: UtilsService, translate: TranslateService, dialog: MatDialog);
     redirectUrl: string;
     oauth2Clients: Array<OAuth2ClientInfo>;
     twoFactorAuthProviders: Array<TwoFaProviderInfo>;
@@ -66,11 +60,6 @@ export declare class AuthService {
     private loadUser;
     private showLoginErrorDialog;
     private procceedJwtTokenValidate;
-    private loadIsUserTokenAccessEnabled;
-    loadIsEdgesSupportEnabled(): Observable<boolean>;
-    private loadHasRepository;
-    private loadTbelEnabled;
-    private loadUserSettings;
     private loadSystemParams;
     refreshJwtToken(loadUserElseStoreJwtToken?: boolean): Observable<LoginResponse>;
     private validateJwtToken;
@@ -86,7 +75,6 @@ export declare class AuthService {
     private userForceFullscreen;
     private userHasProfile;
     private userHasDefaultDashboard;
-    private fetchAllowedDashboardIds;
     static ɵfac: i0.ɵɵFactoryDeclaration<AuthService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<AuthService>;
 }

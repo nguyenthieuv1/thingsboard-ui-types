@@ -22,6 +22,7 @@ export declare class UsageInfoWidgetComponent extends PageComponent implements O
     apiCallItemCritical: {
         [key: string]: boolean;
     };
+    hasUsageInfoAccess: boolean;
     constructor(store: Store<AppState>, cd: ChangeDetectorRef, shortNumberPipe: ShortNumberPipe, usageInfoService: UsageInfoService);
     ngOnInit(): void;
     maxValue(max: number): number | string;
