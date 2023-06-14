@@ -17,7 +17,7 @@ export declare class SmsProviderComponent extends PageComponent implements HasCo
     fb: FormBuilder;
     smsProvider: FormGroup;
     private adminSettings;
-    notificationSettingsForm: FormGroup;
+    slackSettingsForm: FormGroup;
     private notificationSettings;
     private readonly authUser;
     constructor(store: Store<AppState>, router: Router, adminService: AdminService, notificationService: NotificationService, dialog: MatDialog, fb: FormBuilder);

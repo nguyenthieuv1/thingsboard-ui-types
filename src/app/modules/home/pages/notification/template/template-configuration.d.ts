@@ -18,7 +18,6 @@ export declare abstract class TemplateConfiguration<T, R = any> extends DialogCo
     emailTemplateForm: FormGroup;
     smsTemplateForm: FormGroup;
     slackTemplateForm: FormGroup;
-    mobileTemplateForm: FormGroup;
     notificationDeliveryMethods: NotificationDeliveryMethod[];
     notificationDeliveryMethodTranslateMap: Map<NotificationDeliveryMethod, string>;
     notificationTemplateTypeTranslateMap: Map<NotificationType, import("@shared/models/notification.models").NotificationTemplateTypeTranslate>;

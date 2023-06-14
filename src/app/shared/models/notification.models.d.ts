@@ -10,6 +10,7 @@ import { NotificationRuleId } from '@shared/models/id/notification-rule-id';
 import { AlarmSearchStatus, AlarmSeverity, AlarmStatus } from '@shared/models/alarm.models';
 import { EntityType } from '@shared/models/entity-type.models';
 import { ApiFeature, ApiUsageStateValue } from '@shared/models/api-usage.models';
+import { LimitedApi } from '@shared/models/limited-api.models';
 export interface Notification {
     readonly id: NotificationId;
     readonly requestId: NotificationRequestId;
@@ -73,16 +74,12 @@ export interface NotificationSettings {
         [key in NotificationDeliveryMethod]: NotificationDeliveryMethodConfig;
     };
 }
-export interface NotificationDeliveryMethodConfig extends Partial<SlackNotificationDeliveryMethodConfig & MobileNotificationDeliveryMethodConfig> {
+export interface NotificationDeliveryMethodConfig extends Partial<SlackNotificationDeliveryMethodConfig> {
     enabled: boolean;
     method: NotificationDeliveryMethod;
 }
 interface SlackNotificationDeliveryMethodConfig {
     botToken: string;
-}
-interface MobileNotificationDeliveryMethodConfig {
-    firebaseServiceAccountCredentials: string;
-    firebaseServiceAccountCredentialsFileName: string;
 }
 export interface SlackConversation {
     id: string;
@@ -103,7 +100,7 @@ export interface NotificationRule extends Omit<BaseData<NotificationRuleId>, 'la
         description: string;
     };
 }
-export type NotificationRuleTriggerConfig = Partial<AlarmNotificationRuleTriggerConfig & DeviceInactivityNotificationRuleTriggerConfig & EntityActionNotificationRuleTriggerConfig & AlarmCommentNotificationRuleTriggerConfig & AlarmAssignmentNotificationRuleTriggerConfig & RuleEngineLifecycleEventNotificationRuleTriggerConfig & EntitiesLimitNotificationRuleTriggerConfig & ApiUsageLimitNotificationRuleTriggerConfig>;
+export type NotificationRuleTriggerConfig = Partial<AlarmNotificationRuleTriggerConfig & DeviceInactivityNotificationRuleTriggerConfig & EntityActionNotificationRuleTriggerConfig & AlarmCommentNotificationRuleTriggerConfig & AlarmAssignmentNotificationRuleTriggerConfig & RuleEngineLifecycleEventNotificationRuleTriggerConfig & EntitiesLimitNotificationRuleTriggerConfig & ApiUsageLimitNotificationRuleTriggerConfig & RateLimitsNotificationRuleTriggerConfig>;
 export interface AlarmNotificationRuleTriggerConfig {
     alarmTypes?: Array<string>;
     alarmSeverities?: Array<AlarmSeverity>;
@@ -151,6 +148,9 @@ export interface EntitiesLimitNotificationRuleTriggerConfig {
 export interface ApiUsageLimitNotificationRuleTriggerConfig {
     apiFeatures: ApiFeature[];
     notifyOn: ApiUsageStateValue[];
+}
+export interface RateLimitsNotificationRuleTriggerConfig {
+    apis: LimitedApi[];
 }
 export declare enum ComponentLifecycleEvent {
     STARTED = "STARTED",
@@ -228,7 +228,7 @@ interface NotificationTemplateConfig {
         [key in NotificationDeliveryMethod]: DeliveryMethodNotificationTemplate;
     };
 }
-export interface DeliveryMethodNotificationTemplate extends Partial<WebDeliveryMethodNotificationTemplate & EmailDeliveryMethodNotificationTemplate & SlackDeliveryMethodNotificationTemplate & MobileDeliveryMethodNotificationTemplate> {
+export interface DeliveryMethodNotificationTemplate extends Partial<WebDeliveryMethodNotificationTemplate & EmailDeliveryMethodNotificationTemplate & SlackDeliveryMethodNotificationTemplate> {
     body?: string;
     enabled: boolean;
     method: NotificationDeliveryMethod;
@@ -260,9 +260,6 @@ interface SlackDeliveryMethodNotificationTemplate {
     conversationType: SlackChanelType;
     conversationId: string;
 }
-interface MobileDeliveryMethodNotificationTemplate {
-    subject: string;
-}
 export declare enum NotificationStatus {
     SENT = "SENT",
     READ = "READ"
@@ -271,8 +268,7 @@ export declare enum NotificationDeliveryMethod {
     WEB = "WEB",
     SMS = "SMS",
     EMAIL = "EMAIL",
-    SLACK = "SLACK",
-    MOBILE = "MOBILE"
+    SLACK = "SLACK"
 }
 export declare const NotificationDeliveryMethodTranslateMap: Map<NotificationDeliveryMethod, string>;
 export declare enum NotificationRequestStatus {
@@ -313,7 +309,8 @@ export declare enum NotificationType {
     ENTITIES_LIMIT = "ENTITIES_LIMIT",
     API_USAGE_LIMIT = "API_USAGE_LIMIT",
     NEW_PLATFORM_VERSION = "NEW_PLATFORM_VERSION",
-    RULE_NODE = "RULE_NODE"
+    RULE_NODE = "RULE_NODE",
+    RATE_LIMITS = "RATE_LIMITS"
 }
 export declare const NotificationTypeIcons: Map<NotificationType, string>;
 export declare const AlarmSeverityNotificationColors: Map<AlarmSeverity, string>;
@@ -336,7 +333,8 @@ export declare enum TriggerType {
     RULE_ENGINE_COMPONENT_LIFECYCLE_EVENT = "RULE_ENGINE_COMPONENT_LIFECYCLE_EVENT",
     ENTITIES_LIMIT = "ENTITIES_LIMIT",
     API_USAGE_LIMIT = "API_USAGE_LIMIT",
-    NEW_PLATFORM_VERSION = "NEW_PLATFORM_VERSION"
+    NEW_PLATFORM_VERSION = "NEW_PLATFORM_VERSION",
+    RATE_LIMITS = "RATE_LIMITS"
 }
 export declare const TriggerTypeTranslationMap: Map<TriggerType, string>;
 export {};

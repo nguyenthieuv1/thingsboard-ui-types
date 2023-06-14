@@ -28,7 +28,7 @@ export declare class SentNotificationDialogComponent extends TemplateConfigurati
     protected fb: FormBuilder;
     private notificationService;
     private dialog;
-    translate: TranslateService;
+    private translate;
     createNotification: MatStepper;
     stepperOrientation: Observable<StepperOrientation>;
     stepperLabelPosition: Observable<'bottom' | 'end'>;
