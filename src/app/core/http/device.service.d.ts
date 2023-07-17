@@ -20,6 +20,7 @@ export declare class DeviceService {
     getDevices(deviceIds: Array<string>, config?: RequestConfig): Observable<Array<Device>>;
     getDeviceInfo(deviceId: string, config?: RequestConfig): Observable<DeviceInfo>;
     saveDevice(device: Device, config?: RequestConfig): Observable<Device>;
+    saveDeviceWithCredentials(device: Device, credentials: DeviceCredentials, config?: RequestConfig): Observable<Device>;
     deleteDevice(deviceId: string, config?: RequestConfig): Observable<Object>;
     getDeviceTypes(config?: RequestConfig): Observable<Array<EntitySubtype>>;
     getDeviceCredentials(deviceId: string, sync?: boolean, config?: RequestConfig): Observable<DeviceCredentials>;
