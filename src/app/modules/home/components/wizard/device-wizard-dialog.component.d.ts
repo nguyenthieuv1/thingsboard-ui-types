@@ -4,7 +4,7 @@ import { AppState } from '@core/core.state';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { DialogComponent } from '@shared/components/dialog.component';
 import { Router } from '@angular/router';
-import { DeviceProfileInfo, DeviceTransportType } from '@shared/models/device.models';
+import { Device, DeviceProfileInfo, DeviceTransportType } from '@shared/models/device.models';
 import { MatStepper, StepperOrientation } from '@angular/material/stepper';
 import { EntityType } from '@shared/models/entity-type.models';
 import { Observable } from 'rxjs';
@@ -12,10 +12,10 @@ import { DeviceService } from '@core/http/device.service';
 import { StepperSelectionEvent } from '@angular/cdk/stepper';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import * as i0 from "@angular/core";
-export declare class DeviceWizardDialogComponent extends DialogComponent<DeviceWizardDialogComponent, boolean> {
+export declare class DeviceWizardDialogComponent extends DialogComponent<DeviceWizardDialogComponent, Device> {
     protected store: Store<AppState>;
     protected router: Router;
-    dialogRef: MatDialogRef<DeviceWizardDialogComponent, boolean>;
+    dialogRef: MatDialogRef<DeviceWizardDialogComponent, Device>;
     private deviceService;
     private breakpointObserver;
     private fb;
@@ -29,7 +29,7 @@ export declare class DeviceWizardDialogComponent extends DialogComponent<DeviceW
     deviceWizardFormGroup: FormGroup;
     credentialsFormGroup: FormGroup;
     private currentDeviceProfileTransportType;
-    constructor(store: Store<AppState>, router: Router, dialogRef: MatDialogRef<DeviceWizardDialogComponent, boolean>, deviceService: DeviceService, breakpointObserver: BreakpointObserver, fb: FormBuilder);
+    constructor(store: Store<AppState>, router: Router, dialogRef: MatDialogRef<DeviceWizardDialogComponent, Device>, deviceService: DeviceService, breakpointObserver: BreakpointObserver, fb: FormBuilder);
     cancel(): void;
     previousStep(): void;
     nextStep(): void;

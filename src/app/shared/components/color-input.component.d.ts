@@ -21,12 +21,8 @@ export declare class ColorInputComponent extends PageComponent implements OnInit
     icon: string;
     label: string;
     requiredText: string;
-    private colorClearButtonValue;
-    get colorClearButton(): boolean;
-    set colorClearButton(value: boolean);
-    private openOnInputValue;
-    get openOnInput(): boolean;
-    set openOnInput(value: boolean);
+    colorClearButton: boolean;
+    openOnInput: boolean;
     private requiredValue;
     get required(): boolean;
     set required(value: boolean);

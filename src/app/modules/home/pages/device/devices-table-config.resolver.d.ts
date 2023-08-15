@@ -16,6 +16,7 @@ import { DeviceId } from '@app/shared/models/id/device-id';
 import { HomeDialogsService } from '@home/dialogs/home-dialogs.service';
 import { EdgeService } from '@core/http/edge.service';
 import { PageLink } from '@shared/models/page/page-link';
+import { EntityId } from '@shared/models/id/entity-id';
 import * as i0 from "@angular/core";
 export declare class DevicesTableConfigResolver implements Resolve<EntityTableConfig<DeviceInfo>> {
     private store;
@@ -55,6 +56,7 @@ export declare class DevicesTableConfigResolver implements Resolve<EntityTableCo
     addDevicesToEdge($event: Event): void;
     unassignFromEdge($event: Event, device: DeviceInfo): void;
     unassignDevicesFromEdge($event: Event, devices: Array<DeviceInfo>): void;
+    checkConnectivity($event: Event, deviceId: EntityId, afterAdd?: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DevicesTableConfigResolver, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<DevicesTableConfigResolver>;
 }

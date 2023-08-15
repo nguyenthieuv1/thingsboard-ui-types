@@ -25,7 +25,6 @@ export declare class ImageInputComponent extends PageComponent implements AfterV
     get required(): boolean;
     set required(value: boolean);
     disabled: boolean;
-    showClearButton: boolean;
     showPreview: boolean;
     inputId: string;
     imageUrl: string;
@@ -43,5 +42,5 @@ export declare class ImageInputComponent extends PageComponent implements AfterV
     private updateModel;
     clearImage(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ImageInputComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ImageInputComponent, "tb-image-input", never, { "label": "label"; "maxSizeByte": "maxSizeByte"; "required": "required"; "disabled": "disabled"; "showClearButton": "showClearButton"; "showPreview": "showPreview"; "inputId": "inputId"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ImageInputComponent, "tb-image-input", never, { "label": "label"; "maxSizeByte": "maxSizeByte"; "required": "required"; "disabled": "disabled"; "showPreview": "showPreview"; "inputId": "inputId"; }, {}, never, never, false, never>;
 }

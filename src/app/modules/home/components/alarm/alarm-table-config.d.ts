@@ -41,4 +41,7 @@ export declare class AlarmTableConfig extends EntityTableConfig<AlarmInfo, TimeP
     getUserInitials(entity: AlarmInfo): string;
     getAvatarBgColor(entity: AlarmInfo): string;
     openAlarmAssigneePanel($event: Event, entity: AlarmInfo): void;
+    ackAlarms($event: Event, alarms: Array<AlarmInfo>): void;
+    clearAlarms($event: Event, alarms: Array<AlarmInfo>): void;
+    deleteAlarms($event: Event, alarms: Array<AlarmInfo>): void;
 }
