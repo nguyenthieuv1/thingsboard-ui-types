@@ -6,14 +6,20 @@ import { DialogComponent } from '@shared/components/dialog.component';
 import * as i0 from "@angular/core";
 export interface ColorPickerDialogData {
     color: string;
+    colorClearButton: boolean;
 }
-export declare class ColorPickerDialogComponent extends DialogComponent<ColorPickerDialogComponent, string> {
+export interface ColorPickerDialogResult {
+    color?: string;
+    canceled?: boolean;
+}
+export declare class ColorPickerDialogComponent extends DialogComponent<ColorPickerDialogComponent, ColorPickerDialogResult> {
     protected store: Store<AppState>;
     protected router: Router;
     data: ColorPickerDialogData;
-    dialogRef: MatDialogRef<ColorPickerDialogComponent, string>;
+    dialogRef: MatDialogRef<ColorPickerDialogComponent, ColorPickerDialogResult>;
     color: string;
-    constructor(store: Store<AppState>, router: Router, data: ColorPickerDialogData, dialogRef: MatDialogRef<ColorPickerDialogComponent, string>);
+    colorClearButton: boolean;
+    constructor(store: Store<AppState>, router: Router, data: ColorPickerDialogData, dialogRef: MatDialogRef<ColorPickerDialogComponent, ColorPickerDialogResult>);
     selectColor(color: string): void;
     cancel(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ColorPickerDialogComponent, never>;

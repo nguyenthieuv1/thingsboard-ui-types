@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, ElementRef, NgZone, OnInit, ViewContainerRef } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, ElementRef, NgZone, OnDestroy, OnInit, ViewContainerRef } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -17,7 +17,7 @@ import { Overlay } from '@angular/cdk/overlay';
 import { EntityDataPageLink, KeyFilter } from '@shared/models/query/query.models';
 import { DatePipe } from '@angular/common';
 import * as i0 from "@angular/core";
-export declare class EntitiesTableWidgetComponent extends PageComponent implements OnInit, AfterViewInit {
+export declare class EntitiesTableWidgetComponent extends PageComponent implements OnInit, AfterViewInit, OnDestroy {
     protected store: Store<AppState>;
     private elementRef;
     private ngZone;
@@ -35,6 +35,7 @@ export declare class EntitiesTableWidgetComponent extends PageComponent implemen
     displayPagination: boolean;
     enableStickyHeader: boolean;
     enableStickyAction: boolean;
+    showCellActionsMenu: boolean;
     pageSizeOptions: any;
     pageLink: EntityDataPageLink;
     sortOrderProperty: string;
@@ -44,6 +45,7 @@ export declare class EntitiesTableWidgetComponent extends PageComponent implemen
     displayedColumns: string[];
     entityDatasource: EntityDatasource;
     noDataDisplayMessageText: string;
+    hasRowAction: boolean;
     private setCellButtonAction;
     private cellContentCache;
     private cellStyleCache;
@@ -52,7 +54,6 @@ export declare class EntitiesTableWidgetComponent extends PageComponent implemen
     private widgetConfig;
     private subscription;
     private widgetResize$;
-    private entitiesTitlePattern;
     private defaultPageSize;
     private defaultSortOrder;
     private contentsInfo;
@@ -70,7 +71,6 @@ export declare class EntitiesTableWidgetComponent extends PageComponent implemen
     onDataUpdated(): void;
     pageLinkSortDirection(): SortDirection;
     private initializeConfig;
-    private updateTitle;
     private updateDatasources;
     private editColumnsToDisplay;
     private enterFilterMode;
