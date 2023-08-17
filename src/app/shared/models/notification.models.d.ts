@@ -339,4 +339,15 @@ export declare enum TriggerType {
     RATE_LIMITS = "RATE_LIMITS"
 }
 export declare const TriggerTypeTranslationMap: Map<TriggerType, string>;
+export interface NotificationUserSettings {
+    prefs: {
+        [key: string]: NotificationUserSetting;
+    };
+}
+export interface NotificationUserSetting {
+    enabled: boolean;
+    enabledDeliveryMethods: {
+        [key: string]: boolean;
+    };
+}
 export {};

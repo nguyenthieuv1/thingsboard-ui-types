@@ -21,6 +21,7 @@ import { DialogService } from '@core/services/dialog.service';
 import { AlarmService } from '@core/http/alarm.service';
 import { AlarmData, AlarmDataPageLink, KeyFilter } from '@app/shared/models/query/query.models';
 import { EntityService } from '@core/http/entity.service';
+import { FormBuilder } from '@angular/forms';
 import * as i0 from "@angular/core";
 interface AlarmWidgetActionDescriptor extends TableCellButtonActionDescriptor {
     details?: boolean;
@@ -43,10 +44,12 @@ export declare class AlarmsTableWidgetComponent extends PageComponent implements
     private entityService;
     private alarmService;
     private cd;
+    private fb;
     ctx: WidgetContext;
     searchInputField: ElementRef;
     paginator: MatPaginator;
     sort: MatSort;
+    textSearch: import("@angular/forms").FormControl<string>;
     enableSelection: boolean;
     displayPagination: boolean;
     enableStickyHeader: boolean;
@@ -70,6 +73,7 @@ export declare class AlarmsTableWidgetComponent extends PageComponent implements
     private widgetConfig;
     private subscription;
     private widgetResize$;
+    private destroy$;
     private displayActivity;
     private displayDetails;
     allowAcknowledgment: boolean;
@@ -87,7 +91,7 @@ export declare class AlarmsTableWidgetComponent extends PageComponent implements
     private searchAction;
     private columnDisplayAction;
     private alarmFilterAction;
-    constructor(store: Store<AppState>, elementRef: ElementRef, ngZone: NgZone, overlay: Overlay, viewContainerRef: ViewContainerRef, utils: UtilsService, translate: TranslateService, domSanitizer: DomSanitizer, datePipe: DatePipe, dialog: MatDialog, dialogService: DialogService, entityService: EntityService, alarmService: AlarmService, cd: ChangeDetectorRef);
+    constructor(store: Store<AppState>, elementRef: ElementRef, ngZone: NgZone, overlay: Overlay, viewContainerRef: ViewContainerRef, utils: UtilsService, translate: TranslateService, domSanitizer: DomSanitizer, datePipe: DatePipe, dialog: MatDialog, dialogService: DialogService, entityService: EntityService, alarmService: AlarmService, cd: ChangeDetectorRef, fb: FormBuilder);
     ngOnInit(): void;
     ngOnDestroy(): void;
     ngAfterViewInit(): void;
