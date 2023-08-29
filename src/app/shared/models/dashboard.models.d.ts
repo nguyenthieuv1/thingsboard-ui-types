@@ -110,6 +110,6 @@ export interface HomeDashboardInfo {
     dashboardId: DashboardId;
     hideDashboardToolbar: boolean;
 }
-export declare function isPublicDashboard(dashboard: DashboardInfo): boolean;
-export declare function getDashboardAssignedCustomersText(dashboard: DashboardInfo): string;
-export declare function isCurrentPublicDashboardCustomer(dashboard: DashboardInfo, customerId: string): boolean;
+export declare const isPublicDashboard: (dashboard: DashboardInfo) => boolean;
+export declare const getDashboardAssignedCustomersText: (dashboard: DashboardInfo) => string;
+export declare const isCurrentPublicDashboardCustomer: (dashboard: DashboardInfo, customerId: string) => boolean;

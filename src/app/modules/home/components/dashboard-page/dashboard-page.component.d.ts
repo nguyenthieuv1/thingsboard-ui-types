@@ -62,6 +62,7 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
     private cd;
     private sanitizer;
     elRef: ElementRef;
+    private forcePristine;
     get isDirty(): boolean;
     set isDirty(value: boolean);
     authState: AuthState;
