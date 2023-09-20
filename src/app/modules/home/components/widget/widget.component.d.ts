@@ -1,6 +1,6 @@
-import { AfterViewInit, ChangeDetectorRef, ComponentFactoryResolver, ComponentRef, ElementRef, Injector, NgZone, OnChanges, OnDestroy, OnInit, Renderer2, SimpleChanges, ViewContainerRef } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, ComponentFactoryResolver, ComponentRef, ElementRef, Injector, NgZone, OnChanges, OnDestroy, OnInit, Renderer2, SimpleChanges, TemplateRef, ViewContainerRef } from '@angular/core';
 import { DashboardWidget } from '@home/models/dashboard-component.models';
-import { LegendConfig, LegendData, Widget, WidgetTypeParameters } from '@shared/models/widget.models';
+import { Widget, WidgetTypeParameters } from '@shared/models/widget.models';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -57,6 +57,7 @@ export declare class WidgetComponent extends PageComponent implements OnInit, Af
     private raf;
     private ngZone;
     private cd;
+    widgetTitlePanel: TemplateRef<any>;
     isEdit: boolean;
     isMobile: boolean;
     dashboardWidget: DashboardWidget;
@@ -72,14 +73,6 @@ export declare class WidgetComponent extends PageComponent implements OnInit, Af
     loadingData: boolean;
     displayNoData: boolean;
     noDataDisplayMessageText: string;
-    displayLegend: boolean;
-    legendConfig: LegendConfig;
-    legendData: LegendData;
-    isLegendFirst: boolean;
-    legendContainerLayoutType: string;
-    legendStyle: {
-        [klass: string]: any;
-    };
     dynamicWidgetComponentRef: ComponentRef<IDynamicWidgetComponent>;
     dynamicWidgetComponent: IDynamicWidgetComponent;
     subscriptionContext: WidgetSubscriptionContext;
@@ -105,7 +98,6 @@ export declare class WidgetComponent extends PageComponent implements OnInit, Af
     private displayWidgetInstance;
     private onDestroy;
     onTimewindowChanged(timewindow: Timewindow): void;
-    onLegendKeyHiddenChange(index: number): void;
     private loadFromWidgetInfo;
     private detectChanges;
     private isReady;
@@ -124,7 +116,6 @@ export declare class WidgetComponent extends PageComponent implements OnInit, Af
     private createSubscription;
     private createSubscriptionFromInfo;
     private defaultComponentsOptions;
-    private defaultSubscriptionOptions;
     private createDefaultSubscription;
     private getActionDescriptors;
     private handleWidgetAction;
@@ -133,10 +124,11 @@ export declare class WidgetComponent extends PageComponent implements OnInit, Af
     private openDashboardStateInPopover;
     private openDashboardStateInSeparateDialog;
     private elementClick;
+    private cardClick;
     private loadCustomActionResources;
     private processResourcesLoadErrors;
     private getActiveEntityInfo;
     private checkSize;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetComponent, [null, null, null, null, null, null, null, null, null, null, null, null, { optional: true; }, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetComponent, "tb-widget", never, { "isEdit": "isEdit"; "isMobile": "isMobile"; "dashboardWidget": "dashboardWidget"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetComponent, "tb-widget", never, { "widgetTitlePanel": "widgetTitlePanel"; "isEdit": "isEdit"; "isMobile": "isMobile"; "dashboardWidget": "dashboardWidget"; }, {}, never, never, false, never>;
 }

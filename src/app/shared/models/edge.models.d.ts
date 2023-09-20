@@ -39,9 +39,12 @@ export declare enum EdgeEventType {
     CUSTOMER = "CUSTOMER",
     RELATION = "RELATION",
     TENANT = "TENANT",
+    TENANT_PROFILE = "TENANT_PROFILE",
     WIDGETS_BUNDLE = "WIDGETS_BUNDLE",
     WIDGET_TYPE = "WIDGET_TYPE",
-    ADMIN_SETTINGS = "ADMIN_SETTINGS"
+    ADMIN_SETTINGS = "ADMIN_SETTINGS",
+    OTA_PACKAGE = "OTA_PACKAGE",
+    QUEUE = "QUEUE"
 }
 export declare enum EdgeEventActionType {
     ADDED = "ADDED",
@@ -59,6 +62,8 @@ export declare enum EdgeEventActionType {
     RPC_CALL = "RPC_CALL",
     ALARM_ACK = "ALARM_ACK",
     ALARM_CLEAR = "ALARM_CLEAR",
+    ALARM_ASSIGNED = "ALARM_ASSIGNED",
+    ALARM_UNASSIGNED = "ALARM_UNASSIGNED",
     ASSIGNED_TO_EDGE = "ASSIGNED_TO_EDGE",
     UNASSIGNED_FROM_EDGE = "UNASSIGNED_FROM_EDGE",
     CREDENTIALS_REQUEST = "CREDENTIALS_REQUEST",
@@ -87,5 +92,10 @@ export interface EdgeEvent extends BaseData<EventId> {
     body: string;
 }
 export interface EdgeInstallInstructions {
-    dockerInstallInstructions: string;
+    installInstructions: string;
+}
+export declare enum EdgeInstructionsMethod {
+    ubuntu = 0,
+    centos = 1,
+    docker = 2
 }

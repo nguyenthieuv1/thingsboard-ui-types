@@ -115,6 +115,7 @@ export declare const HelpLinks: {
         lwm2mResourceLibrary: string;
         dashboards: string;
         otaUpdates: string;
+        widgetTypes: string;
         widgetsBundles: string;
         widgetsConfig: string;
         widgetsConfigTimeseries: string;

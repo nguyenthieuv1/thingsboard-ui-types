@@ -7,7 +7,8 @@ export interface ImportWidgetResult {
 }
 export interface WidgetsBundleItem {
     widgetsBundle: WidgetsBundle;
-    widgetTypes: WidgetTypeDetails[];
+    widgetTypes?: WidgetTypeDetails[];
+    widgetTypeFqns?: string[];
 }
 export interface CsvToJsonConfig {
     delim?: string;
@@ -42,6 +43,10 @@ export declare enum ImportEntityColumnType {
     lwm2mServerSecurityMode = "LWM2M_SERVER_SECURITY_MODE",
     lwm2mServerClientPublicKeyOrId = "LWM2M_SERVER_CLIENT_PUBLIC_KEY_OR_ID",
     lwm2mServerClientSecretKey = "LWM2M_SERVER_CLIENT_SECRET_KEY",
+    snmpHost = "SNMP_HOST",
+    snmpPort = "SNMP_PORT",
+    snmpVersion = "SNMP_VERSION",
+    snmpCommunityString = "SNMP_COMMUNITY_STRING",
     isGateway = "IS_GATEWAY",
     description = "DESCRIPTION",
     routingKey = "ROUTING_KEY",

@@ -37,7 +37,7 @@ export declare class DashboardsTableConfigResolver implements Resolve<EntityTabl
     configureGroupActions(dashboardScope: string): Array<GroupActionDescriptor<DashboardInfo>>;
     configureAddActions(dashboardScope: string): Array<HeaderActionDescriptor>;
     openDashboard($event: Event, dashboard: DashboardInfo): void;
-    importDashboard($event: Event): void;
+    importDashboard(_$event: Event): void;
     exportDashboard($event: Event, dashboard: DashboardInfo): void;
     addDashboardsToCustomer($event: Event): void;
     makePublic($event: Event, dashboard: DashboardInfo): void;

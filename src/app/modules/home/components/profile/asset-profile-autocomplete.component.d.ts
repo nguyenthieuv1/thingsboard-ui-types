@@ -29,9 +29,7 @@ export declare class AssetProfileAutocompleteComponent implements ControlValueAc
     editProfileEnabled: boolean;
     addNewProfile: boolean;
     showDetailsPageLink: boolean;
-    private requiredValue;
-    get required(): boolean;
-    set required(value: boolean);
+    required: boolean;
     disabled: boolean;
     hint: string;
     assetProfileUpdated: EventEmitter<AssetProfileId>;

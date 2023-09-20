@@ -16,7 +16,7 @@ export declare class EntityAutocompleteComponent implements ControlValueAccessor
     private entityService;
     private fb;
     selectEntityFormGroup: UntypedFormGroup;
-    modelValue: string | null;
+    modelValue: string | EntityId | null;
     entityTypeValue: EntityType | AliasEntityType;
     entitySubtypeValue: string;
     entityText: string;
@@ -32,6 +32,7 @@ export declare class EntityAutocompleteComponent implements ControlValueAccessor
     excludeEntityIds: Array<string>;
     labelText: string;
     requiredText: string;
+    useFullEntityId: boolean;
     appearance: MatFormFieldAppearance;
     required: boolean;
     disabled: boolean;
@@ -56,5 +57,5 @@ export declare class EntityAutocompleteComponent implements ControlValueAccessor
     clear(): void;
     checkEntityType(entityType: EntityType | AliasEntityType): EntityType;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityAutocompleteComponent, "tb-entity-autocomplete", never, { "entityType": "entityType"; "entitySubtype": "entitySubtype"; "excludeEntityIds": "excludeEntityIds"; "labelText": "labelText"; "requiredText": "requiredText"; "appearance": "appearance"; "required": "required"; "disabled": "disabled"; }, { "entityChanged": "entityChanged"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityAutocompleteComponent, "tb-entity-autocomplete", never, { "entityType": "entityType"; "entitySubtype": "entitySubtype"; "excludeEntityIds": "excludeEntityIds"; "labelText": "labelText"; "requiredText": "requiredText"; "useFullEntityId": "useFullEntityId"; "appearance": "appearance"; "required": "required"; "disabled": "disabled"; }, { "entityChanged": "entityChanged"; }, never, never, false, never>;
 }

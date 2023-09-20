@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, ElementRef, NgZone, OnInit, ViewContainerRef } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, ElementRef, NgZone, OnDestroy, OnInit, ViewContainerRef } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { PageLink } from '@shared/models/page/page-link';
 import { MatPaginator } from '@angular/material/paginator';
@@ -9,7 +9,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogService } from '@core/services/dialog.service';
 import { EntityId } from '@shared/models/id/entity-id';
-import { AttributeData, LatestTelemetry, TelemetryType } from '@shared/models/telemetry/telemetry.models';
+import { AttributeData, AttributeScope, LatestTelemetry, TelemetryType } from '@shared/models/telemetry/telemetry.models';
 import { AttributeDatasource } from '@home/models/datasource/attribute-datasource';
 import { AttributeService } from '@app/core/http/attribute.service';
 import { Overlay } from '@angular/cdk/overlay';
@@ -21,8 +21,9 @@ import { UtilsService } from '@core/services/utils.service';
 import { DashboardUtilsService } from '@core/services/dashboard-utils.service';
 import { WidgetService } from '@core/http/widget.service';
 import { EntityService } from '@core/http/entity.service';
+import { FormBuilder } from '@angular/forms';
 import * as i0 from "@angular/core";
-export declare class AttributeTableComponent extends PageComponent implements AfterViewInit, OnInit {
+export declare class AttributeTableComponent extends PageComponent implements AfterViewInit, OnInit, OnDestroy {
     protected store: Store<AppState>;
     private attributeService;
     private telemetryWsService;
@@ -38,9 +39,11 @@ export declare class AttributeTableComponent extends PageComponent implements Af
     private zone;
     private cd;
     private elementRef;
+    private fb;
     telemetryTypeTranslationsMap: Map<TelemetryType, string>;
     isClientSideTelemetryTypeMap: Map<TelemetryType, boolean>;
     latestTelemetryTypes: typeof LatestTelemetry;
+    attributeScopeTypes: typeof AttributeScope;
     mode: 'default' | 'widget';
     attributeScopes: Array<string>;
     attributeScope: TelemetryType;
@@ -74,7 +77,9 @@ export declare class AttributeTableComponent extends PageComponent implements Af
     searchInputField: ElementRef;
     paginator: MatPaginator;
     sort: MatSort;
-    constructor(store: Store<AppState>, attributeService: AttributeService, telemetryWsService: TelemetryWebsocketService, translate: TranslateService, dialog: MatDialog, overlay: Overlay, viewContainerRef: ViewContainerRef, dialogService: DialogService, entityService: EntityService, utils: UtilsService, dashboardUtils: DashboardUtilsService, widgetService: WidgetService, zone: NgZone, cd: ChangeDetectorRef, elementRef: ElementRef);
+    textSearch: import("@angular/forms").FormControl<string>;
+    private destroy$;
+    constructor(store: Store<AppState>, attributeService: AttributeService, telemetryWsService: TelemetryWebsocketService, translate: TranslateService, dialog: MatDialog, overlay: Overlay, viewContainerRef: ViewContainerRef, dialogService: DialogService, entityService: EntityService, utils: UtilsService, dashboardUtils: DashboardUtilsService, widgetService: WidgetService, zone: NgZone, cd: ChangeDetectorRef, elementRef: ElementRef, fb: FormBuilder);
     ngOnInit(): void;
     ngOnDestroy(): void;
     attributeScopeChanged(attributeScope: TelemetryType): void;
@@ -86,7 +91,9 @@ export declare class AttributeTableComponent extends PageComponent implements Af
     reloadAttributes(): void;
     addAttribute($event: Event): void;
     editAttribute($event: Event, attribute: AttributeData): void;
+    deleteTimeseries($event: Event, telemetry?: AttributeData): void;
     deleteAttributes($event: Event): void;
+    deleteTelemetry($event: Event): void;
     enterWidgetMode(): void;
     onWidgetsCarouselIndexChanged(): void;
     onWidgetsBundleChanged(widgetsBundle: WidgetsBundle): void;
