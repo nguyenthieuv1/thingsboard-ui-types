@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { PageLink } from '@shared/models/page/page-link';
 import { PageData } from '@shared/models/page/page-data';
 import { WidgetsBundle } from '@shared/models/widgets-bundle.model';
-import { WidgetType, widgetType, WidgetTypeDetails, WidgetTypeInfo } from '@shared/models/widget.models';
+import { DeprecatedFilter, WidgetType, widgetType, WidgetTypeDetails, WidgetTypeInfo } from '@shared/models/widget.models';
 import { TranslateService } from '@ngx-translate/core';
 import { WidgetInfo } from '@app/modules/home/models/widget-component.models';
 import { WidgetTypeId } from '@shared/models/id/widget-type-id';
@@ -17,7 +17,6 @@ export declare class WidgetService {
     private allWidgetsBundles;
     private systemWidgetsBundles;
     private tenantWidgetsBundles;
-    private widgetTypeInfosCache;
     private widgetsInfoInMemoryCache;
     private loadWidgetsBundleCacheSubject;
     constructor(http: HttpClient, translate: TranslateService, router: Router);
@@ -25,7 +24,7 @@ export declare class WidgetService {
     getAllWidgetsBundles(config?: RequestConfig): Observable<Array<WidgetsBundle>>;
     getSystemWidgetsBundles(config?: RequestConfig): Observable<Array<WidgetsBundle>>;
     getTenantWidgetsBundles(config?: RequestConfig): Observable<Array<WidgetsBundle>>;
-    getWidgetBundles(pageLink: PageLink, config?: RequestConfig): Observable<PageData<WidgetsBundle>>;
+    getWidgetBundles(pageLink: PageLink, fullSearch?: boolean, tenantOnly?: boolean, config?: RequestConfig): Observable<PageData<WidgetsBundle>>;
     getWidgetsBundle(widgetsBundleId: string, config?: RequestConfig): Observable<WidgetsBundle>;
     saveWidgetsBundle(widgetsBundle: WidgetsBundle, config?: RequestConfig): Observable<WidgetsBundle>;
     updateWidgetsBundleWidgetTypes(widgetsBundleId: string, widgetTypeIds: Array<string>, config?: RequestConfig): Observable<void>;
@@ -34,7 +33,8 @@ export declare class WidgetService {
     getBundleWidgetTypes(widgetsBundleId: string, config?: RequestConfig): Observable<Array<WidgetType>>;
     getBundleWidgetTypesDetails(widgetsBundleId: string, config?: RequestConfig): Observable<Array<WidgetTypeDetails>>;
     getBundleWidgetTypeFqns(widgetsBundleId: string, config?: RequestConfig): Observable<Array<string>>;
-    getBundleWidgetTypeInfos(widgetsBundleId: string, config?: RequestConfig): Observable<Array<WidgetTypeInfo>>;
+    getBundleWidgetTypeInfosList(widgetsBundleId: string, config?: RequestConfig): Observable<Array<WidgetTypeInfo>>;
+    getBundleWidgetTypeInfos(pageLink: PageLink, widgetsBundleId: string, fullSearch?: boolean, deprecatedFilter?: DeprecatedFilter, widgetTypes?: Array<widgetType>, config?: RequestConfig): Observable<PageData<WidgetTypeInfo>>;
     getWidgetType(fullFqn: string, config?: RequestConfig): Observable<WidgetType>;
     saveWidgetTypeDetails(widgetInfo: WidgetInfo, id: WidgetTypeId, createdTime: number, config?: RequestConfig): Observable<WidgetTypeDetails>;
     saveImportedWidgetTypeDetails(widgetTypeDetails: WidgetTypeDetails, config?: RequestConfig): Observable<WidgetTypeDetails>;
@@ -42,7 +42,8 @@ export declare class WidgetService {
     getWidgetTypeInfoById(widgetTypeId: string, config?: RequestConfig): Observable<WidgetTypeInfo>;
     saveWidgetType(widgetTypeDetails: WidgetTypeDetails, config?: RequestConfig): Observable<WidgetTypeDetails>;
     deleteWidgetType(widgetTypeId: string, config?: RequestConfig): Observable<Object>;
-    getWidgetTypes(pageLink: PageLink, tenantOnly?: boolean, fullSearch?: boolean, config?: RequestConfig): Observable<PageData<WidgetTypeInfo>>;
+    getWidgetTypes(pageLink: PageLink, tenantOnly?: boolean, fullSearch?: boolean, deprecatedFilter?: DeprecatedFilter, widgetTypes?: Array<widgetType>, config?: RequestConfig): Observable<PageData<WidgetTypeInfo>>;
+    addWidgetFqnToWidgetBundle(widgetsBundleId: string, fqn: string, config?: RequestConfig): Observable<void>;
     getWidgetTemplate(widgetTypeParam: widgetType, config?: RequestConfig): Observable<WidgetInfo>;
     getWidgetInfoFromCache(fullFqn: string): WidgetInfo | undefined;
     putWidgetInfoToCache(widgetInfo: WidgetInfo): void;

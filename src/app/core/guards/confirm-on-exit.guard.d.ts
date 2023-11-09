@@ -7,9 +7,11 @@ import { TranslateService } from '@ngx-translate/core';
 import * as i0 from "@angular/core";
 export interface HasConfirmForm {
     confirmForm(): UntypedFormGroup;
+    confirmOnExitMessage?: string;
 }
 export interface HasDirtyFlag {
     isDirty: boolean;
+    confirmOnExitMessage?: string;
 }
 export declare class ConfirmOnExitGuard implements CanDeactivate<HasConfirmForm & HasDirtyFlag> {
     private store;
@@ -17,6 +19,7 @@ export declare class ConfirmOnExitGuard implements CanDeactivate<HasConfirmForm 
     private translate;
     constructor(store: Store<AppState>, dialogService: DialogService, translate: TranslateService);
     canDeactivate(component: HasConfirmForm & HasDirtyFlag, route: ActivatedRouteSnapshot, state: RouterStateSnapshot): true | import("rxjs").Observable<boolean>;
+    private getMessage;
     static ɵfac: i0.ɵɵFactoryDeclaration<ConfirmOnExitGuard, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<ConfirmOnExitGuard>;
 }

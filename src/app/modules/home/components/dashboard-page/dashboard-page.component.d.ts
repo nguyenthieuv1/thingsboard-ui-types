@@ -96,7 +96,6 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
     forceDashboardMobileMode: boolean;
     isAddingWidget: boolean;
     isAddingWidgetClosed: boolean;
-    searchBundle: string;
     filterWidgetTypes: widgetType[];
     isToolbarOpened: boolean;
     isToolbarOpenedAnimate: boolean;
@@ -189,6 +188,7 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
     private resetHighlight;
     private entityAliasesUpdated;
     private filtersUpdated;
+    private notifyDashboardToggleEditMode;
     private notifyDashboardUpdated;
     helpLinkIdForWidgetType(): string;
     addWidget($event: Event, layoutCtx?: DashboardPageLayoutContext): void;
@@ -213,10 +213,8 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
     widgetMouseDown($event: Event, layoutCtx: DashboardPageLayoutContext, widget: Widget): void;
     prepareDashboardContextMenu(layoutCtx: DashboardPageLayoutContext): Array<DashboardContextMenuItem>;
     prepareWidgetContextMenu(layoutCtx: DashboardPageLayoutContext, widget: Widget): Array<WidgetContextMenuItem>;
-    widgetBundleSelected(): void;
     clearSelectedWidgetBundle(): void;
     editWidgetsTypesToDisplay($event: Event): void;
-    onCloseSearchBundle(): void;
     updateDashboardImage($event: Event): void;
     toggleVersionControl($event: Event, versionControlButton: MatButton): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DashboardPageComponent, [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, { optional: true; }, null, null, null, null, null, null]>;

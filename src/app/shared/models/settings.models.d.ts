@@ -62,6 +62,13 @@ export interface MailConfigTemplate {
 export interface GeneralSettings {
     baseUrl: string;
 }
+export type DeviceConnectivityProtocol = 'http' | 'https' | 'mqtt' | 'mqtts' | 'coap' | 'coaps';
+export interface DeviceConnectivityInfo {
+    enabled: boolean;
+    host: string;
+    port: number;
+}
+export type DeviceConnectivitySettings = Record<DeviceConnectivityProtocol, DeviceConnectivityInfo>;
 export interface UserPasswordPolicy {
     minimumLength: number;
     minimumUppercaseLetters: number;

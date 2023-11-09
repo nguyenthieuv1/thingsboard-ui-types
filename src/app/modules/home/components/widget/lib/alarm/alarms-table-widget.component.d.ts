@@ -139,7 +139,7 @@ declare class AlarmsDatasource implements DataSource<AlarmDataInfo> {
     private widgetContext;
     private alarmsSubject;
     private pageDataSubject;
-    selection: SelectionModel<string>;
+    selection: SelectionModel<AlarmDataInfo>;
     private selectionModeChanged;
     selectionModeChanged$: Observable<boolean>;
     private currentAlarm;
