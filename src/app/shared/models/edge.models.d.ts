@@ -6,7 +6,8 @@ import { EntitySearchQuery } from '@shared/models/relation.models';
 import { RuleChainId } from '@shared/models/id/rule-chain-id';
 import { BaseEventBody } from '@shared/models/event.models';
 import { EventId } from '@shared/models/id/event-id';
-export interface Edge extends BaseData<EdgeId> {
+import { HasTenantId } from '@shared/models/entity.models';
+export interface Edge extends BaseData<EdgeId>, HasTenantId {
     tenantId?: TenantId;
     customerId?: CustomerId;
     name: string;
@@ -91,11 +92,12 @@ export interface EdgeEvent extends BaseData<EventId> {
     uid: string;
     body: string;
 }
-export interface EdgeInstallInstructions {
-    installInstructions: string;
+export interface EdgeInstructions {
+    instructions: string;
 }
 export declare enum EdgeInstructionsMethod {
     ubuntu = 0,
     centos = 1,
     docker = 2
 }
+export declare const edgeVersionAttributeKey = "edgeVersion";

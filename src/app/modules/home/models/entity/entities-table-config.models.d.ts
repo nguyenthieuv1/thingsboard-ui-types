@@ -38,8 +38,7 @@ export interface CellActionDescriptor<T extends BaseData<HasId>> {
     name: string;
     nameFunction?: (entity: T) => string;
     icon?: string;
-    mdiIcon?: string;
-    mdiIconFunction?: (entity: T) => string;
+    iconFunction?: (entity: T) => string;
     style?: any;
     isEnabled: (entity: T) => boolean;
     onAction: ($event: MouseEvent, entity: T) => any;
@@ -57,7 +56,7 @@ export interface HeaderActionDescriptor {
     isEnabled: () => boolean;
     onAction: ($event: MouseEvent) => void;
 }
-export type EntityTableColumnType = 'content' | 'action';
+export type EntityTableColumnType = 'content' | 'action' | 'link';
 export declare class BaseEntityTableColumn<T extends BaseData<HasId>> {
     type: EntityTableColumnType;
     key: string;
@@ -88,10 +87,18 @@ export declare class EntityActionTableColumn<T extends BaseData<HasId>> extends 
     width: string;
     constructor(key: string, title: string, actionDescriptor: CellActionDescriptor<T>, width?: string);
 }
+export declare class EntityLinkTableColumn<T extends BaseData<HasId>> extends BaseEntityTableColumn<T> {
+    key: string;
+    title: string;
+    width: string;
+    cellContentFunction: CellContentFunction<T>;
+    entityURL: (entity: any) => string;
+    constructor(key: string, title: string, width: string, cellContentFunction: CellContentFunction<T>, entityURL: (entity: any) => string);
+}
 export declare class DateEntityTableColumn<T extends BaseData<HasId>> extends EntityTableColumn<T> {
     constructor(key: string, title: string, datePipe: DatePipe, width?: string, dateFormat?: string, cellStyleFunction?: CellStyleFunction<T>);
 }
-export type EntityColumn<T extends BaseData<HasId>> = EntityTableColumn<T> | EntityActionTableColumn<T>;
+export type EntityColumn<T extends BaseData<HasId>> = EntityTableColumn<T> | EntityActionTableColumn<T> | EntityLinkTableColumn<T>;
 export declare class EntityTableConfig<T extends BaseData<HasId>, P extends PageLink = PageLink, L extends BaseData<HasId> = T> {
     constructor();
     private table;

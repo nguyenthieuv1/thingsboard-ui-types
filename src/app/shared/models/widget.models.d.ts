@@ -18,6 +18,7 @@ import { Dashboard } from '@shared/models/dashboard.models';
 import { IAliasController } from '@core/api/widget-api.models';
 import { WidgetConfigComponentData } from '@home/models/widget-component.models';
 import { ComponentStyle, Font, TimewindowStyle } from '@shared/models/widget-settings.models';
+import { HasTenantId } from '@shared/models/entity.models';
 import * as i0 from "@angular/core";
 export declare enum widgetType {
     timeseries = "timeseries",
@@ -97,7 +98,7 @@ export interface WidgetControllerDescriptor {
         [actionSourceId: string]: WidgetActionSource;
     };
 }
-export interface BaseWidgetType extends BaseData<WidgetTypeId> {
+export interface BaseWidgetType extends BaseData<WidgetTypeId>, HasTenantId {
     tenantId: TenantId;
     fqn: string;
     name: string;
@@ -136,6 +137,7 @@ export declare enum LegendPosition {
     left = "left",
     right = "right"
 }
+export declare const legendPositions: LegendPosition[];
 export declare const legendPositionTranslationMap: Map<LegendPosition, string>;
 export interface LegendConfig {
     position: LegendPosition;

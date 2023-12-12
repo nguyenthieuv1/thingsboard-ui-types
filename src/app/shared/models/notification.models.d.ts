@@ -11,6 +11,7 @@ import { AlarmSearchStatus, AlarmSeverity, AlarmStatus } from '@shared/models/al
 import { EntityType } from '@shared/models/entity-type.models';
 import { ApiFeature, ApiUsageStateValue } from '@shared/models/api-usage.models';
 import { LimitedApi } from '@shared/models/limited-api.models';
+import { HasTenantId } from '@shared/models/entity.models';
 export interface Notification {
     readonly id: NotificationId;
     readonly requestId: NotificationRequestId;
@@ -91,7 +92,7 @@ export interface SlackConversation {
     email: string;
     type: string;
 }
-export interface NotificationRule extends Omit<BaseData<NotificationRuleId>, 'label'>, ExportableEntity<NotificationRuleId> {
+export interface NotificationRule extends Omit<BaseData<NotificationRuleId>, 'label'>, HasTenantId, ExportableEntity<NotificationRuleId> {
     tenantId: TenantId;
     enabled: boolean;
     templateId: NotificationTemplateId;
@@ -187,7 +188,7 @@ export interface NonConfirmedNotificationEscalation {
     delayInSec: number;
     targets: Array<string>;
 }
-export interface NotificationTarget extends Omit<BaseData<NotificationTargetId>, 'label'>, ExportableEntity<NotificationTargetId> {
+export interface NotificationTarget extends Omit<BaseData<NotificationTargetId>, 'label'>, HasTenantId, ExportableEntity<NotificationTargetId> {
     tenantId: TenantId;
     configuration: NotificationTargetConfig;
 }
@@ -225,7 +226,7 @@ export declare enum NotificationTargetType {
     MICROSOFT_TEAMS = "MICROSOFT_TEAMS"
 }
 export declare const NotificationTargetTypeTranslationMap: Map<NotificationTargetType, string>;
-export interface NotificationTemplate extends Omit<BaseData<NotificationTemplateId>, 'label'>, ExportableEntity<NotificationTemplateId> {
+export interface NotificationTemplate extends Omit<BaseData<NotificationTemplateId>, 'label'>, HasTenantId, ExportableEntity<NotificationTemplateId> {
     tenantId: TenantId;
     notificationType: NotificationType;
     configuration: NotificationTemplateConfig;

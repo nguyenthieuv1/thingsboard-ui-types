@@ -9,10 +9,10 @@ import { AppState } from '@core/core.state';
 import { CustomerService } from '@core/http/customer.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogService } from '@core/services/dialog.service';
-import { Dashboard, DashboardInfo } from '@app/shared/models/dashboard.models';
+import { Dashboard, DashboardInfo, DashboardSetup } from '@app/shared/models/dashboard.models';
 import { DashboardService } from '@app/core/http/dashboard.service';
 import { ManageDashboardCustomersActionType } from './manage-dashboard-customers-dialog.component';
-import { ImportExportService } from '@home/components/import-export/import-export.service';
+import { ImportExportService } from '@shared/import-export/import-export.service';
 import { EdgeService } from '@core/http/edge.service';
 import { HomeDialogsService } from '@home/dialogs/home-dialogs.service';
 import * as i0 from "@angular/core";
@@ -38,6 +38,7 @@ export declare class DashboardsTableConfigResolver implements Resolve<EntityTabl
     configureAddActions(dashboardScope: string): Array<HeaderActionDescriptor>;
     openDashboard($event: Event, dashboard: DashboardInfo): void;
     importDashboard(_$event: Event): void;
+    private editMissingAliases;
     exportDashboard($event: Event, dashboard: DashboardInfo): void;
     addDashboardsToCustomer($event: Event): void;
     makePublic($event: Event, dashboard: DashboardInfo): void;
@@ -52,6 +53,7 @@ export declare class DashboardsTableConfigResolver implements Resolve<EntityTabl
     addDashboardsToEdge($event: Event): void;
     unassignFromEdge($event: Event, dashboard: DashboardInfo): void;
     unassignDashboardsFromEdge($event: Event, dashboards: Array<DashboardInfo>): void;
+    saveAndAssignDashboard(dashboard: DashboardSetup): Observable<Dashboard>;
     static ɵfac: i0.ɵɵFactoryDeclaration<DashboardsTableConfigResolver, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<DashboardsTableConfigResolver>;
 }

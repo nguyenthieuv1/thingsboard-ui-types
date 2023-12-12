@@ -4,7 +4,8 @@ import { RuleChainId } from '@shared/models/id/rule-chain-id';
 import { RuleNodeId } from '@shared/models/id/rule-node-id';
 import { RuleNode, RuleNodeComponentDescriptor } from '@shared/models/rule-node.models';
 import { ComponentType } from '@shared/models/component-descriptor.models';
-export interface RuleChain extends BaseData<RuleChainId>, ExportableEntity<RuleChainId> {
+import { HasTenantId } from '@shared/models/entity.models';
+export interface RuleChain extends BaseData<RuleChainId>, HasTenantId, ExportableEntity<RuleChainId> {
     tenantId: TenantId;
     name: string;
     firstRuleNodeId: RuleNodeId;

@@ -7,6 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { Dashboard } from '@shared/models/dashboard.models';
 import { DashboardService } from '@core/http/dashboard.service';
 import { EntityTableConfig } from '@home/models/entity/entities-table-config.models';
+import { EntityType } from '@shared/models/entity-type.models';
 import * as i0 from "@angular/core";
 export declare class DashboardFormComponent extends EntityComponent<Dashboard> {
     protected store: Store<AppState>;
@@ -20,6 +21,7 @@ export declare class DashboardFormComponent extends EntityComponent<Dashboard> {
     customerId: string;
     publicLink: string;
     assignedCustomersText: string;
+    entityType: typeof EntityType;
     constructor(store: Store<AppState>, translate: TranslateService, dashboardService: DashboardService, entityValue: Dashboard, entitiesTableConfigValue: EntityTableConfig<Dashboard>, fb: UntypedFormBuilder, cd: ChangeDetectorRef);
     ngOnInit(): void;
     isPublic(entity: Dashboard): boolean;

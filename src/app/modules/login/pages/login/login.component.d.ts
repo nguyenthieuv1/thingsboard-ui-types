@@ -12,6 +12,7 @@ export declare class LoginComponent extends PageComponent implements OnInit {
     private authService;
     fb: UntypedFormBuilder;
     private router;
+    passwordViolation: boolean;
     loginFormGroup: import("@angular/forms").UntypedFormGroup;
     oauth2Clients: Array<OAuth2ClientInfo>;
     constructor(store: Store<AppState>, authService: AuthService, fb: UntypedFormBuilder, router: Router);

@@ -3,7 +3,8 @@ import { UserId } from './id/user-id';
 import { CustomerId } from './id/customer-id';
 import { Authority } from './authority.enum';
 import { TenantId } from './id/tenant-id';
-export interface User extends BaseData<UserId> {
+import { HasTenantId } from '@shared/models/entity.models';
+export interface User extends BaseData<UserId>, HasTenantId {
     tenantId: TenantId;
     customerId: CustomerId;
     email: string;

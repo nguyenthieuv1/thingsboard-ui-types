@@ -8,6 +8,7 @@ import { TableCellButtonActionDescriptor } from '@home/components/widget/lib/tab
 import { AlarmCommentId } from '@shared/models/id/alarm-comment-id';
 import { UserId } from '@shared/models/id/user-id';
 import { AlarmFilter } from '@shared/models/query/query.models';
+import { HasTenantId } from '@shared/models/entity.models';
 export declare enum AlarmsMode {
     ALL = 0,
     ENTITY = 1
@@ -36,7 +37,7 @@ export declare const alarmSeverityTranslations: Map<AlarmSeverity, string>;
 export declare const alarmStatusTranslations: Map<AlarmStatus, string>;
 export declare const alarmSearchStatusTranslations: Map<AlarmSearchStatus, string>;
 export declare const alarmSeverityColors: Map<AlarmSeverity, string>;
-export interface Alarm extends BaseData<AlarmId> {
+export interface Alarm extends BaseData<AlarmId>, HasTenantId {
     tenantId: TenantId;
     customerId: CustomerId;
     assigneeId: UserId;

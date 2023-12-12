@@ -15,6 +15,7 @@ export interface DefaultTenantProfileConfiguration {
     maxRuleChains: number;
     maxResourcesInBytes: number;
     maxOtaPackagesInBytes: number;
+    maxResourceSize: number;
     transportTenantMsgRateLimit?: string;
     transportTenantTelemetryMsgRateLimit?: string;
     transportTenantTelemetryDataPointsRateLimit?: string;

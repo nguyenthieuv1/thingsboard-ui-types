@@ -17,6 +17,7 @@ export declare class DashboardService {
     getTenantDashboardsByTenantId(tenantId: string, pageLink: PageLink, config?: RequestConfig): Observable<PageData<DashboardInfo>>;
     getCustomerDashboards(customerId: string, pageLink: PageLink, config?: RequestConfig): Observable<PageData<DashboardInfo>>;
     getDashboard(dashboardId: string, config?: RequestConfig): Observable<Dashboard>;
+    exportDashboard(dashboardId: string, config?: RequestConfig): Observable<Dashboard>;
     getDashboardInfo(dashboardId: string, config?: RequestConfig): Observable<DashboardInfo>;
     saveDashboard(dashboard: Dashboard, config?: RequestConfig): Observable<Dashboard>;
     deleteDashboard(dashboardId: string, config?: RequestConfig): Observable<Object>;

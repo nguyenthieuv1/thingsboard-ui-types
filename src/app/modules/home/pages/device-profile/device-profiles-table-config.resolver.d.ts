@@ -7,7 +7,7 @@ import { DialogService } from '@core/services/dialog.service';
 import { DeviceProfile } from '@shared/models/device.models';
 import { DeviceProfileService } from '@core/http/device-profile.service';
 import { MatDialog } from '@angular/material/dialog';
-import { ImportExportService } from '@home/components/import-export/import-export.service';
+import { ImportExportService } from '@shared/import-export/import-export.service';
 import { HomeDialogsService } from '@home/dialogs/home-dialogs.service';
 import * as i0 from "@angular/core";
 export declare class DeviceProfilesTableConfigResolver implements Resolve<EntityTableConfig<DeviceProfile>> {

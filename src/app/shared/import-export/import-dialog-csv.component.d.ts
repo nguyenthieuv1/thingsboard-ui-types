@@ -8,9 +8,9 @@ import { DialogComponent } from '@app/shared/components/dialog.component';
 import { EntityType } from '@shared/models/entity-type.models';
 import { TranslateService } from '@ngx-translate/core';
 import { MatStepper } from '@angular/material/stepper';
-import { BulkImportResult, CSVDelimiter } from '@home/components/import-export/import-export.models';
-import { ImportExportService } from '@home/components/import-export/import-export.service';
-import { TableColumnsAssignmentComponent } from '@home/components/import-export/table-columns-assignment.component';
+import { BulkImportResult, CSVDelimiter } from '@shared/import-export/import-export.models';
+import { ImportExportService } from '@shared/import-export/import-export.service';
+import { TableColumnsAssignmentComponent } from '@shared/import-export/table-columns-assignment.component';
 import { Ace } from 'ace-builds';
 import * as i0 from "@angular/core";
 export interface ImportDialogCsvData {

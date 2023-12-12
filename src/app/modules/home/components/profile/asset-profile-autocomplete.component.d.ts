@@ -39,6 +39,8 @@ export declare class AssetProfileAutocompleteComponent implements ControlValueAc
     filteredAssetProfiles: Observable<Array<AssetProfileInfo>>;
     searchText: string;
     assetProfileURL: string;
+    useAssetProfileLink: boolean;
+    private authUser;
     private dirty;
     private ignoreClosedPanel;
     private allAssetProfile;

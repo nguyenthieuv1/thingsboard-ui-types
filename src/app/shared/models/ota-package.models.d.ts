@@ -2,6 +2,7 @@ import { BaseData } from '@shared/models/base-data';
 import { TenantId } from '@shared/models/id/tenant-id';
 import { OtaPackageId } from '@shared/models/id/ota-package-id';
 import { DeviceProfileId } from '@shared/models/id/device-profile-id';
+import { HasTenantId } from '@shared/models/entity.models';
 export declare enum ChecksumAlgorithm {
     MD5 = "MD5",
     SHA256 = "SHA256",
@@ -29,7 +30,7 @@ export interface OtaPagesIds {
     firmwareId?: OtaPackageId;
     softwareId?: OtaPackageId;
 }
-export interface OtaPackageInfo extends BaseData<OtaPackageId> {
+export interface OtaPackageInfo extends BaseData<OtaPackageId>, HasTenantId {
     tenantId?: TenantId;
     type: OtaUpdateType;
     deviceProfileId?: DeviceProfileId;
