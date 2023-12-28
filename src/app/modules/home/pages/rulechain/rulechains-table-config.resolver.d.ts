@@ -45,7 +45,7 @@ export declare class RuleChainsTableConfigResolver implements Resolve<EntityTabl
     onRuleChainAction(action: EntityAction<RuleChain>): boolean;
     setEdgeTemplateRootRuleChain($event: Event, ruleChain: RuleChain): void;
     private checkMissingToRelatedRuleChains;
-    addRuleChainsToEdge($event: Event): void;
+    assignRuleChainsToEdge($event: Event): void;
     unassignFromEdge($event: Event, ruleChain: RuleChain): void;
     unassignRuleChainsFromEdge($event: Event, ruleChains: Array<RuleChain>): void;
     setAutoAssignToEdgeRuleChain($event: Event, ruleChain: RuleChain): void;

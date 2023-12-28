@@ -30,6 +30,7 @@ export declare class EdgeService {
     bulkImportEdges(entitiesData: BulkImportRequest, config?: RequestConfig): Observable<BulkImportResult>;
     getEdgeInstallInstructions(edgeId: string, method?: string, config?: RequestConfig): Observable<EdgeInstructions>;
     getEdgeUpgradeInstructions(edgeVersion: string, method?: string, config?: RequestConfig): Observable<EdgeInstructions>;
+    isEdgeUpgradeAvailable(edgeId: string, config?: RequestConfig): Observable<boolean>;
     static ɵfac: i0.ɵɵFactoryDeclaration<EdgeService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<EdgeService>;
 }

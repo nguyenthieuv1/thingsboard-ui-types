@@ -7,12 +7,12 @@ import { EntityType } from '@shared/models/entity-type.models';
 import { EdgeInfo } from '@shared/models/edge.models';
 import { TranslateService } from '@ngx-translate/core';
 import { EntityTableConfig } from '@home/models/entity/entities-table-config.models';
-import { AttributeService } from '@core/http/attribute.service';
+import { EdgeService } from "@core/http/edge.service";
 import * as i0 from "@angular/core";
 export declare class EdgeComponent extends EntityComponent<EdgeInfo> {
     protected store: Store<AppState>;
     protected translate: TranslateService;
-    private attributeService;
+    private edgeService;
     protected entityValue: EdgeInfo;
     protected entitiesTableConfigValue: EntityTableConfig<EdgeInfo>;
     fb: UntypedFormBuilder;
@@ -20,7 +20,7 @@ export declare class EdgeComponent extends EntityComponent<EdgeInfo> {
     entityType: typeof EntityType;
     edgeScope: 'tenant' | 'customer' | 'customer_user';
     upgradeAvailable: boolean;
-    constructor(store: Store<AppState>, translate: TranslateService, attributeService: AttributeService, entityValue: EdgeInfo, entitiesTableConfigValue: EntityTableConfig<EdgeInfo>, fb: UntypedFormBuilder, cd: ChangeDetectorRef);
+    constructor(store: Store<AppState>, translate: TranslateService, edgeService: EdgeService, entityValue: EdgeInfo, entitiesTableConfigValue: EntityTableConfig<EdgeInfo>, fb: UntypedFormBuilder, cd: ChangeDetectorRef);
     ngOnInit(): void;
     hideDelete(): boolean;
     isAssignedToCustomer(entity: EdgeInfo): boolean;
@@ -30,8 +30,6 @@ export declare class EdgeComponent extends EntityComponent<EdgeInfo> {
     onEdgeIdCopied($event: any): void;
     onEdgeInfoCopied(type: string): void;
     private generateRoutingKeyAndSecret;
-    checkEdgeVersion(): void;
-    private versionUpgradeSupported;
     static ɵfac: i0.ɵɵFactoryDeclaration<EdgeComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<EdgeComponent, "tb-edge", never, {}, {}, never, never, false, never>;
 }

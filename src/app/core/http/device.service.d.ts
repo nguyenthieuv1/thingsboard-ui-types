@@ -3,14 +3,16 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { PageLink } from '@shared/models/page/page-link';
 import { PageData } from '@shared/models/page/page-data';
-import { ClaimRequest, ClaimResult, Device, DeviceCredentials, DeviceInfo, DeviceInfoQuery, DeviceSearchQuery, PublishLaunchCommand, PublishTelemetryCommand } from '@shared/models/device.models';
+import { ClaimRequest, ClaimResult, Device, DeviceCredentials, DeviceInfo, DeviceInfoQuery, DeviceSearchQuery, PublishTelemetryCommand } from '@shared/models/device.models';
 import { EntitySubtype } from '@shared/models/entity-type.models';
 import { BulkImportRequest, BulkImportResult } from '@shared/import-export/import-export.models';
 import { PersistentRpc, RpcStatus } from '@shared/models/rpc.models';
+import { ResourcesService } from '@core/services/resources.service';
 import * as i0 from "@angular/core";
 export declare class DeviceService {
     private http;
-    constructor(http: HttpClient);
+    private resourcesService;
+    constructor(http: HttpClient, resourcesService: ResourcesService);
     getDeviceInfosByQuery(deviceInfoQuery: DeviceInfoQuery, config?: RequestConfig): Observable<PageData<DeviceInfo>>;
     getTenantDeviceInfos(pageLink: PageLink, type?: string, config?: RequestConfig): Observable<PageData<DeviceInfo>>;
     getTenantDeviceInfosByDeviceProfileId(pageLink: PageLink, deviceProfileId?: string, config?: RequestConfig): Observable<PageData<DeviceInfo>>;
@@ -42,7 +44,7 @@ export declare class DeviceService {
     getEdgeDevices(edgeId: string, pageLink: PageLink, type?: string, config?: RequestConfig): Observable<PageData<DeviceInfo>>;
     bulkImportDevices(entitiesData: BulkImportRequest, config?: RequestConfig): Observable<BulkImportResult>;
     getDevicePublishTelemetryCommands(deviceId: string, config?: RequestConfig): Observable<PublishTelemetryCommand>;
-    getDevicePublishLaunchCommands(deviceId: string, config?: RequestConfig): Observable<PublishLaunchCommand>;
+    downloadGatewayDockerComposeFile(deviceId: string): Observable<any>;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<DeviceService>;
 }
