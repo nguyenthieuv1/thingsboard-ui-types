@@ -9,6 +9,7 @@ export declare abstract class PageComponent implements OnDestroy {
     isLoading$: Observable<boolean>;
     loadingSubscription: Subscription;
     disabledOnLoadFormControls: Array<AbstractControl>;
+    showMainLoadingBar: boolean;
     protected constructor(store: Store<AppState>);
     protected registerDisableOnLoadFormControl(control: AbstractControl): void;
     ngOnDestroy(): void;

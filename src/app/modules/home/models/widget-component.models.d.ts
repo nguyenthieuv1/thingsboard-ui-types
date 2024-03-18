@@ -43,6 +43,7 @@ import { ImagePipe, MillisecondsToTimeStringPipe, TelemetrySubscriber } from '@a
 import { UserId } from '@shared/models/id/user-id';
 import { UserSettingsService } from '@core/http/user-settings.service';
 import { DynamicComponentModule } from '@core/services/dynamic-component-factory.service';
+import { DataKeySettingsFunction } from '@home/components/widget/config/data-keys.component.models';
 export interface IWidgetAction {
     name: string;
     icon: string;
@@ -59,7 +60,7 @@ export interface WidgetAction extends IWidgetAction {
     show: boolean;
 }
 export interface IDashboardWidget {
-    updateWidgetParams(): any;
+    updateWidgetParams(): void;
 }
 export declare class WidgetContext {
     dashboard: IDashboardComponent;
@@ -121,6 +122,7 @@ export declare class WidgetContext {
     height: number;
     $scope: IDynamicWidgetComponent;
     isEdit: boolean;
+    isPreview: boolean;
     isMobile: boolean;
     toastTargetId: string;
     widgetNamespace?: string;
@@ -135,6 +137,7 @@ export declare class WidgetContext {
     }>;
     timeWindow?: WidgetTimewindow;
     embedTitlePanel?: boolean;
+    overflowVisible?: boolean;
     hideTitlePanel: boolean;
     widgetTitle?: string;
     widgetTitleTooltip?: string;
@@ -325,11 +328,11 @@ export declare class WidgetContext {
     setPopoversHidden(hidden: boolean): void;
     registerLabelPattern(label: string, label$: Observable<string>): Observable<string>;
     updateLabelPatterns(): void;
-    showSuccessToast(message: string, duration?: number, verticalPosition?: NotificationVerticalPosition, horizontalPosition?: NotificationHorizontalPosition, target?: string): void;
-    showInfoToast(message: string, verticalPosition?: NotificationVerticalPosition, horizontalPosition?: NotificationHorizontalPosition, target?: string): void;
-    showWarnToast(message: string, verticalPosition?: NotificationVerticalPosition, horizontalPosition?: NotificationHorizontalPosition, target?: string): void;
-    showErrorToast(message: string, verticalPosition?: NotificationVerticalPosition, horizontalPosition?: NotificationHorizontalPosition, target?: string): void;
-    showToast(type: NotificationType, message: string, duration: number, verticalPosition?: NotificationVerticalPosition, horizontalPosition?: NotificationHorizontalPosition, target?: string): void;
+    showSuccessToast(message: string, duration?: number, verticalPosition?: NotificationVerticalPosition, horizontalPosition?: NotificationHorizontalPosition, target?: string, modern?: boolean): void;
+    showInfoToast(message: string, verticalPosition?: NotificationVerticalPosition, horizontalPosition?: NotificationHorizontalPosition, target?: string, modern?: boolean): void;
+    showWarnToast(message: string, verticalPosition?: NotificationVerticalPosition, horizontalPosition?: NotificationHorizontalPosition, target?: string, modern?: boolean): void;
+    showErrorToast(message: string, verticalPosition?: NotificationVerticalPosition, horizontalPosition?: NotificationHorizontalPosition, target?: string, modern?: boolean): void;
+    showToast(type: NotificationType, message: string, duration: number, verticalPosition?: NotificationVerticalPosition, horizontalPosition?: NotificationHorizontalPosition, target?: string, modern?: boolean): void;
     hideToast(target?: string): void;
     detectChanges(updateWidgetParams?: boolean): void;
     detectContainerChanges(): void;
@@ -360,7 +363,7 @@ export interface IDynamicWidgetComponent {
     executingRpcRequest: boolean;
     rpcEnabled: boolean;
     rpcErrorText: string;
-    rpcRejection: HttpErrorResponse;
+    rpcRejection: HttpErrorResponse | Error;
     raf: RafService;
     [key: string]: any;
 }
@@ -390,6 +393,7 @@ export interface WidgetConfigComponentData {
     settingsSchema: JsonSettingsSchema;
     dataKeySettingsSchema: JsonSettingsSchema;
     latestDataKeySettingsSchema: JsonSettingsSchema;
+    dataKeySettingsFunction: DataKeySettingsFunction;
     settingsDirective: string;
     dataKeySettingsDirective: string;
     latestDataKeySettingsDirective: string;

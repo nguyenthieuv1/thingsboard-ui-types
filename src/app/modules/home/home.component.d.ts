@@ -13,8 +13,8 @@ export declare class HomeComponent extends PageComponent implements AfterViewIni
     protected store: Store<AppState>;
     private window;
     private activeComponentService;
-    breakpointObserver: BreakpointObserver;
     private fb;
+    breakpointObserver: BreakpointObserver;
     authState: AuthState;
     forceFullscreen: boolean;
     activeComponent: any;
@@ -30,7 +30,7 @@ export declare class HomeComponent extends PageComponent implements AfterViewIni
     textSearch: import("@angular/forms").FormControl<string>;
     hideLoadingBar: boolean;
     private destroy$;
-    constructor(store: Store<AppState>, window: Window, activeComponentService: ActiveComponentService, breakpointObserver: BreakpointObserver, fb: FormBuilder);
+    constructor(store: Store<AppState>, window: Window, activeComponentService: ActiveComponentService, fb: FormBuilder, breakpointObserver: BreakpointObserver);
     ngOnInit(): void;
     ngOnDestroy(): void;
     ngAfterViewInit(): void;

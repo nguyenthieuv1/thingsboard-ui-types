@@ -11,6 +11,7 @@ export declare class ImageService {
     private http;
     private sanitizer;
     private resourcesService;
+    private imagesLoading;
     constructor(http: HttpClient, sanitizer: DomSanitizer, resourcesService: ResourcesService);
     uploadImage(file: File, title: string, config?: RequestConfig): Observable<ImageResourceInfo>;
     updateImage(type: ImageResourceType, key: string, file: File, config?: RequestConfig): Observable<ImageResourceInfo>;
@@ -19,6 +20,7 @@ export declare class ImageService {
     getImages(pageLink: PageLink, includeSystemImages?: boolean, config?: RequestConfig): Observable<PageData<ImageResourceInfo>>;
     getImageInfo(type: ImageResourceType, key: string, config?: RequestConfig): Observable<ImageResourceInfo>;
     getImageDataUrl(imageUrl: string, preview?: boolean, asString?: boolean, emptyUrl?: string): Observable<SafeUrl | string>;
+    private loadImageDataUrl;
     resolveImageUrl(imageUrl: string, preview?: boolean, asString?: boolean, emptyUrl?: string): Observable<SafeUrl | string>;
     downloadImage(type: ImageResourceType, key: string): Observable<any>;
     deleteImage(type: ImageResourceType, key: string, force?: boolean, config?: RequestConfig): Observable<Object>;

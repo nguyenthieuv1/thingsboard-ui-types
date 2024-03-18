@@ -5,6 +5,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { SafeStyle } from '@angular/platform-browser';
 import { GridsterItemComponent } from 'angular-gridster2';
+import { UtilsService } from '@core/services/utils.service';
 import * as i0 from "@angular/core";
 export declare enum WidgetComponentActionType {
     MOUSE_DOWN = 0,
@@ -22,7 +23,7 @@ export declare class WidgetContainerComponent extends PageComponent implements O
     protected store: Store<AppState>;
     private cd;
     private renderer;
-    private document;
+    private utils;
     widgetContainerClass: string;
     tbWidgetElement: ElementRef;
     gridsterItem: GridsterItemComponent;
@@ -32,6 +33,7 @@ export declare class WidgetContainerComponent extends PageComponent implements O
     };
     backgroundImage: SafeStyle | string;
     isEdit: boolean;
+    isPreview: boolean;
     isMobile: boolean;
     dashboardWidgets: DashboardWidgets;
     isEditActionEnabled: boolean;
@@ -41,7 +43,7 @@ export declare class WidgetContainerComponent extends PageComponent implements O
     widgetFullscreenChanged: EventEmitter<boolean>;
     widgetComponentAction: EventEmitter<WidgetComponentAction>;
     private cssClass;
-    constructor(store: Store<AppState>, cd: ChangeDetectorRef, renderer: Renderer2, document: Document);
+    constructor(store: Store<AppState>, cd: ChangeDetectorRef, renderer: Renderer2, utils: UtilsService);
     ngOnInit(): void;
     ngAfterViewInit(): void;
     ngOnDestroy(): void;
@@ -55,5 +57,5 @@ export declare class WidgetContainerComponent extends PageComponent implements O
     onExport(event: MouseEvent): void;
     onRemove(event: MouseEvent): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetContainerComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetContainerComponent, "tb-widget-container", never, { "gridsterItem": "gridsterItem"; "widget": "widget"; "dashboardStyle": "dashboardStyle"; "backgroundImage": "backgroundImage"; "isEdit": "isEdit"; "isMobile": "isMobile"; "dashboardWidgets": "dashboardWidgets"; "isEditActionEnabled": "isEditActionEnabled"; "isExportActionEnabled": "isExportActionEnabled"; "isRemoveActionEnabled": "isRemoveActionEnabled"; "disableWidgetInteraction": "disableWidgetInteraction"; }, { "widgetFullscreenChanged": "widgetFullscreenChanged"; "widgetComponentAction": "widgetComponentAction"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetContainerComponent, "tb-widget-container", never, { "gridsterItem": "gridsterItem"; "widget": "widget"; "dashboardStyle": "dashboardStyle"; "backgroundImage": "backgroundImage"; "isEdit": "isEdit"; "isPreview": "isPreview"; "isMobile": "isMobile"; "dashboardWidgets": "dashboardWidgets"; "isEditActionEnabled": "isEditActionEnabled"; "isExportActionEnabled": "isExportActionEnabled"; "isRemoveActionEnabled": "isRemoveActionEnabled"; "disableWidgetInteraction": "disableWidgetInteraction"; }, { "widgetFullscreenChanged": "widgetFullscreenChanged"; "widgetComponentAction": "widgetComponentAction"; }, never, never, false, never>;
 }

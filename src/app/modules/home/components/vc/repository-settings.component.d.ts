@@ -18,6 +18,7 @@ export declare class RepositorySettingsComponent extends PageComponent implement
     fb: UntypedFormBuilder;
     detailsMode: boolean;
     popoverComponent: TbPopoverComponent;
+    hideLoadingBar: boolean;
     repositorySettingsForm: UntypedFormGroup;
     settings: RepositorySettings;
     repositoryAuthMethod: typeof RepositoryAuthMethod;
@@ -36,5 +37,5 @@ export declare class RepositorySettingsComponent extends PageComponent implement
     changePrivateKeyPasswordChanged(): void;
     updateValidators(emitEvent?: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<RepositorySettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RepositorySettingsComponent, "tb-repository-settings", never, { "detailsMode": "detailsMode"; "popoverComponent": "popoverComponent"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RepositorySettingsComponent, "tb-repository-settings", never, { "detailsMode": "detailsMode"; "popoverComponent": "popoverComponent"; "hideLoadingBar": "hideLoadingBar"; }, {}, never, never, false, never>;
 }

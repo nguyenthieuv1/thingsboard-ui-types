@@ -77,12 +77,16 @@ export interface NotificationSettings {
         [key in NotificationDeliveryMethod]: NotificationDeliveryMethodConfig;
     };
 }
-export interface NotificationDeliveryMethodConfig extends Partial<SlackNotificationDeliveryMethodConfig> {
+export interface NotificationDeliveryMethodConfig extends Partial<SlackNotificationDeliveryMethodConfig & MobileNotificationDeliveryMethodConfig> {
     enabled: boolean;
     method: NotificationDeliveryMethod;
 }
 interface SlackNotificationDeliveryMethodConfig {
     botToken: string;
+}
+interface MobileNotificationDeliveryMethodConfig {
+    firebaseServiceAccountCredentials: string;
+    firebaseServiceAccountCredentialsFileName: string;
 }
 export interface SlackConversation {
     id: string;
@@ -232,11 +236,12 @@ export interface NotificationTemplate extends Omit<BaseData<NotificationTemplate
     configuration: NotificationTemplateConfig;
 }
 interface NotificationTemplateConfig {
-    deliveryMethodsTemplates: {
-        [key in NotificationDeliveryMethod]: DeliveryMethodNotificationTemplate;
-    };
+    deliveryMethodsTemplates: DeliveryMethodsTemplates;
 }
-export interface DeliveryMethodNotificationTemplate extends Partial<WebDeliveryMethodNotificationTemplate & EmailDeliveryMethodNotificationTemplate & SlackDeliveryMethodNotificationTemplate & MicrosoftTeamsDeliveryMethodNotificationTemplate> {
+export type DeliveryMethodsTemplates = {
+    [key in NotificationDeliveryMethod]: DeliveryMethodNotificationTemplate;
+};
+export interface DeliveryMethodNotificationTemplate extends Partial<WebDeliveryMethodNotificationTemplate & EmailDeliveryMethodNotificationTemplate & SlackDeliveryMethodNotificationTemplate & MicrosoftTeamsDeliveryMethodNotificationTemplate & MobileDeliveryMethodNotificationTemplate> {
     body: string;
     enabled: boolean;
     method: NotificationDeliveryMethod;
@@ -273,18 +278,26 @@ interface MicrosoftTeamsDeliveryMethodNotificationTemplate {
     subject?: string;
     button: NotificationButtonConfig;
 }
+interface MobileDeliveryMethodNotificationTemplate {
+    subject: string;
+}
 export declare enum NotificationStatus {
     SENT = "SENT",
     READ = "READ"
 }
 export declare enum NotificationDeliveryMethod {
     WEB = "WEB",
+    MOBILE_APP = "MOBILE_APP",
     SMS = "SMS",
     EMAIL = "EMAIL",
     SLACK = "SLACK",
     MICROSOFT_TEAMS = "MICROSOFT_TEAMS"
 }
-export declare const NotificationDeliveryMethodTranslateMap: Map<NotificationDeliveryMethod, string>;
+export interface NotificationDeliveryMethodInfo {
+    name: string;
+    icon: string;
+}
+export declare const NotificationDeliveryMethodInfoMap: Map<NotificationDeliveryMethod, NotificationDeliveryMethodInfo>;
 export declare enum NotificationRequestStatus {
     PROCESSING = "PROCESSING",
     SCHEDULED = "SCHEDULED",
@@ -324,7 +337,9 @@ export declare enum NotificationType {
     API_USAGE_LIMIT = "API_USAGE_LIMIT",
     NEW_PLATFORM_VERSION = "NEW_PLATFORM_VERSION",
     RULE_NODE = "RULE_NODE",
-    RATE_LIMITS = "RATE_LIMITS"
+    RATE_LIMITS = "RATE_LIMITS",
+    EDGE_CONNECTION = "EDGE_CONNECTION",
+    EDGE_COMMUNICATION_FAILURE = "EDGE_COMMUNICATION_FAILURE"
 }
 export declare const NotificationTypeIcons: Map<NotificationType, string>;
 export declare const AlarmSeverityNotificationColors: Map<AlarmSeverity, string>;
@@ -348,7 +363,9 @@ export declare enum TriggerType {
     ENTITIES_LIMIT = "ENTITIES_LIMIT",
     API_USAGE_LIMIT = "API_USAGE_LIMIT",
     NEW_PLATFORM_VERSION = "NEW_PLATFORM_VERSION",
-    RATE_LIMITS = "RATE_LIMITS"
+    RATE_LIMITS = "RATE_LIMITS",
+    EDGE_CONNECTION = "EDGE_CONNECTION",
+    EDGE_COMMUNICATION_FAILURE = "EDGE_COMMUNICATION_FAILURE"
 }
 export declare const TriggerTypeTranslationMap: Map<TriggerType, string>;
 export interface NotificationUserSettings {

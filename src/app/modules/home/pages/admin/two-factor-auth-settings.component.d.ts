@@ -17,6 +17,7 @@ export declare class TwoFactorAuthSettingsComponent extends PageComponent implem
     twoFaFormGroup: UntypedFormGroup;
     twoFactorAuthProviderType: typeof TwoFactorAuthProviderType;
     twoFactorAuthProvidersData: Map<TwoFactorAuthProviderType, import("@shared/models/two-factor-auth.models").TwoFactorAuthProviderData>;
+    showMainLoadingBar: boolean;
     expansionPanel: QueryList<MatExpansionPanel>;
     constructor(store: Store<AppState>, twoFaService: TwoFactorAuthenticationService, fb: UntypedFormBuilder);
     ngOnInit(): void;

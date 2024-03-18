@@ -28,9 +28,9 @@ export declare class DashboardAutocompleteComponent implements ControlValueAcces
     floatLabel: FloatLabelType;
     appearance: MatFormFieldAppearance;
     subscriptSizing: SubscriptSizing;
-    private requiredValue;
-    get required(): boolean;
-    set required(value: boolean);
+    inlineField: boolean;
+    requiredText: string;
+    required: boolean;
     disabled: boolean;
     dashboardInput: ElementRef;
     filteredDashboards: Observable<Array<DashboardInfo>>;
@@ -41,7 +41,7 @@ export declare class DashboardAutocompleteComponent implements ControlValueAcces
     private propagateChange;
     constructor(store: Store<AppState>, translate: TranslateService, dashboardService: DashboardService, fb: UntypedFormBuilder);
     registerOnChange(fn: any): void;
-    registerOnTouched(fn: any): void;
+    registerOnTouched(_fn: any): void;
     ngOnInit(): void;
     ngAfterViewInit(): void;
     selectFirstDashboardIfNeeded(): void;
@@ -54,5 +54,5 @@ export declare class DashboardAutocompleteComponent implements ControlValueAcces
     onFocus(): void;
     clear(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DashboardAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardAutocompleteComponent, "tb-dashboard-autocomplete", never, { "useIdValue": "useIdValue"; "selectFirstDashboard": "selectFirstDashboard"; "label": "label"; "placeholder": "placeholder"; "dashboardsScope": "dashboardsScope"; "tenantId": "tenantId"; "customerId": "customerId"; "floatLabel": "floatLabel"; "appearance": "appearance"; "subscriptSizing": "subscriptSizing"; "required": "required"; "disabled": "disabled"; }, {}, never, ["[tb-error]", "[tb-hint]"], false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardAutocompleteComponent, "tb-dashboard-autocomplete", never, { "useIdValue": "useIdValue"; "selectFirstDashboard": "selectFirstDashboard"; "label": "label"; "placeholder": "placeholder"; "dashboardsScope": "dashboardsScope"; "tenantId": "tenantId"; "customerId": "customerId"; "floatLabel": "floatLabel"; "appearance": "appearance"; "subscriptSizing": "subscriptSizing"; "inlineField": "inlineField"; "requiredText": "requiredText"; "required": "required"; "disabled": "disabled"; }, {}, never, ["[tb-error]", "[tb-hint]"], false, never>;
 }

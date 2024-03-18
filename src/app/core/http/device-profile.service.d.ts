@@ -8,6 +8,7 @@ import { ObjectLwM2M, ServerSecurityConfig, ServerSecurityConfigInfo } from '@ho
 import { SortOrder } from '@shared/models/page/sort-order';
 import { OtaPackageService } from '@core/http/ota-package.service';
 import { Lwm2mSecurityType } from '@shared/models/lwm2m-security-config.models';
+import { EntityInfoData } from '@shared/models/entity.models';
 import * as i0 from "@angular/core";
 export declare class DeviceProfileService {
     private http;
@@ -30,6 +31,7 @@ export declare class DeviceProfileService {
     getDeviceProfileInfos(pageLink: PageLink, transportType?: DeviceTransportType, config?: RequestConfig): Observable<PageData<DeviceProfileInfo>>;
     getDeviceProfileDevicesAttributesKeys(deviceProfileId?: string, config?: RequestConfig): Observable<Array<string>>;
     getDeviceProfileDevicesTimeseriesKeys(deviceProfileId?: string, config?: RequestConfig): Observable<Array<string>>;
+    getDeviceProfileNames(activeOnly?: boolean, config?: RequestConfig): Observable<Array<EntityInfoData>>;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceProfileService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<DeviceProfileService>;
 }

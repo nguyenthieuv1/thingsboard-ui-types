@@ -101,3 +101,8 @@ export declare enum EdgeInstructionsMethod {
     docker = 2
 }
 export declare const edgeVersionAttributeKey = "edgeVersion";
+export declare enum EdgeConnectionEvent {
+    CONNECTED = "CONNECTED",
+    DISCONNECTED = "DISCONNECTED"
+}
+export declare const EdgeConnectionEventTranslationMap: Map<EdgeConnectionEvent, string>;
