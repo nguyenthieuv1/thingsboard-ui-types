@@ -22,6 +22,7 @@ export declare class ColorInputComponent extends PageComponent implements OnInit
     requiredText: string;
     colorClearButton: boolean;
     openOnInput: boolean;
+    noBorder: boolean;
     private requiredValue;
     get required(): boolean;
     set required(value: boolean);
@@ -42,5 +43,5 @@ export declare class ColorInputComponent extends PageComponent implements OnInit
     openColorPickerPopup($event: Event, element?: ElementRef): void;
     clear(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ColorInputComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ColorInputComponent, "tb-color-input", never, { "asBoxInput": "asBoxInput"; "icon": "icon"; "label": "label"; "requiredText": "requiredText"; "colorClearButton": "colorClearButton"; "openOnInput": "openOnInput"; "required": "required"; "disabled": "disabled"; "readonly": "readonly"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ColorInputComponent, "tb-color-input", never, { "asBoxInput": "asBoxInput"; "icon": "icon"; "label": "label"; "requiredText": "requiredText"; "colorClearButton": "colorClearButton"; "openOnInput": "openOnInput"; "noBorder": "noBorder"; "required": "required"; "disabled": "disabled"; "readonly": "readonly"; }, {}, never, never, false, never>;
 }

@@ -41,6 +41,7 @@ export declare const MediaBreakpoints: {
 };
 export declare const resolveBreakpoint: (breakpoint: string) => string;
 export declare const helpBaseUrl = "https://thingsboard.io";
+export declare const docPlatformPrefix = "";
 export declare const HelpLinks: {
     linksMap: {
         outgoingMailSettings: string;
@@ -48,7 +49,6 @@ export declare const HelpLinks: {
         slackSettings: string;
         securitySettings: string;
         oauth2Settings: string;
-        twoFactorAuthSettings: string;
         ruleEngine: string;
         ruleNodeCheckRelation: string;
         ruleNodeCheckExistenceFields: string;
@@ -102,6 +102,9 @@ export declare const HelpLinks: {
         ruleNodeSendSms: string;
         ruleNodeMath: string;
         ruleNodeCalculateDelta: string;
+        ruleNodeRestCallReply: string;
+        ruleNodePushToCloud: string;
+        ruleNodePushToEdge: string;
         tenants: string;
         tenantProfiles: string;
         customers: string;
@@ -125,8 +128,6 @@ export declare const HelpLinks: {
         widgetsConfigRpc: string;
         widgetsConfigAlarm: string;
         widgetsConfigStatic: string;
-        ruleNodePushToCloud: string;
-        ruleNodePushToEdge: string;
         queue: string;
         repositorySettings: string;
         autoCommitSettings: string;

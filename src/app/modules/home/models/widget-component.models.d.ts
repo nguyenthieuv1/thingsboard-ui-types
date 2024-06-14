@@ -44,6 +44,7 @@ import { UserId } from '@shared/models/id/user-id';
 import { UserSettingsService } from '@core/http/user-settings.service';
 import { DynamicComponentModule } from '@core/services/dynamic-component-factory.service';
 import { DataKeySettingsFunction } from '@home/components/widget/config/data-keys.component.models';
+import { UtilsService } from '@core/services/utils.service';
 export interface IWidgetAction {
     name: string;
     icon: string;
@@ -94,6 +95,7 @@ export declare class WidgetContext {
     customDialog: CustomDialogService;
     resourceService: ResourceService;
     userSettingsService: UserSettingsService;
+    utilsService: UtilsService;
     telemetryWsService: TelemetryWebsocketService;
     telemetrySubscribers?: TelemetrySubscriber[];
     date: DatePipe;

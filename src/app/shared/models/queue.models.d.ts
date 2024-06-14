@@ -52,5 +52,10 @@ export interface QueueInfo extends BaseData<QueueId>, HasTenantId {
     additionalInfo: {
         description?: string;
         customProperties?: string;
+        duplicateMsgToAllPartitions?: boolean;
     };
+}
+export interface QueueStatisticsInfo extends Omit<BaseData<QueueId>, 'label'>, HasTenantId {
+    queueName: string;
+    serviceId: string;
 }

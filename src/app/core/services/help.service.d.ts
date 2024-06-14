@@ -8,6 +8,7 @@ export declare class HelpService {
     private http;
     private uiSettingsService;
     private siteBaseUrl;
+    private docPlatformPrefix;
     private helpCache;
     constructor(translate: TranslateService, http: HttpClient, uiSettingsService: UiSettingsService);
     getHelpContent(key: string): Observable<string>;

@@ -65,14 +65,17 @@ export declare class EntitiesTableWidgetComponent extends PageComponent implemen
     private columnWidth;
     private columnDefaultVisibility;
     private columnSelectionAvailability;
+    private columnsWithCellClick;
     private rowStylesInfo;
     private searchAction;
     private columnDisplayAction;
     constructor(store: Store<AppState>, elementRef: ElementRef, ngZone: NgZone, overlay: Overlay, viewContainerRef: ViewContainerRef, utils: UtilsService, datePipe: DatePipe, translate: TranslateService, domSanitizer: DomSanitizer, cd: ChangeDetectorRef, fb: FormBuilder);
     ngOnInit(): void;
+    private isActionsConfigured;
     ngOnDestroy(): void;
     ngAfterViewInit(): void;
     onDataUpdated(): void;
+    onEditModeChanged(): void;
     pageLinkSortDirection(): SortDirection;
     private initializeConfig;
     private updateDatasources;
@@ -88,6 +91,8 @@ export declare class EntitiesTableWidgetComponent extends PageComponent implemen
     cellStyle(entity: EntityData, key: EntityColumn, row: number): any;
     cellContent(entity: EntityData, key: EntityColumn, row: number): SafeHtml;
     private defaultContent;
+    onCellClick($event: Event, entity: EntityData, key: EntityColumn, columnIndex: number): void;
+    columnHasCellClick(index: number): boolean;
     onRowClick($event: Event, entity: EntityData, isDouble?: boolean): void;
     onActionButtonClick($event: Event, entity: EntityData, actionDescriptor: WidgetActionDescriptor): void;
     private clearCache;

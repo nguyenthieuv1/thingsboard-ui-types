@@ -57,7 +57,7 @@ export declare class ImportExportService {
     importImage(): Observable<ImageResourceInfo>;
     exportDashboard(dashboardId: string): void;
     importDashboard(onEditMissingAliases: editMissingAliasesFunction): Observable<Dashboard>;
-    exportWidget(dashboard: Dashboard, sourceState: string, sourceLayout: DashboardLayoutId, widget: Widget): void;
+    exportWidget(dashboard: Dashboard, sourceState: string, sourceLayout: DashboardLayoutId, widget: Widget, widgetTitle: string): void;
     importWidget(dashboard: Dashboard, targetState: string, onEditMissingAliases: editMissingAliasesFunction, targetLayoutFunction: () => Observable<DashboardLayoutId>, onAliasesUpdateFunction: () => void, onFiltersUpdateFunction: () => void): Observable<ImportWidgetResult>;
     exportWidgetType(widgetTypeId: string): void;
     exportWidgetTypes(widgetTypeIds: string[]): Observable<void>;

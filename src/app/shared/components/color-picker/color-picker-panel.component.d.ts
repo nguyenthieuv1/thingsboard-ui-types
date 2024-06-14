@@ -9,13 +9,16 @@ export declare class ColorPickerPanelComponent extends PageComponent implements 
     protected store: Store<AppState>;
     color: string;
     colorClearButton: boolean;
+    colorCancelButton: boolean;
     popover: TbPopoverComponent<ColorPickerPanelComponent>;
     colorSelected: EventEmitter<string>;
+    colorCancelDialog: EventEmitter<any>;
     colorPickerControl: UntypedFormControl;
     constructor(store: Store<AppState>);
     ngOnInit(): void;
     selectColor(): void;
     clearColor(): void;
+    cancelColor(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ColorPickerPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ColorPickerPanelComponent, "tb-color-picker-panel", never, { "color": "color"; "colorClearButton": "colorClearButton"; "popover": "popover"; }, { "colorSelected": "colorSelected"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ColorPickerPanelComponent, "tb-color-picker-panel", never, { "color": "color"; "colorClearButton": "colorClearButton"; "colorCancelButton": "colorCancelButton"; "popover": "popover"; }, { "colorSelected": "colorSelected"; "colorCancelDialog": "colorCancelDialog"; }, never, never, false, never>;
 }

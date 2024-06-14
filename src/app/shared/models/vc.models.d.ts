@@ -73,6 +73,7 @@ export interface EntityTypeVersionLoadRequest extends VersionLoadRequest {
         [entityType: string]: EntityTypeVersionLoadConfig;
     };
     type: VersionLoadRequestType.ENTITY_TYPE;
+    rollbackOnError: boolean;
 }
 export declare function createDefaultEntityTypesVersionLoad(): {
     [entityType: string]: EntityTypeVersionLoadConfig;

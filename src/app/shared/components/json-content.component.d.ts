@@ -23,18 +23,12 @@ export declare class JsonContentComponent implements OnInit, ControlValueAccesso
     editorStyle: {
         [klass: string]: any;
     };
-    private readonlyValue;
-    get readonly(): boolean;
-    set readonly(value: boolean);
-    private validateContentValue;
-    get validateContent(): boolean;
-    set validateContent(value: boolean);
-    private validateOnChangeValue;
-    get validateOnChange(): boolean;
-    set validateOnChange(value: boolean);
-    private requiredValue;
-    get required(): boolean;
-    set required(value: boolean);
+    tbPlaceholder: string;
+    hideToolbar: boolean;
+    readonly: boolean;
+    validateContent: boolean;
+    validateOnChange: boolean;
+    required: boolean;
     fullscreen: boolean;
     contentBody: string;
     contentValid: boolean;
@@ -42,6 +36,8 @@ export declare class JsonContentComponent implements OnInit, ControlValueAccesso
     private propagateChange;
     constructor(elementRef: ElementRef, store: Store<AppState>, raf: RafService, cd: ChangeDetectorRef);
     ngOnInit(): void;
+    private createPlaceholder;
+    private updateEditorPlaceholder;
     ngOnDestroy(): void;
     private onAceEditorResize;
     ngOnChanges(changes: SimpleChanges): void;
@@ -62,5 +58,5 @@ export declare class JsonContentComponent implements OnInit, ControlValueAccesso
     minifyJSON(): void;
     onFullscreen(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<JsonContentComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<JsonContentComponent, "tb-json-content", never, { "label": "label"; "contentType": "contentType"; "disabled": "disabled"; "fillHeight": "fillHeight"; "editorStyle": "editorStyle"; "readonly": "readonly"; "validateContent": "validateContent"; "validateOnChange": "validateOnChange"; "required": "required"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<JsonContentComponent, "tb-json-content", never, { "label": "label"; "contentType": "contentType"; "disabled": "disabled"; "fillHeight": "fillHeight"; "editorStyle": "editorStyle"; "tbPlaceholder": "tbPlaceholder"; "hideToolbar": "hideToolbar"; "readonly": "readonly"; "validateContent": "validateContent"; "validateOnChange": "validateOnChange"; "required": "required"; }, {}, never, never, false, never>;
 }

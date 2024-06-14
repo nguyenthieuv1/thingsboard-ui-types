@@ -12,12 +12,14 @@ import * as i10 from "@home/pages/admin/queue/queue.component";
 import * as i11 from "@home/pages/admin/repository-admin-settings.component";
 import * as i12 from "@home/pages/admin/auto-commit-admin-settings.component";
 import * as i13 from "@home/pages/admin/two-factor-auth-settings.component";
-import * as i14 from "@angular/common";
-import * as i15 from "@app/shared/shared.module";
-import * as i16 from "@modules/home/components/home-components.module";
-import * as i17 from "./admin-routing.module";
+import * as i14 from "@home/pages/admin/mobile-app-settings.component";
+import * as i15 from "@angular/common";
+import * as i16 from "@app/shared/shared.module";
+import * as i17 from "@modules/home/components/home-components.module";
+import * as i18 from "./admin-routing.module";
+import * as i19 from "@home/components/widget/widget-components.module";
 export declare class AdminModule {
     static ɵfac: i0.ɵɵFactoryDeclaration<AdminModule, never>;
-    static ɵmod: i0.ɵɵNgModuleDeclaration<AdminModule, [typeof i1.GeneralSettingsComponent, typeof i2.MailServerComponent, typeof i3.SmsProviderComponent, typeof i4.SendTestSmsDialogComponent, typeof i5.SecuritySettingsComponent, typeof i6.OAuth2SettingsComponent, typeof i7.HomeSettingsComponent, typeof i8.ResourcesLibraryComponent, typeof i9.ResourcesTableHeaderComponent, typeof i10.QueueComponent, typeof i11.RepositoryAdminSettingsComponent, typeof i12.AutoCommitAdminSettingsComponent, typeof i13.TwoFactorAuthSettingsComponent], [typeof i14.CommonModule, typeof i15.SharedModule, typeof i16.HomeComponentsModule, typeof i17.AdminRoutingModule], never>;
+    static ɵmod: i0.ɵɵNgModuleDeclaration<AdminModule, [typeof i1.GeneralSettingsComponent, typeof i2.MailServerComponent, typeof i3.SmsProviderComponent, typeof i4.SendTestSmsDialogComponent, typeof i5.SecuritySettingsComponent, typeof i6.OAuth2SettingsComponent, typeof i7.HomeSettingsComponent, typeof i8.ResourcesLibraryComponent, typeof i9.ResourcesTableHeaderComponent, typeof i10.QueueComponent, typeof i11.RepositoryAdminSettingsComponent, typeof i12.AutoCommitAdminSettingsComponent, typeof i13.TwoFactorAuthSettingsComponent, typeof i14.MobileAppSettingsComponent], [typeof i15.CommonModule, typeof i16.SharedModule, typeof i17.HomeComponentsModule, typeof i18.AdminRoutingModule, typeof i19.WidgetComponentsModule], never>;
     static ɵinj: i0.ɵɵInjectorDeclaration<AdminModule>;
 }

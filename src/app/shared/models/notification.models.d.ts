@@ -67,7 +67,7 @@ export interface NotificationRequestStats {
             [errorKey in string]: string;
         };
     };
-    processedRecipients: Map<NotificationDeliveryMethod, Set<UserId>>;
+    totalErrors: number;
 }
 export interface NotificationRequestConfig {
     sendingDelayInSec: number;
@@ -339,7 +339,8 @@ export declare enum NotificationType {
     RULE_NODE = "RULE_NODE",
     RATE_LIMITS = "RATE_LIMITS",
     EDGE_CONNECTION = "EDGE_CONNECTION",
-    EDGE_COMMUNICATION_FAILURE = "EDGE_COMMUNICATION_FAILURE"
+    EDGE_COMMUNICATION_FAILURE = "EDGE_COMMUNICATION_FAILURE",
+    TASK_PROCESSING_FAILURE = "TASK_PROCESSING_FAILURE"
 }
 export declare const NotificationTypeIcons: Map<NotificationType, string>;
 export declare const AlarmSeverityNotificationColors: Map<AlarmSeverity, string>;
@@ -365,7 +366,8 @@ export declare enum TriggerType {
     NEW_PLATFORM_VERSION = "NEW_PLATFORM_VERSION",
     RATE_LIMITS = "RATE_LIMITS",
     EDGE_CONNECTION = "EDGE_CONNECTION",
-    EDGE_COMMUNICATION_FAILURE = "EDGE_COMMUNICATION_FAILURE"
+    EDGE_COMMUNICATION_FAILURE = "EDGE_COMMUNICATION_FAILURE",
+    TASK_PROCESSING_FAILURE = "TASK_PROCESSING_FAILURE"
 }
 export declare const TriggerTypeTranslationMap: Map<TriggerType, string>;
 export interface NotificationUserSettings {
