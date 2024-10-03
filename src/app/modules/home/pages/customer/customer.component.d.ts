@@ -7,6 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { ContactBasedComponent } from '../../components/entity/contact-based.component';
 import { EntityTableConfig } from '@home/models/entity/entities-table-config.models';
 import { AuthState } from '@core/auth/auth.models';
+import { CountryData } from '@shared/models/country.models';
 import * as i0 from "@angular/core";
 export declare class CustomerComponent extends ContactBasedComponent<Customer> {
     protected store: Store<AppState>;
@@ -15,9 +16,10 @@ export declare class CustomerComponent extends ContactBasedComponent<Customer> {
     protected entitiesTableConfigValue: EntityTableConfig<Customer>;
     protected fb: UntypedFormBuilder;
     protected cd: ChangeDetectorRef;
+    protected countryData: CountryData;
     isPublic: boolean;
     authState: AuthState;
-    constructor(store: Store<AppState>, translate: TranslateService, entityValue: Customer, entitiesTableConfigValue: EntityTableConfig<Customer>, fb: UntypedFormBuilder, cd: ChangeDetectorRef);
+    constructor(store: Store<AppState>, translate: TranslateService, entityValue: Customer, entitiesTableConfigValue: EntityTableConfig<Customer>, fb: UntypedFormBuilder, cd: ChangeDetectorRef, countryData: CountryData);
     hideDelete(): boolean;
     buildEntityForm(entity: Customer): UntypedFormGroup;
     updateEntityForm(entity: Customer): void;

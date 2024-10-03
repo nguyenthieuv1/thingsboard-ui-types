@@ -67,3 +67,6 @@ export declare const entityFields: {
 export interface HasTenantId {
     tenantId?: TenantId;
 }
+export interface HasVersion {
+    version?: number;
+}

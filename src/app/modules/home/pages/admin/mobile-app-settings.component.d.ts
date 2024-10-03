@@ -4,7 +4,7 @@ import { AppState } from '@core/core.state';
 import { PageComponent } from '@shared/components/page.component';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { HasConfirmForm } from '@core/guards/confirm-on-exit.guard';
-import { MobileAppService } from '@core/http/mobile-app.service';
+import { MobileApplicationService } from '@core/http/mobile-application.service';
 import { BadgePosition, MobileAppSettings } from '@shared/models/mobile-app.models';
 import * as i0 from "@angular/core";
 export declare class MobileAppSettingsComponent extends PageComponent implements HasConfirmForm, OnDestroy {
@@ -15,7 +15,7 @@ export declare class MobileAppSettingsComponent extends PageComponent implements
     mobileAppSettings: MobileAppSettings;
     private readonly destroy$;
     badgePositionTranslationsMap: Map<BadgePosition, string>;
-    constructor(store: Store<AppState>, mobileAppService: MobileAppService, fb: FormBuilder);
+    constructor(store: Store<AppState>, mobileAppService: MobileApplicationService, fb: FormBuilder);
     ngOnDestroy(): void;
     private buildMobileAppSettingsForm;
     private processMobileAppSettings;

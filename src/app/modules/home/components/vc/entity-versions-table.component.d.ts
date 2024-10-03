@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, ElementRef, EventEmitter, OnDestroy, OnInit, Renderer2, ViewContainerRef } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, ElementRef, EventEmitter, NgZone, OnDestroy, OnInit, Renderer2, ViewContainerRef } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -28,6 +28,7 @@ export declare class EntityVersionsTableComponent extends PageComponent implemen
     private viewContainerRef;
     private elementRef;
     private fb;
+    private zone;
     branchAutocompleteComponent: BranchAutocompleteComponent;
     singleEntityMode: boolean;
     popoverComponent: TbPopoverComponent;
@@ -54,7 +55,7 @@ export declare class EntityVersionsTableComponent extends PageComponent implemen
     searchInputField: ElementRef;
     paginator: MatPaginator;
     sort: MatSort;
-    constructor(store: Store<AppState>, entitiesVersionControlService: EntitiesVersionControlService, adminService: AdminService, popoverService: TbPopoverService, renderer: Renderer2, cd: ChangeDetectorRef, viewContainerRef: ViewContainerRef, elementRef: ElementRef, fb: FormBuilder);
+    constructor(store: Store<AppState>, entitiesVersionControlService: EntitiesVersionControlService, adminService: AdminService, popoverService: TbPopoverService, renderer: Renderer2, cd: ChangeDetectorRef, viewContainerRef: ViewContainerRef, elementRef: ElementRef, fb: FormBuilder, zone: NgZone);
     ngOnInit(): void;
     ngOnDestroy(): void;
     branchChanged(newBranch: string): void;

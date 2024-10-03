@@ -21,6 +21,7 @@ export declare class ImageInputComponent extends PageComponent implements AfterV
     private translate;
     private fileSize;
     private cd;
+    accept: string;
     label: string;
     maxSizeByte: number;
     private requiredValue;
@@ -30,6 +31,7 @@ export declare class ImageInputComponent extends PageComponent implements AfterV
     showClearButton: boolean;
     showPreview: boolean;
     inputId: string;
+    allowedExtensions: string;
     processImageApiLink: boolean;
     resultAsFile: boolean;
     showFileName: boolean;
@@ -49,7 +51,8 @@ export declare class ImageInputComponent extends PageComponent implements AfterV
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: string): void;
     private updateModel;
+    private filterFile;
     clearImage(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ImageInputComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ImageInputComponent, "tb-image-input", never, { "label": "label"; "maxSizeByte": "maxSizeByte"; "required": "required"; "disabled": "disabled"; "showClearButton": "showClearButton"; "showPreview": "showPreview"; "inputId": "inputId"; "processImageApiLink": "processImageApiLink"; "resultAsFile": "resultAsFile"; "showFileName": "showFileName"; "fileName": "fileName"; }, { "fileNameChanged": "fileNameChanged"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ImageInputComponent, "tb-image-input", never, { "accept": "accept"; "label": "label"; "maxSizeByte": "maxSizeByte"; "required": "required"; "disabled": "disabled"; "showClearButton": "showClearButton"; "showPreview": "showPreview"; "inputId": "inputId"; "allowedExtensions": "allowedExtensions"; "processImageApiLink": "processImageApiLink"; "resultAsFile": "resultAsFile"; "showFileName": "showFileName"; "fileName": "fileName"; }, { "fileNameChanged": "fileNameChanged"; }, never, never, false, never>;
 }

@@ -5,7 +5,7 @@ import { AppState } from '@core/core.state';
 import { UntypedFormGroup } from '@angular/forms';
 import { UserComponent } from '@modules/home/pages/user/user.component';
 import { Authority } from '@shared/models/authority.enum';
-import { ActivationMethod, User } from '@shared/models/user.model';
+import { ActivationLinkInfo, ActivationMethod, User } from '@shared/models/user.model';
 import { UserService } from '@core/http/user.service';
 import { Observable } from 'rxjs';
 import { DialogComponent } from '@shared/components/dialog.component';
@@ -34,7 +34,7 @@ export declare class AddUserDialogComponent extends DialogComponent<AddUserDialo
     ngOnInit(): void;
     cancel(): void;
     add(): void;
-    displayActivationLink(activationLink: string): Observable<void>;
+    displayActivationLink(activationLinkInfo: ActivationLinkInfo): Observable<void>;
     static ɵfac: i0.ɵɵFactoryDeclaration<AddUserDialogComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<AddUserDialogComponent, "tb-add-user-dialog", never, {}, {}, never, never, false, never>;
 }

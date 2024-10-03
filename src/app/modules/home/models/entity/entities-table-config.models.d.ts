@@ -56,7 +56,7 @@ export interface HeaderActionDescriptor {
     isEnabled: () => boolean;
     onAction: ($event: MouseEvent) => void;
 }
-export type EntityTableColumnType = 'content' | 'action' | 'link';
+export type EntityTableColumnType = 'content' | 'action' | 'link' | 'entityChips';
 export declare class BaseEntityTableColumn<T extends BaseData<HasId>> {
     type: EntityTableColumnType;
     key: string;
@@ -99,7 +99,13 @@ export declare class EntityLinkTableColumn<T extends BaseData<HasId>> extends Ba
 export declare class DateEntityTableColumn<T extends BaseData<HasId>> extends EntityTableColumn<T> {
     constructor(key: string, title: string, datePipe: DatePipe, width?: string, dateFormat?: string, cellStyleFunction?: CellStyleFunction<T>);
 }
-export type EntityColumn<T extends BaseData<HasId>> = EntityTableColumn<T> | EntityActionTableColumn<T> | EntityLinkTableColumn<T>;
+export declare class EntityChipsEntityTableColumn<T extends BaseData<HasId>> extends BaseEntityTableColumn<T> {
+    key: string;
+    title: string;
+    width: string;
+    constructor(key: string, title: string, width?: string);
+}
+export type EntityColumn<T extends BaseData<HasId>> = EntityTableColumn<T> | EntityActionTableColumn<T> | EntityLinkTableColumn<T> | EntityChipsEntityTableColumn<T>;
 export declare class EntityTableConfig<T extends BaseData<HasId>, P extends PageLink = PageLink, L extends BaseData<HasId> = T> {
     constructor();
     private table;

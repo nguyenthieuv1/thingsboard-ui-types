@@ -20,6 +20,9 @@ export declare class AuditLogTableConfig extends EntityTableConfig<AuditLog, Tim
     userId: UserId;
     customerId: CustomerId;
     constructor(auditLogService: AuditLogService, translate: TranslateService, datePipe: DatePipe, dialog: MatDialog, auditLogMode?: AuditLogMode, entityId?: EntityId, userId?: UserId, customerId?: CustomerId, updateOnInit?: boolean, pageMode?: boolean);
+    private getEntityTypeTranslation;
+    private getActionTypeTranslation;
+    private getActionStatusTranslation;
     fetchAuditLogs(pageLink: TimePageLink): Observable<PageData<AuditLog>>;
     showAuditLogDetails(entity: AuditLog): void;
 }

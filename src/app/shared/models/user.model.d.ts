@@ -19,6 +19,10 @@ export declare enum ActivationMethod {
     SEND_ACTIVATION_MAIL = "SEND_ACTIVATION_MAIL"
 }
 export declare const activationMethodTranslations: Map<ActivationMethod, string>;
+export interface ActivationLinkInfo {
+    value: string;
+    ttlMs: number;
+}
 export interface AuthUser {
     sub: string;
     scopes: string[];

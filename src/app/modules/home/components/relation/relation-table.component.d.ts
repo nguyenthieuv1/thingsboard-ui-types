@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, ElementRef, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, ElementRef, NgZone, OnDestroy, OnInit } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { PageLink } from '@shared/models/page/page-link';
 import { MatPaginator } from '@angular/material/paginator';
@@ -23,6 +23,7 @@ export declare class RelationTableComponent extends PageComponent implements Aft
     private cd;
     private elementRef;
     private fb;
+    private zone;
     directions: typeof EntitySearchDirection;
     directionTypes: string[];
     directionTypeTranslations: Map<EntitySearchDirection, string>;
@@ -44,7 +45,7 @@ export declare class RelationTableComponent extends PageComponent implements Aft
     textSearch: import("@angular/forms").FormControl<string>;
     private widgetResize$;
     private destroy$;
-    constructor(store: Store<AppState>, entityRelationService: EntityRelationService, translate: TranslateService, dialog: MatDialog, dialogService: DialogService, cd: ChangeDetectorRef, elementRef: ElementRef, fb: FormBuilder);
+    constructor(store: Store<AppState>, entityRelationService: EntityRelationService, translate: TranslateService, dialog: MatDialog, dialogService: DialogService, cd: ChangeDetectorRef, elementRef: ElementRef, fb: FormBuilder, zone: NgZone);
     ngOnInit(): void;
     ngOnDestroy(): void;
     updateColumns(): void;

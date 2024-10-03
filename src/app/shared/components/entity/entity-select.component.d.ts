@@ -16,12 +16,14 @@ export declare class EntitySelectComponent implements ControlValueAccessor, OnIn
     modelValue: EntityId;
     allowedEntityTypes: Array<EntityType | AliasEntityType>;
     useAliasEntityTypes: boolean;
-    private requiredValue;
-    get required(): boolean;
-    set required(value: boolean);
+    required: boolean;
     disabled: boolean;
+    additionEntityTypes: {
+        [entityType in string]: string;
+    };
     displayEntityTypeSelect: boolean;
     AliasEntityType: typeof AliasEntityType;
+    entityTypeNullUUID: Set<AliasEntityType | EntityType | string>;
     private readonly defaultEntityType;
     private propagateChange;
     constructor(store: Store<AppState>, entityService: EntityService, translate: TranslateService, fb: UntypedFormBuilder);
@@ -33,5 +35,5 @@ export declare class EntitySelectComponent implements ControlValueAccessor, OnIn
     writeValue(value: EntityId | null): void;
     updateView(entityType: EntityType | AliasEntityType | null, entityId: string | null): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntitySelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntitySelectComponent, "tb-entity-select", never, { "allowedEntityTypes": "allowedEntityTypes"; "useAliasEntityTypes": "useAliasEntityTypes"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntitySelectComponent, "tb-entity-select", never, { "allowedEntityTypes": "allowedEntityTypes"; "useAliasEntityTypes": "useAliasEntityTypes"; "required": "required"; "disabled": "disabled"; "additionEntityTypes": "additionEntityTypes"; }, {}, never, never, false, never>;
 }

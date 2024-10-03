@@ -39,6 +39,8 @@ export declare class WidgetConfigComponent extends PageComponent implements OnIn
     hideHeader: boolean;
     hideToggleHeader: boolean;
     isAdd: boolean;
+    showLayoutConfig: boolean;
+    isDefaultBreakpoint: boolean;
     disabled: boolean;
     widgetConfigMode: WidgetConfigMode;
     widgetType: widgetType;
@@ -84,6 +86,7 @@ export declare class WidgetConfigComponent extends PageComponent implements OnIn
     private destroyBasicModeComponent;
     private setupDefaultConfig;
     private updateWidgetSettingsEnabledState;
+    private updateLayoutEnabledState;
     private updateSchemaForm;
     private updateDataSettings;
     private updateTargetDeviceSettings;
@@ -114,5 +117,5 @@ export declare class WidgetConfigComponent extends PageComponent implements OnIn
     validate(c: UntypedFormControl): Observable<ValidationErrors | null>;
     private doValidate;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetConfigComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetConfigComponent, "tb-widget-config", never, { "forceExpandDatasources": "forceExpandDatasources"; "aliasController": "aliasController"; "dashboard": "dashboard"; "widget": "widget"; "functionsOnly": "functionsOnly"; "hideHeader": "hideHeader"; "hideToggleHeader": "hideToggleHeader"; "isAdd": "isAdd"; "disabled": "disabled"; }, {}, never, [".tb-widget-config-header-prefix", ".tb-widget-config-header-suffix"], false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetConfigComponent, "tb-widget-config", never, { "forceExpandDatasources": "forceExpandDatasources"; "aliasController": "aliasController"; "dashboard": "dashboard"; "widget": "widget"; "functionsOnly": "functionsOnly"; "hideHeader": "hideHeader"; "hideToggleHeader": "hideToggleHeader"; "isAdd": "isAdd"; "showLayoutConfig": "showLayoutConfig"; "isDefaultBreakpoint": "isDefaultBreakpoint"; "disabled": "disabled"; }, {}, never, [".tb-widget-config-header-prefix", ".tb-widget-config-header-suffix"], false, never>;
 }

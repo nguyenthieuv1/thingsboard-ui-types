@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, ComponentFactoryResolver, ElementRef, EventEmitter, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, ComponentFactoryResolver, ElementRef, EventEmitter, NgZone, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -33,6 +33,7 @@ export declare class EntitiesTableComponent extends PageComponent implements IEn
     private componentFactoryResolver;
     private elementRef;
     private fb;
+    private zone;
     entitiesTableConfig: EntityTableConfig<BaseData<HasId>>;
     translations: EntityTypeTranslation;
     headerActionDescriptors: Array<HeaderActionDescriptor>;
@@ -68,7 +69,7 @@ export declare class EntitiesTableComponent extends PageComponent implements IEn
     private viewInited;
     private widgetResize$;
     private destroy$;
-    constructor(store: Store<AppState>, route: ActivatedRoute, translate: TranslateService, dialog: MatDialog, dialogService: DialogService, domSanitizer: DomSanitizer, cd: ChangeDetectorRef, router: Router, componentFactoryResolver: ComponentFactoryResolver, elementRef: ElementRef, fb: FormBuilder);
+    constructor(store: Store<AppState>, route: ActivatedRoute, translate: TranslateService, dialog: MatDialog, dialogService: DialogService, domSanitizer: DomSanitizer, cd: ChangeDetectorRef, router: Router, componentFactoryResolver: ComponentFactoryResolver, elementRef: ElementRef, fb: FormBuilder, zone: NgZone);
     ngOnInit(): void;
     ngOnDestroy(): void;
     ngOnChanges(changes: SimpleChanges): void;
@@ -77,7 +78,7 @@ export declare class EntitiesTableComponent extends PageComponent implements IEn
     private updatePaginationSubscriptions;
     addEnabled(): boolean;
     clearSelection(): void;
-    updateData(closeDetails?: boolean): void;
+    updateData(closeDetails?: boolean, reloadEntity?: boolean): void;
     private getTimePageLinkInterval;
     private dataLoaded;
     onRowClick($event: Event, entity: any): void;

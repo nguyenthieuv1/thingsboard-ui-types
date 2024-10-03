@@ -1,8 +1,6 @@
 import { AfterViewInit, ElementRef, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup, ValidationErrors } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { Store } from '@ngrx/store';
-import { AppState } from '@app/core/core.state';
 import { TranslateService } from '@ngx-translate/core';
 import { EntityType } from '@shared/models/entity-type.models';
 import { BaseData } from '@shared/models/base-data';
@@ -13,12 +11,11 @@ import { MatChipGrid } from '@angular/material/chips';
 import { SubscriptSizing } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 export declare class EntityListComponent implements ControlValueAccessor, OnInit, AfterViewInit, OnChanges {
-    private store;
     translate: TranslateService;
     private entityService;
     private fb;
     entityListFormGroup: UntypedFormGroup;
-    modelValue: Array<string> | null;
+    private modelValue;
     entityType: EntityType;
     subType: string;
     labelText: string;
@@ -30,6 +27,7 @@ export declare class EntityListComponent implements ControlValueAccessor, OnInit
     disabled: boolean;
     subscriptSizing: SubscriptSizing;
     hint: string;
+    syncIdsWithDB: boolean;
     entityInput: ElementRef<HTMLInputElement>;
     matAutocomplete: MatAutocomplete;
     chipList: MatChipGrid;
@@ -38,8 +36,8 @@ export declare class EntityListComponent implements ControlValueAccessor, OnInit
     searchText: string;
     private dirty;
     private propagateChange;
-    constructor(store: Store<AppState>, translate: TranslateService, entityService: EntityService, fb: UntypedFormBuilder);
-    updateValidators(): void;
+    constructor(translate: TranslateService, entityService: EntityService, fb: UntypedFormBuilder);
+    private updateValidators;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
@@ -47,13 +45,15 @@ export declare class EntityListComponent implements ControlValueAccessor, OnInit
     ngAfterViewInit(): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: Array<string> | null): void;
-    reset(): void;
-    add(entity: BaseData<EntityId>): void;
+    validate(): ValidationErrors | null;
+    private reset;
+    private add;
     remove(entity: BaseData<EntityId>): void;
     displayEntityFn(entity?: BaseData<EntityId>): string | undefined;
-    fetchEntities(searchText?: string): Observable<Array<BaseData<EntityId>>>;
+    private fetchEntities;
     onFocus(): void;
-    clear(value?: string): void;
+    private clear;
+    textIsNotEmpty(text: string): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityListComponent, "tb-entity-list", never, { "entityType": "entityType"; "subType": "subType"; "labelText": "labelText"; "placeholderText": "placeholderText"; "requiredText": "requiredText"; "required": "required"; "disabled": "disabled"; "subscriptSizing": "subscriptSizing"; "hint": "hint"; }, {}, never, ["[matSuffix]"], false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityListComponent, "tb-entity-list", never, { "entityType": "entityType"; "subType": "subType"; "labelText": "labelText"; "placeholderText": "placeholderText"; "requiredText": "requiredText"; "required": "required"; "disabled": "disabled"; "subscriptSizing": "subscriptSizing"; "hint": "hint"; "syncIdsWithDB": "syncIdsWithDB"; }, {}, never, ["[matSuffix]"], false, never>;
 }
