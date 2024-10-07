@@ -1,4 +1,4 @@
-import { Resolve, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { EntityTableConfig } from '@home/models/entity/entities-table-config.models';
 import { TranslateService } from '@ngx-translate/core';
 import { DatePipe } from '@angular/common';
@@ -9,7 +9,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { HomeDialogsService } from '@home/dialogs/home-dialogs.service';
 import * as i0 from "@angular/core";
-export declare class CustomersTableConfigResolver implements Resolve<EntityTableConfig<Customer>> {
+export declare class CustomersTableConfigResolver {
     private customerService;
     private homeDialogs;
     private translate;

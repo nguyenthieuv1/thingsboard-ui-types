@@ -62,5 +62,5 @@ export declare class RelationTableComponent extends PageComponent implements Aft
     deleteRelations($event: Event): void;
     openRelationDialog($event: Event, relation?: EntityRelation): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<RelationTableComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RelationTableComponent, "tb-relation-table", never, { "active": "active"; "entityId": "entityId"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RelationTableComponent, "tb-relation-table", never, { "active": { "alias": "active"; "required": false; }; "entityId": { "alias": "entityId"; "required": false; }; }, {}, never, never, false, never>;
 }

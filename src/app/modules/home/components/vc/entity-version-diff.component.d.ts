@@ -50,5 +50,5 @@ export declare class EntityVersionDiffComponent extends PageComponent implements
     close(): void;
     toggleRestoreEntityVersion($event: Event, restoreVersionButton: MatButton): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityVersionDiffComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityVersionDiffComponent, "tb-entity-version-diff", never, { "versionName": "versionName"; "versionId": "versionId"; "entityId": "entityId"; "externalEntityId": "externalEntityId"; "onClose": "onClose"; "popoverComponent": "popoverComponent"; }, { "versionRestored": "versionRestored"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityVersionDiffComponent, "tb-entity-version-diff", never, { "versionName": { "alias": "versionName"; "required": false; }; "versionId": { "alias": "versionId"; "required": false; }; "entityId": { "alias": "entityId"; "required": false; }; "externalEntityId": { "alias": "externalEntityId"; "required": false; }; "onClose": { "alias": "onClose"; "required": false; }; "popoverComponent": { "alias": "popoverComponent"; "required": false; }; }, { "versionRestored": "versionRestored"; }, never, never, false, never>;
 }

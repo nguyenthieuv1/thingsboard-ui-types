@@ -36,5 +36,5 @@ export declare class KeyValMapComponent extends PageComponent implements Control
     };
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<KeyValMapComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<KeyValMapComponent, "tb-key-val-map", never, { "disabled": "disabled"; "titleText": "titleText"; "keyPlaceholderText": "keyPlaceholderText"; "valuePlaceholderText": "valuePlaceholderText"; "noDataText": "noDataText"; "subscriptSizing": "subscriptSizing"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<KeyValMapComponent, "tb-key-val-map", never, { "disabled": { "alias": "disabled"; "required": false; }; "titleText": { "alias": "titleText"; "required": false; }; "keyPlaceholderText": { "alias": "keyPlaceholderText"; "required": false; }; "valuePlaceholderText": { "alias": "valuePlaceholderText"; "required": false; }; "noDataText": { "alias": "noDataText"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; }, {}, never, never, false, never>;
 }

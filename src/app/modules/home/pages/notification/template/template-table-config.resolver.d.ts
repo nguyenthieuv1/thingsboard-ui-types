@@ -3,10 +3,10 @@ import { NotificationTemplate } from '@shared/models/notification.models';
 import { NotificationService } from '@core/http/notification.service';
 import { MatDialog } from '@angular/material/dialog';
 import { TranslateService } from '@ngx-translate/core';
-import { ActivatedRouteSnapshot, Resolve } from '@angular/router';
+import { ActivatedRouteSnapshot } from '@angular/router';
 import { DatePipe } from '@angular/common';
 import * as i0 from "@angular/core";
-export declare class TemplateTableConfigResolver implements Resolve<EntityTableConfig<NotificationTemplate>> {
+export declare class TemplateTableConfigResolver {
     private notificationService;
     private translate;
     private dialog;

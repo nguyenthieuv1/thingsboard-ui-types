@@ -1,4 +1,4 @@
-import { ActivatedRouteSnapshot, Resolve, Router } from '@angular/router';
+import { ActivatedRouteSnapshot, Router } from '@angular/router';
 import { CellActionDescriptor, EntityColumn, EntityTableConfig, GroupActionDescriptor, HeaderActionDescriptor } from '@home/models/entity/entities-table-config.models';
 import { TranslateService } from '@ngx-translate/core';
 import { DatePipe } from '@angular/common';
@@ -16,7 +16,7 @@ import { Edge } from '@shared/models/edge.models';
 import { PageData } from '@shared/models/page/page-data';
 import { HomeDialogsService } from '@home/dialogs/home-dialogs.service';
 import * as i0 from "@angular/core";
-export declare class RuleChainsTableConfigResolver implements Resolve<EntityTableConfig<RuleChain>> {
+export declare class RuleChainsTableConfigResolver {
     private ruleChainService;
     private dialogService;
     private dialog;

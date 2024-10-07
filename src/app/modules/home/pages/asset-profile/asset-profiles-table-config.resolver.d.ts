@@ -1,4 +1,4 @@
-import { Resolve, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { EntityTableConfig, HeaderActionDescriptor } from '@home/models/entity/entities-table-config.models';
 import { TranslateService } from '@ngx-translate/core';
 import { DatePipe } from '@angular/common';
@@ -10,7 +10,7 @@ import { HomeDialogsService } from '@home/dialogs/home-dialogs.service';
 import { AssetProfile } from '@shared/models/asset.models';
 import { AssetProfileService } from '@core/http/asset-profile.service';
 import * as i0 from "@angular/core";
-export declare class AssetProfilesTableConfigResolver implements Resolve<EntityTableConfig<AssetProfile>> {
+export declare class AssetProfilesTableConfigResolver {
     private assetProfileService;
     private importExport;
     private homeDialogs;

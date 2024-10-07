@@ -56,7 +56,7 @@ export declare class RuleNotificationDialogComponent extends DialogComponent<Rul
     alarmSearchStatuses: AlarmSearchStatus[];
     alarmSearchStatusTranslationMap: Map<AlarmSearchStatus, string>;
     alarmSeverityTranslationMap: Map<AlarmSeverity, string>;
-    alarmSeverities: AlarmSeverity[];
+    alarmSeverities: Array<AlarmSeverity>;
     alarmActions: AlarmAction[];
     alarmActionTranslationMap: Map<AlarmAction, string>;
     alarmAssignmentActions: AlarmAssignmentAction[];

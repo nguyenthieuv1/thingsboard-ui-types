@@ -40,5 +40,5 @@ export declare class DashboardSelectComponent implements ControlValueAccessor, O
     private updateView;
     private getDashboards;
     static ɵfac: i0.ɵɵFactoryDeclaration<DashboardSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardSelectComponent, "tb-dashboard-select", never, { "dashboardsScope": "dashboardsScope"; "customerId": "customerId"; "tooltipPosition": "tooltipPosition"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardSelectComponent, "tb-dashboard-select", never, { "dashboardsScope": { "alias": "dashboardsScope"; "required": false; }; "customerId": { "alias": "customerId"; "required": false; }; "tooltipPosition": { "alias": "tooltipPosition"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

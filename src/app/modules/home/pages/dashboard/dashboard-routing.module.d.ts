@@ -1,4 +1,4 @@
-import { ActivatedRouteSnapshot, Resolve } from '@angular/router';
+import { ActivatedRouteSnapshot } from '@angular/router';
 import { DashboardPageComponent } from '@home/components/dashboard-page/dashboard-page.component';
 import { BreadCrumbLabelFunction } from '@shared/components/breadcrumb';
 import { Observable } from 'rxjs';
@@ -10,7 +10,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import * as i0 from "@angular/core";
 import * as i1 from "@angular/router";
-export declare class DashboardResolver implements Resolve<Dashboard> {
+export declare class DashboardResolver {
     private store;
     private dashboardService;
     private userSettingService;

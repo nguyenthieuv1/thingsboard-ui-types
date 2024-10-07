@@ -1,4 +1,4 @@
-import { Resolve, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { EntityTableConfig } from '@home/models/entity/entities-table-config.models';
 import { TranslateService } from '@ngx-translate/core';
 import { DatePipe } from '@angular/common';
@@ -11,7 +11,7 @@ import { Authority } from '@shared/models/authority.enum';
 import { DialogService } from '@core/services/dialog.service';
 import { ImportExportService } from '@shared/import-export/import-export.service';
 import * as i0 from "@angular/core";
-export declare class WidgetsBundlesTableConfigResolver implements Resolve<EntityTableConfig<WidgetsBundle>> {
+export declare class WidgetsBundlesTableConfigResolver {
     private store;
     private dialogService;
     private widgetsService;

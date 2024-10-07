@@ -41,5 +41,5 @@ export declare class EventTableComponent implements OnInit, AfterViewInit, OnDes
     ngAfterViewInit(): void;
     ngOnDestroy(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EventTableComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EventTableComponent, "tb-event-table", never, { "tenantId": "tenantId"; "defaultEventType": "defaultEventType"; "disabledEventTypes": "disabledEventTypes"; "debugEventTypes": "debugEventTypes"; "active": "active"; "entityId": "entityId"; "functionTestButtonLabel": "functionTestButtonLabel"; }, { "debugEventSelected": "debugEventSelected"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EventTableComponent, "tb-event-table", never, { "tenantId": { "alias": "tenantId"; "required": false; }; "defaultEventType": { "alias": "defaultEventType"; "required": false; }; "disabledEventTypes": { "alias": "disabledEventTypes"; "required": false; }; "debugEventTypes": { "alias": "debugEventTypes"; "required": false; }; "active": { "alias": "active"; "required": false; }; "entityId": { "alias": "entityId"; "required": false; }; "functionTestButtonLabel": { "alias": "functionTestButtonLabel"; "required": false; }; }, { "debugEventSelected": "debugEventSelected"; }, never, never, false, never>;
 }

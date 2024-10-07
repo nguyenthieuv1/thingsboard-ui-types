@@ -67,5 +67,5 @@ export declare class ManageWidgetActionsComponent extends PageComponent implemen
     }): void;
     private onActionsUpdated;
     static ɵfac: i0.ɵɵFactoryDeclaration<ManageWidgetActionsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ManageWidgetActionsComponent, "tb-manage-widget-actions", never, { "disabled": "disabled"; "widgetType": "widgetType"; "callbacks": "callbacks"; "actionSources": "actionSources"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ManageWidgetActionsComponent, "tb-manage-widget-actions", never, { "disabled": { "alias": "disabled"; "required": false; }; "widgetType": { "alias": "widgetType"; "required": false; }; "callbacks": { "alias": "callbacks"; "required": false; }; "actionSources": { "alias": "actionSources"; "required": false; }; }, {}, never, never, false, never>;
 }

@@ -50,5 +50,5 @@ export declare class EntityTypesVersionLoadComponent extends PageComponent imple
     onRemoveOtherEntities(removeOtherEntitiesCheckbox: MatCheckbox, entityTypeControl: AbstractControl): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityTypesVersionLoadComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityTypesVersionLoadComponent, "tb-entity-types-version-load", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityTypesVersionLoadComponent, "tb-entity-types-version-load", never, { "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

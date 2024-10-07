@@ -1,4 +1,4 @@
-import { ActivatedRouteSnapshot, Resolve, Router } from '@angular/router';
+import { ActivatedRouteSnapshot, Router } from '@angular/router';
 import { CellActionDescriptor, EntityTableColumn, EntityTableConfig, GroupActionDescriptor, HeaderActionDescriptor } from '@home/models/entity/entities-table-config.models';
 import { TranslateService } from '@ngx-translate/core';
 import { DatePipe } from '@angular/common';
@@ -15,7 +15,7 @@ import { EntityViewService } from '@core/http/entity-view.service';
 import { EntityViewId } from '@shared/models/id/entity-view-id';
 import { EdgeService } from '@core/http/edge.service';
 import * as i0 from "@angular/core";
-export declare class EntityViewsTableConfigResolver implements Resolve<EntityTableConfig<EntityViewInfo>> {
+export declare class EntityViewsTableConfigResolver {
     private store;
     private broadcast;
     private entityViewService;

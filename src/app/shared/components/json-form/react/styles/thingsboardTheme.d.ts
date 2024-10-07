@@ -1,3 +1,3 @@
-import { ThemeOptions } from '@material-ui/core/styles';
+import { ThemeOptions } from '@mui/material/styles';
 declare const _default: ThemeOptions;
 export default _default;

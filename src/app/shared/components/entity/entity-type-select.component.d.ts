@@ -35,5 +35,5 @@ export declare class EntityTypeSelectComponent implements ControlValueAccessor, 
     updateView(value: EntityType | AliasEntityType | null): void;
     displayEntityTypeFn(entityType?: EntityType | AliasEntityType | null): string | undefined;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityTypeSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityTypeSelectComponent, "tb-entity-type-select", never, { "allowedEntityTypes": "allowedEntityTypes"; "useAliasEntityTypes": "useAliasEntityTypes"; "filterAllowedEntityTypes": "filterAllowedEntityTypes"; "showLabel": "showLabel"; "required": "required"; "disabled": "disabled"; "additionEntityTypes": "additionEntityTypes"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityTypeSelectComponent, "tb-entity-type-select", never, { "allowedEntityTypes": { "alias": "allowedEntityTypes"; "required": false; }; "useAliasEntityTypes": { "alias": "useAliasEntityTypes"; "required": false; }; "filterAllowedEntityTypes": { "alias": "filterAllowedEntityTypes"; "required": false; }; "showLabel": { "alias": "showLabel"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "additionEntityTypes": { "alias": "additionEntityTypes"; "required": false; }; }, {}, never, never, false, never>;
 }
