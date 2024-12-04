@@ -8,6 +8,7 @@ import { ResourcesService } from '@core/services/resources.service';
 import { Widget } from '@shared/models/widget.models';
 import { TranslateService } from '@ngx-translate/core';
 import { IModulesMap } from '@modules/common/modules-map.models';
+import { HttpClient } from '@angular/common/http';
 import * as i0 from "@angular/core";
 export declare class WidgetComponentService {
     private window;
@@ -18,13 +19,14 @@ export declare class WidgetComponentService {
     private utils;
     private resources;
     private translate;
+    private http;
     private cssParser;
     private widgetsInfoFetchQueue;
     private init$;
     private missingWidgetType;
     private errorWidgetType;
     private editingWidgetType;
-    constructor(window: Window, modulesMap: IModulesMap, homeComponentsModule: Type<any>, dynamicComponentFactoryService: DynamicComponentFactoryService, widgetService: WidgetService, utils: UtilsService, resources: ResourcesService, translate: TranslateService);
+    constructor(window: Window, modulesMap: IModulesMap, homeComponentsModule: Type<any>, dynamicComponentFactoryService: DynamicComponentFactoryService, widgetService: WidgetService, utils: UtilsService, resources: ResourcesService, translate: TranslateService, http: HttpClient);
     private init;
     getInstantWidgetInfo(widget: Widget): WidgetInfo;
     getWidgetInfo(fullFqn: string): Observable<WidgetInfo>;
@@ -37,6 +39,6 @@ export declare class WidgetComponentService {
     private createWidgetControllerDescriptor;
     private processWidgetLoadError;
     private resolveWidgetsInfoFetchQueue;
-    static ɵfac: i0.ɵɵFactoryDeclaration<WidgetComponentService, [null, { optional: true; }, null, null, null, null, null, null]>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<WidgetComponentService, [null, { optional: true; }, null, null, null, null, null, null, null]>;
     static ɵprov: i0.ɵɵInjectableDeclaration<WidgetComponentService>;
 }

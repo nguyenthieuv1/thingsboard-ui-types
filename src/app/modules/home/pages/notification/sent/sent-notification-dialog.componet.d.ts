@@ -39,6 +39,7 @@ export declare class SentNotificationDialogComponent extends TemplateConfigurati
     preview: NotificationRequestPreview;
     dialogTitle: string;
     showRefresh: boolean;
+    tinyMceOptions: Record<string, any>;
     private authUser;
     private allowNotificationDeliveryMethods;
     constructor(store: Store<AppState>, router: Router, dialogRef: MatDialogRef<SentNotificationDialogComponent, NotificationRequest>, data: RequestNotificationDialogData, breakpointObserver: BreakpointObserver, fb: FormBuilder, notificationService: NotificationService, dialog: MatDialog, translate: TranslateService);

@@ -17,7 +17,8 @@ export declare class SettingsEffects {
     private localStorageService;
     private titleService;
     private translate;
-    constructor(actions$: Actions<SettingsActions>, store: Store<AppState>, utils: UtilsService, router: Router, localStorageService: LocalStorageService, titleService: TitleService, translate: TranslateService);
+    private document;
+    constructor(actions$: Actions<SettingsActions>, store: Store<AppState>, utils: UtilsService, router: Router, localStorageService: LocalStorageService, titleService: TitleService, translate: TranslateService, document: Document);
     setTranslateServiceLanguage: import("rxjs").Observable<import("./settings.models").SettingsState> & import("@ngrx/effects").CreateEffectMetadata;
     setTitle: import("rxjs").Observable<ActivationEnd | import("./settings.actions").ActionSettingsChangeLanguage> & import("@ngrx/effects").CreateEffectMetadata;
     setPublicId: import("rxjs").Observable<ActivationEnd> & import("@ngrx/effects").CreateEffectMetadata;

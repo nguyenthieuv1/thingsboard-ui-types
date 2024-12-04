@@ -111,9 +111,9 @@ export declare class AlarmsTableWidgetComponent extends PageComponent implements
     trackByAlarmId(index: number, alarm: AlarmData): string;
     trackByActionCellDescriptionId(index: number, action: WidgetActionDescriptor): string;
     headerStyle(key: EntityColumn): any;
-    rowStyle(alarm: AlarmDataInfo, row: number): any;
-    cellStyle(alarm: AlarmDataInfo, key: EntityColumn, row: number): any;
-    cellContent(alarm: AlarmDataInfo, key: EntityColumn, row: number): SafeHtml;
+    rowStyle(alarm: AlarmDataInfo, row: number): Observable<any>;
+    cellStyle(alarm: AlarmDataInfo, key: EntityColumn, row: number): Observable<any>;
+    cellContent(alarm: AlarmDataInfo, key: EntityColumn, row: number): Observable<SafeHtml>;
     onCellClick($event: Event, alarm: AlarmDataInfo, key: EntityColumn, columnIndex: number): void;
     columnHasCellClick(columnIndex: number): boolean;
     onRowClick($event: Event, alarm: AlarmDataInfo): void;
@@ -142,6 +142,7 @@ declare class AlarmsDatasource implements DataSource<AlarmDataInfo> {
     private dataKeys;
     private ngZone;
     private widgetContext;
+    private actionCellDescriptors;
     private alarmsSubject;
     private pageDataSubject;
     selection: SelectionModel<AlarmDataInfo>;
@@ -154,8 +155,10 @@ declare class AlarmsDatasource implements DataSource<AlarmDataInfo> {
     private appliedSortOrderLabel;
     private reserveSpaceForHiddenAction;
     private cellButtonActions;
-    private readonly usedShowCellActionFunction;
+    private usedShowCellActionFunction;
+    private inited;
     constructor(subscription: IWidgetSubscription, dataKeys: Array<DataKey>, ngZone: NgZone, widgetContext: WidgetContext, actionCellDescriptors: AlarmWidgetActionDescriptor[]);
+    private init;
     connect(collectionViewer: CollectionViewer): Observable<AlarmDataInfo[] | ReadonlyArray<AlarmDataInfo>>;
     disconnect(collectionViewer: CollectionViewer): void;
     loadAlarms(pageLink: AlarmDataPageLink, sortOrderLabel: string, keyFilters: KeyFilter[]): void;

@@ -5,14 +5,16 @@ import { TranslateService } from '@ngx-translate/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRouteSnapshot } from '@angular/router';
 import { DatePipe } from '@angular/common';
+import { CustomTranslatePipe } from '@shared/pipe/custom-translate.pipe';
 import * as i0 from "@angular/core";
 export declare class RecipientTableConfigResolver {
     private notificationService;
     private translate;
     private dialog;
     private datePipe;
+    private customTranslate;
     private readonly config;
-    constructor(notificationService: NotificationService, translate: TranslateService, dialog: MatDialog, datePipe: DatePipe);
+    constructor(notificationService: NotificationService, translate: TranslateService, dialog: MatDialog, datePipe: DatePipe, customTranslate: CustomTranslatePipe);
     resolve(route: ActivatedRouteSnapshot): EntityTableConfig<NotificationTarget>;
     private configureCellActions;
     private editTarget;

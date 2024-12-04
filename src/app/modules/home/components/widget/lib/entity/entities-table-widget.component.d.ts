@@ -87,9 +87,9 @@ export declare class EntitiesTableWidgetComponent extends PageComponent implemen
     trackByEntityId(index: number, entity: EntityData): string;
     trackByActionCellDescriptionId(index: number, action: WidgetActionDescriptor): string;
     headerStyle(key: EntityColumn): any;
-    rowStyle(entity: EntityData, row: number): any;
-    cellStyle(entity: EntityData, key: EntityColumn, row: number): any;
-    cellContent(entity: EntityData, key: EntityColumn, row: number): SafeHtml;
+    rowStyle(entity: EntityData, row: number): Observable<any>;
+    cellStyle(entity: EntityData, key: EntityColumn, row: number): Observable<any>;
+    cellContent(entity: EntityData, key: EntityColumn, row: number): Observable<SafeHtml>;
     private defaultContent;
     onCellClick($event: Event, entity: EntityData, key: EntityColumn, columnIndex: number): void;
     columnHasCellClick(index: number): boolean;
@@ -114,8 +114,10 @@ declare class EntityDatasource implements DataSource<EntityData> {
     private appliedSortOrderLabel;
     private reserveSpaceForHiddenAction;
     private cellButtonActions;
-    private readonly usedShowCellActionFunction;
+    private usedShowCellActionFunction;
+    private inited;
     constructor(translate: TranslateService, dataKeys: Array<DataKey>, subscription: IWidgetSubscription, ngZone: NgZone, widgetContext: WidgetContext);
+    private init;
     connect(collectionViewer: CollectionViewer): Observable<EntityData[] | ReadonlyArray<EntityData>>;
     disconnect(collectionViewer: CollectionViewer): void;
     loadEntities(pageLink: EntityDataPageLink, sortOrderLabel: string, keyFilters: KeyFilter[]): void;

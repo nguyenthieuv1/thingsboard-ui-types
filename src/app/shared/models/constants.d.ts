@@ -110,6 +110,10 @@ export declare const HelpLinks: {
         ruleNodeRestCallReply: string;
         ruleNodePushToCloud: string;
         ruleNodePushToEdge: string;
+        ruleNodeAcknowledge: string;
+        ruleNodeCheckpoint: string;
+        ruleNodeSendNotification: string;
+        ruleNodeSendSlack: string;
         tenants: string;
         tenantProfiles: string;
         customers: string;
@@ -146,6 +150,9 @@ export declare const HelpLinks: {
         scada: string;
         scadaSymbolDev: string;
         scadaSymbolDevAnimation: string;
+        mobileApplication: string;
+        mobileBundle: string;
+        mobileQrCode: string;
     };
 };
 export interface ValueTypeData {

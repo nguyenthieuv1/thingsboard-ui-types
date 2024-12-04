@@ -7,6 +7,7 @@ import { EntityAction } from '@home/models/entity/entity-component.models';
 import { TenantProfileService } from '@core/http/tenant-profile.service';
 import { DialogService } from '@core/services/dialog.service';
 import { ImportExportService } from '@shared/import-export/import-export.service';
+import { CustomTranslatePipe } from '@shared/pipe/custom-translate.pipe';
 import * as i0 from "@angular/core";
 export declare class TenantProfilesTableConfigResolver {
     private tenantProfileService;
@@ -15,8 +16,9 @@ export declare class TenantProfilesTableConfigResolver {
     private datePipe;
     private router;
     private dialogService;
+    private customTranslate;
     private readonly config;
-    constructor(tenantProfileService: TenantProfileService, importExport: ImportExportService, translate: TranslateService, datePipe: DatePipe, router: Router, dialogService: DialogService);
+    constructor(tenantProfileService: TenantProfileService, importExport: ImportExportService, translate: TranslateService, datePipe: DatePipe, router: Router, dialogService: DialogService, customTranslate: CustomTranslatePipe);
     resolve(): EntityTableConfig<TenantProfile>;
     configureAddActions(): Array<HeaderActionDescriptor>;
     private openTenantProfile;

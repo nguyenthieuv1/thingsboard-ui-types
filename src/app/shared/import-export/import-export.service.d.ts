@@ -15,9 +15,9 @@ import { EntityType } from '@shared/models/entity-type.models';
 import { UtilsService } from '@core/services/utils.service';
 import { WidgetService } from '@core/http/widget.service';
 import { WidgetsBundle } from '@shared/models/widgets-bundle.model';
-import { EntityInfoData, ImportEntitiesResultInfo, ImportEntityData } from '@shared/models/entity.models';
+import { ImportEntitiesResultInfo, ImportEntityData, VersionedEntity } from '@shared/models/entity.models';
 import { RequestConfig } from '@core/http/http-utils';
-import { RuleChainImport, RuleChainMetaData, RuleChainType } from '@shared/models/rule-chain.models';
+import { RuleChainImport, RuleChainType } from '@shared/models/rule-chain.models';
 import { RuleChainService } from '@core/http/rule-chain.service';
 import { DeviceProfileService } from '@core/http/device-profile.service';
 import { DeviceProfile } from '@shared/models/device.models';
@@ -63,7 +63,7 @@ export declare class ImportExportService {
     exportWidgetTypes(widgetTypeIds: string[]): Observable<void>;
     importWidgetType(): Observable<WidgetTypeDetails>;
     exportWidgetsBundle(widgetsBundleId: string): void;
-    exportEntity(entityData: EntityInfoData | RuleChainMetaData): void;
+    exportEntity(entityData: VersionedEntity): void;
     private exportSelectedWidgetsBundle;
     private handleExportWidgetsBundle;
     private exportWidgetsBundleWithWidgetTypes;
@@ -114,6 +114,9 @@ export declare class ImportExportService {
     private prepareProfileExport;
     private prepareExport;
     private prepareImport;
+    private getIncludeResourcesPreference;
+    private openExportDialog;
+    private updateUserSettingsIncludeResourcesIfNeeded;
     static ɵfac: i0.ɵɵFactoryDeclaration<ImportExportService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<ImportExportService>;
 }

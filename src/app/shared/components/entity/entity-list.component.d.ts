@@ -8,7 +8,7 @@ import { EntityId } from '@shared/models/id/entity-id';
 import { EntityService } from '@core/http/entity.service';
 import { MatAutocomplete } from '@angular/material/autocomplete';
 import { MatChipGrid } from '@angular/material/chips';
-import { SubscriptSizing } from '@angular/material/form-field';
+import { MatFormFieldAppearance, SubscriptSizing } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 export declare class EntityListComponent implements ControlValueAccessor, OnInit, AfterViewInit, OnChanges {
     translate: TranslateService;
@@ -21,6 +21,7 @@ export declare class EntityListComponent implements ControlValueAccessor, OnInit
     labelText: string;
     placeholderText: any;
     requiredText: any;
+    appearance: MatFormFieldAppearance;
     private requiredValue;
     get required(): boolean;
     set required(value: boolean);
@@ -55,5 +56,5 @@ export declare class EntityListComponent implements ControlValueAccessor, OnInit
     private clear;
     textIsNotEmpty(text: string): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityListComponent, "tb-entity-list", never, { "entityType": { "alias": "entityType"; "required": false; }; "subType": { "alias": "subType"; "required": false; }; "labelText": { "alias": "labelText"; "required": false; }; "placeholderText": { "alias": "placeholderText"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "hint": { "alias": "hint"; "required": false; }; "syncIdsWithDB": { "alias": "syncIdsWithDB"; "required": false; }; }, {}, never, ["[matSuffix]"], false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityListComponent, "tb-entity-list", never, { "entityType": { "alias": "entityType"; "required": false; }; "subType": { "alias": "subType"; "required": false; }; "labelText": { "alias": "labelText"; "required": false; }; "placeholderText": { "alias": "placeholderText"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "hint": { "alias": "hint"; "required": false; }; "syncIdsWithDB": { "alias": "syncIdsWithDB"; "required": false; }; }, {}, never, ["[matSuffix]"], false, never>;
 }

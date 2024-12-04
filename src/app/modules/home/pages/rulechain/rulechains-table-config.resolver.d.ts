@@ -14,7 +14,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { PageLink } from '@shared/models/page/page-link';
 import { Edge } from '@shared/models/edge.models';
 import { PageData } from '@shared/models/page/page-data';
-import { HomeDialogsService } from '@home/dialogs/home-dialogs.service';
+import { CustomTranslatePipe } from '@shared/pipe/custom-translate.pipe';
 import * as i0 from "@angular/core";
 export declare class RuleChainsTableConfigResolver {
     private ruleChainService;
@@ -23,13 +23,12 @@ export declare class RuleChainsTableConfigResolver {
     private importExport;
     private itembuffer;
     private edgeService;
-    private homeDialogs;
     private translate;
     private datePipe;
     private router;
+    private customTranslate;
     private readonly config;
-    private edge;
-    constructor(ruleChainService: RuleChainService, dialogService: DialogService, dialog: MatDialog, importExport: ImportExportService, itembuffer: ItemBufferService, edgeService: EdgeService, homeDialogs: HomeDialogsService, translate: TranslateService, datePipe: DatePipe, router: Router);
+    constructor(ruleChainService: RuleChainService, dialogService: DialogService, dialog: MatDialog, importExport: ImportExportService, itembuffer: ItemBufferService, edgeService: EdgeService, translate: TranslateService, datePipe: DatePipe, router: Router, customTranslate: CustomTranslatePipe);
     resolve(route: ActivatedRouteSnapshot): EntityTableConfig<RuleChain>;
     configureEntityTableColumns(ruleChainScope: string): Array<EntityColumn<RuleChain>>;
     configureAddActions(ruleChainScope: string): Array<HeaderActionDescriptor>;

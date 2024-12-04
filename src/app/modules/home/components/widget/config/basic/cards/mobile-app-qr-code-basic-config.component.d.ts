@@ -1,4 +1,3 @@
-import { ChangeDetectorRef, Injector } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -9,12 +8,10 @@ import * as i0 from "@angular/core";
 export declare class MobileAppQrCodeBasicConfigComponent extends BasicWidgetConfigComponent {
     protected store: Store<AppState>;
     protected widgetConfigComponent: WidgetConfigComponent;
-    private cd;
-    private $injector;
     private fb;
     mobileAppQrCodeWidgetConfigForm: UntypedFormGroup;
     badgePositionTranslationsMap: Map<import("@app/shared/models/mobile-app.models").BadgePosition, string>;
-    constructor(store: Store<AppState>, widgetConfigComponent: WidgetConfigComponent, cd: ChangeDetectorRef, $injector: Injector, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, widgetConfigComponent: WidgetConfigComponent, fb: UntypedFormBuilder);
     protected configForm(): UntypedFormGroup;
     protected setupConfig(widgetConfig: WidgetConfigComponentData): void;
     protected onConfigSet(configData: WidgetConfigComponentData): void;
