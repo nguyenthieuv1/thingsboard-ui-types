@@ -13,10 +13,9 @@ export declare class TemplateTableConfigResolver {
     private datePipe;
     private readonly config;
     constructor(notificationService: NotificationService, translate: TranslateService, dialog: MatDialog, datePipe: DatePipe);
-    resolve(route: ActivatedRouteSnapshot): EntityTableConfig<NotificationTemplate>;
+    resolve(_route: ActivatedRouteSnapshot): EntityTableConfig<NotificationTemplate>;
     private configureCellActions;
     private editTemplate;
-    private onTemplateAction;
     static ɵfac: i0.ɵɵFactoryDeclaration<TemplateTableConfigResolver, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<TemplateTableConfigResolver>;
 }

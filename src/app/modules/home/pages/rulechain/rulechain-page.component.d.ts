@@ -178,8 +178,9 @@ export declare class RuleChainPageComponent extends PageComponent implements Aft
     private updateRuleNodesHighlight;
     objectsSelected(): boolean;
     deleteSelected(): void;
-    isDebugModeEnabled(): boolean;
-    resetDebugModeInAllNodes(): void;
+    isDebugSettingsEnabled(): boolean;
+    resetDebugSettingsInAllNodes(): void;
+    private isDebugSettingsActive;
     validate(): void;
     saveRuleChain(): Observable<any>;
     reloadRuleChain(): void;

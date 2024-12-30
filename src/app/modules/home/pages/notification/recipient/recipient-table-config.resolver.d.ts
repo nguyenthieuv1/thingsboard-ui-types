@@ -15,10 +15,9 @@ export declare class RecipientTableConfigResolver {
     private customTranslate;
     private readonly config;
     constructor(notificationService: NotificationService, translate: TranslateService, dialog: MatDialog, datePipe: DatePipe, customTranslate: CustomTranslatePipe);
-    resolve(route: ActivatedRouteSnapshot): EntityTableConfig<NotificationTarget>;
+    resolve(_route: ActivatedRouteSnapshot): EntityTableConfig<NotificationTarget>;
     private configureCellActions;
     private editTarget;
-    private onTargetAction;
     static ɵfac: i0.ɵɵFactoryDeclaration<RecipientTableConfigResolver, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<RecipientTableConfigResolver>;
 }

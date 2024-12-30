@@ -20,7 +20,7 @@ export declare class UserComponent extends EntityComponent<User> {
     constructor(store: Store<AppState>, entityValue: User, entitiesTableConfigValue: EntityTableConfig<User>, fb: UntypedFormBuilder, cd: ChangeDetectorRef, translate: TranslateService);
     hideDelete(): boolean;
     isUserCredentialsEnabled(): boolean;
-    isUserCredentialPresent(): boolean;
+    isUserActivated(): boolean;
     buildForm(entity: User): UntypedFormGroup;
     updateForm(entity: User): void;
     onUserIdCopied($event: any): void;

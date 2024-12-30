@@ -12,7 +12,18 @@ export interface User extends BaseData<UserId>, HasTenantId {
     authority: Authority;
     firstName: string;
     lastName: string;
-    additionalInfo: any;
+    additionalInfo: Partial<UserAdditionalInfo>;
+}
+export interface UserAdditionalInfo {
+    userCredentialsEnabled: boolean;
+    userActivated: boolean;
+    description: string;
+    defaultDashboardId: string;
+    defaultDashboardFullscreen: boolean;
+    homeDashboardId: string;
+    homeDashboardHideToolbar: boolean;
+    lang: string;
+    [key: string]: any;
 }
 export declare enum ActivationMethod {
     DISPLAY_ACTIVATION_LINK = "DISPLAY_ACTIVATION_LINK",

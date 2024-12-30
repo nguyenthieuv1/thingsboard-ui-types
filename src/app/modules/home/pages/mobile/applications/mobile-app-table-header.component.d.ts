@@ -6,7 +6,6 @@ import * as i0 from "@angular/core";
 export declare class MobileAppTableHeaderComponent extends EntityTableHeaderComponent<MobileApp> {
     protected store: Store<AppState>;
     constructor(store: Store<AppState>);
-    createMobile($event: Event): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<MobileAppTableHeaderComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<MobileAppTableHeaderComponent, "tb-mobile-app-table-header", never, {}, {}, never, never, false, never>;
 }

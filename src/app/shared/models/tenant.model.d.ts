@@ -13,6 +13,7 @@ export interface DefaultTenantProfileConfiguration {
     maxUsers: number;
     maxDashboards: number;
     maxRuleChains: number;
+    maxEdges: number;
     maxResourcesInBytes: number;
     maxOtaPackagesInBytes: number;
     maxResourceSize: number;
@@ -22,6 +23,12 @@ export interface DefaultTenantProfileConfiguration {
     transportDeviceMsgRateLimit?: string;
     transportDeviceTelemetryMsgRateLimit?: string;
     transportDeviceTelemetryDataPointsRateLimit?: string;
+    transportGatewayMsgRateLimit?: string;
+    transportGatewayTelemetryMsgRateLimit?: string;
+    transportGatewayTelemetryDataPointsRateLimit?: string;
+    transportGatewayDeviceMsgRateLimit?: string;
+    transportGatewayDeviceTelemetryMsgRateLimit?: string;
+    transportGatewayDeviceTelemetryDataPointsRateLimit?: string;
     tenantEntityExportRateLimit?: string;
     tenantEntityImportRateLimit?: string;
     tenantNotificationRequestsRateLimit?: string;
@@ -37,6 +44,7 @@ export interface DefaultTenantProfileConfiguration {
     maxSms: number;
     smsEnabled: boolean;
     maxCreatedAlarms: number;
+    maxDebugModeDurationMinutes: number;
     tenantServerRestLimitsConfiguration: string;
     customerServerRestLimitsConfiguration: string;
     maxWsSessionsPerTenant: number;
@@ -50,6 +58,10 @@ export interface DefaultTenantProfileConfiguration {
     maxWsSubscriptionsPerPublicUser: number;
     wsUpdatesPerSessionRateLimit: string;
     cassandraQueryTenantRateLimitsConfiguration: string;
+    edgeEventRateLimits?: string;
+    edgeEventRateLimitsPerEdge?: string;
+    edgeUplinkMessagesRateLimits?: string;
+    edgeUplinkMessagesRateLimitsPerEdge?: string;
     defaultStorageTtlDays: number;
     alarmsTtlDays: number;
     rpcTtlDays: number;

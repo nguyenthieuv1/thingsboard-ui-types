@@ -1,4 +1,4 @@
-import { ChangeDetectorRef } from '@angular/core';
+import { ChangeDetectorRef, DestroyRef } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { EntityComponent } from '../../components/entity/entity.component';
@@ -17,11 +17,12 @@ export declare class DeviceComponent extends EntityComponent<DeviceInfo> {
     protected entitiesTableConfigValue: EntityTableConfig<DeviceInfo>;
     fb: UntypedFormBuilder;
     protected cd: ChangeDetectorRef;
+    private destroyRef;
     entityType: typeof EntityType;
     deviceCredentials$: Subject<DeviceCredentials>;
     deviceScope: 'tenant' | 'customer' | 'customer_user' | 'edge' | 'edge_customer_user';
     otaUpdateType: typeof OtaUpdateType;
-    constructor(store: Store<AppState>, translate: TranslateService, entityValue: DeviceInfo, entitiesTableConfigValue: EntityTableConfig<DeviceInfo>, fb: UntypedFormBuilder, cd: ChangeDetectorRef);
+    constructor(store: Store<AppState>, translate: TranslateService, entityValue: DeviceInfo, entitiesTableConfigValue: EntityTableConfig<DeviceInfo>, fb: UntypedFormBuilder, cd: ChangeDetectorRef, destroyRef: DestroyRef);
     ngOnInit(): void;
     hideDelete(): boolean;
     isAssignedToCustomer(entity: DeviceInfo): boolean;
