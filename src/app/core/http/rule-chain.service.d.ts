@@ -40,6 +40,7 @@ export declare class RuleChainService {
     ruleNodeSourceRuleChainId(component: RuleNodeComponentDescriptor, config: RuleNodeConfiguration): string;
     getLatestRuleNodeDebugInput(ruleNodeId: string, config?: RequestConfig): Observable<DebugRuleNodeEventBody>;
     testScript(inputParams: TestScriptInputParams, scriptLang?: ScriptLanguage, config?: RequestConfig): Observable<TestScriptResult>;
+    registerSystemRuleNodeConfigModule(module: any): void;
     private loadRuleNodeComponents;
     private resolveRuleNodeComponentsUiResources;
     private resolveRuleNodeComponentUiResources;

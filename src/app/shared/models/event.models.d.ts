@@ -11,7 +11,8 @@ export declare enum EventType {
 }
 export declare enum DebugEventType {
     DEBUG_RULE_NODE = "DEBUG_RULE_NODE",
-    DEBUG_RULE_CHAIN = "DEBUG_RULE_CHAIN"
+    DEBUG_RULE_CHAIN = "DEBUG_RULE_CHAIN",
+    DEBUG_CALCULATED_FIELD = "DEBUG_CALCULATED_FIELD"
 }
 export declare const eventTypeTranslations: Map<EventType | DebugEventType, string>;
 export interface BaseEventBody {
@@ -46,13 +47,22 @@ export interface DebugRuleChainEventBody extends BaseEventBody {
     message: string;
     error?: string;
 }
-export type EventBody = ErrorEventBody & LcEventEventBody & StatsEventBody & DebugRuleNodeEventBody & DebugRuleChainEventBody;
+export type EventBody = ErrorEventBody & LcEventEventBody & StatsEventBody & DebugRuleNodeEventBody & DebugRuleChainEventBody & CalculatedFieldEventBody;
 export interface Event extends BaseData<EventId> {
     tenantId: TenantId;
     entityId: EntityId;
     type: string;
     uid: string;
     body: EventBody;
+}
+export interface CalculatedFieldEventBody extends BaseFilterEventBody {
+    calculatedFieldId: string;
+    entityId: string;
+    entityType: EntityType;
+    arguments: string;
+    result: string;
+    msgId: string;
+    msgType: string;
 }
 export interface BaseFilterEventBody {
     server?: string;

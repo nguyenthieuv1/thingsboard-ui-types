@@ -22,6 +22,7 @@ export declare class AutoCommitSettingsComponent extends PageComponent implement
     settings: AutoCommitSettings;
     entityTypes: typeof EntityType;
     isReadOnly: Observable<boolean>;
+    readonly typesWithCalculatedFields: Set<EntityType | import("@shared/models/entity-type.models").AliasEntityType>;
     constructor(store: Store<AppState>, adminService: AdminService, dialogService: DialogService, sanitizer: DomSanitizer, translate: TranslateService, fb: UntypedFormBuilder);
     ngOnInit(): void;
     entityTypesFormGroupArray(): UntypedFormGroup[];

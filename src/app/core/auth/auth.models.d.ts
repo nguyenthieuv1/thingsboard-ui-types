@@ -11,7 +11,10 @@ export interface SysParamsState {
     userSettings: UserSettings;
     maxResourceSize: number;
     maxDebugModeDurationMinutes: number;
+    maxDataPointsPerRollingArg: number;
+    maxArgumentsPerCF: number;
     ruleChainDebugPerTenantLimitsConfiguration?: string;
+    calculatedFieldDebugPerTenantLimitsConfiguration?: string;
 }
 export interface SysParams extends SysParamsState {
     maxDatapointsLimit: number;

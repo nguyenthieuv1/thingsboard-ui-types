@@ -60,20 +60,20 @@ export interface ImageExportData {
 }
 export type ImageResourceType = 'tenant' | 'system';
 export type TBResourceScope = 'tenant' | 'system';
-export type ImageReferences = {
+export type ResourceReferences = {
     [entityType: string]: Array<BaseData<HasId> & HasTenantId>;
 };
-export interface ImageResourceInfoWithReferences extends ImageResourceInfo {
-    references: ImageReferences;
+export interface ResourceInfoWithReferences extends ResourceInfo {
+    references: ResourceReferences;
 }
-export interface ImageDeleteResult {
-    image: ImageResourceInfo;
+export interface ResourceDeleteResult {
+    resource: TbResourceInfo<any>;
     success: boolean;
-    imageIsReferencedError?: boolean;
+    resourceIsReferencedError?: boolean;
     error?: any;
-    references?: ImageReferences;
+    references?: ResourceReferences;
 }
-export declare const toImageDeleteResult: (image: ImageResourceInfo, e?: any) => ImageDeleteResult;
+export declare const toResourceDeleteResult: (resource: ResourceInfo, e?: any) => ResourceDeleteResult;
 export declare const imageResourceType: (imageInfo: ImageResourceInfo) => ImageResourceType;
 export declare const TB_IMAGE_PREFIX = "tb-image;";
 export declare const TB_RESOURCE_PREFIX = "tb-resource;";

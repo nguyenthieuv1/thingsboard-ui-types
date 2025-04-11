@@ -55,7 +55,7 @@ export declare class AlarmsTableWidgetComponent extends PageComponent implements
     enableStickyHeader: boolean;
     enableStickyAction: boolean;
     showCellActionsMenu: boolean;
-    pageSizeOptions: any;
+    pageSizeOptions: any[];
     pageLink: AlarmDataPageLink;
     sortOrderProperty: string;
     textSearchMode: boolean;
@@ -127,7 +127,6 @@ export declare class AlarmsTableWidgetComponent extends PageComponent implements
     private openAlarmActivity;
     private defaultContent;
     private defaultStyle;
-    isSorting(column: EntityColumn): boolean;
     private clearCache;
     checkAssigneeHasName(alarmAssignee: AlarmAssignee): boolean;
     getUserDisplayName(alarmAssignee: AlarmAssignee): string;

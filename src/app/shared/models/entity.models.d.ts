@@ -79,4 +79,8 @@ export interface EntityDebugSettings {
     allEnabled?: boolean;
     allEnabledUntil?: number;
 }
+export interface EntityTestScriptResult {
+    output: string;
+    error: string;
+}
 export type VersionedEntity = EntityInfoData & HasVersion | RuleChainMetaData;

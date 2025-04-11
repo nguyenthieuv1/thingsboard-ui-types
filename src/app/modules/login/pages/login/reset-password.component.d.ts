@@ -5,12 +5,13 @@ import { AppState } from '@core/core.state';
 import { PageComponent } from '@shared/components/page.component';
 import { UntypedFormBuilder } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import * as i0 from "@angular/core";
 export declare class ResetPasswordComponent extends PageComponent implements OnInit, OnDestroy {
     protected store: Store<AppState>;
     private route;
+    private router;
     private authService;
     private translate;
     fb: UntypedFormBuilder;
@@ -18,7 +19,7 @@ export declare class ResetPasswordComponent extends PageComponent implements OnI
     resetToken: string;
     sub: Subscription;
     resetPassword: import("@angular/forms").UntypedFormGroup;
-    constructor(store: Store<AppState>, route: ActivatedRoute, authService: AuthService, translate: TranslateService, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, route: ActivatedRoute, router: Router, authService: AuthService, translate: TranslateService, fb: UntypedFormBuilder);
     ngOnInit(): void;
     ngOnDestroy(): void;
     onResetPassword(): void;

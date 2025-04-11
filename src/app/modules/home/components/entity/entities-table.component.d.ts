@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, ElementRef, EventEmitter, NgZone, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, ElementRef, EventEmitter, NgZone, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewContainerRef } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -33,6 +33,7 @@ export declare class EntitiesTableComponent extends PageComponent implements IEn
     private elementRef;
     private fb;
     private zone;
+    viewContainerRef: ViewContainerRef;
     entitiesTableConfig: EntityTableConfig<BaseData<HasId>>;
     translations: EntityTypeTranslation;
     headerActionDescriptors: Array<HeaderActionDescriptor>;
@@ -68,7 +69,7 @@ export declare class EntitiesTableComponent extends PageComponent implements IEn
     private viewInited;
     private widgetResize$;
     private destroy$;
-    constructor(store: Store<AppState>, route: ActivatedRoute, translate: TranslateService, dialog: MatDialog, dialogService: DialogService, domSanitizer: DomSanitizer, cd: ChangeDetectorRef, router: Router, elementRef: ElementRef, fb: FormBuilder, zone: NgZone);
+    constructor(store: Store<AppState>, route: ActivatedRoute, translate: TranslateService, dialog: MatDialog, dialogService: DialogService, domSanitizer: DomSanitizer, cd: ChangeDetectorRef, router: Router, elementRef: ElementRef, fb: FormBuilder, zone: NgZone, viewContainerRef: ViewContainerRef);
     ngOnInit(): void;
     ngOnDestroy(): void;
     ngOnChanges(changes: SimpleChanges): void;

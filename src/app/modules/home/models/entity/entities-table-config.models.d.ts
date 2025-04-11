@@ -94,7 +94,11 @@ export declare class EntityLinkTableColumn<T extends BaseData<HasId>> extends Ba
     cellContentFunction: CellContentFunction<T>;
     entityURL: (entity: any) => string;
     sortable: boolean;
-    constructor(key: string, title: string, width: string, cellContentFunction: CellContentFunction<T>, entityURL: (entity: any) => string, sortable?: boolean);
+    cellStyleFunction: CellStyleFunction<T>;
+    headerCellStyleFunction: HeaderCellStyleFunction<T>;
+    cellTooltipFunction: CellTooltipFunction<T>;
+    actionCell: CellActionDescriptor<T>;
+    constructor(key: string, title: string, width: string, cellContentFunction: CellContentFunction<T>, entityURL: (entity: any) => string, sortable?: boolean, cellStyleFunction?: CellStyleFunction<T>, headerCellStyleFunction?: HeaderCellStyleFunction<T>, cellTooltipFunction?: CellTooltipFunction<T>, actionCell?: CellActionDescriptor<T>);
 }
 export declare class DateEntityTableColumn<T extends BaseData<HasId>> extends EntityTableColumn<T> {
     constructor(key: string, title: string, datePipe: DatePipe, width?: string, dateFormat?: string, cellStyleFunction?: CellStyleFunction<T>);
@@ -103,7 +107,8 @@ export declare class EntityChipsEntityTableColumn<T extends BaseData<HasId>> ext
     key: string;
     title: string;
     width: string;
-    constructor(key: string, title: string, width?: string);
+    entityURL?: (entity: any) => string;
+    constructor(key: string, title: string, width?: string, entityURL?: (entity: any) => string);
 }
 export type EntityColumn<T extends BaseData<HasId>> = EntityTableColumn<T> | EntityActionTableColumn<T> | EntityLinkTableColumn<T> | EntityChipsEntityTableColumn<T>;
 export declare class EntityTableConfig<T extends BaseData<HasId>, P extends PageLink = PageLink, L extends BaseData<HasId> = T> {

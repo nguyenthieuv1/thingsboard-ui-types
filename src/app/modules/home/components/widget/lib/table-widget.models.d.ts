@@ -18,6 +18,8 @@ export interface TableWidgetSettings {
     enableStickyHeader: boolean;
     displayPagination: boolean;
     defaultPageSize: number;
+    pageStepIncrement: number;
+    pageStepCount: number;
     useRowStyleFunction: boolean;
     rowStyleFunction?: TbFunction;
     reserveSpaceForHiddenAction?: boolean;
@@ -31,6 +33,7 @@ export interface TableWidgetDataKeySettings {
     cellContentFunction?: TbFunction;
     defaultColumnVisibility?: ColumnVisibilityOptions;
     columnSelectionToDisplay?: ColumnSelectionOptions;
+    disableSorting?: boolean;
 }
 export type ShowCellButtonActionFunction = (ctx: WidgetContext, data: EntityData | AlarmDataInfo | FormattedData) => boolean;
 export interface TableCellButtonActionDescriptor extends WidgetActionDescriptor {
@@ -106,4 +109,5 @@ export declare function prepareTableCellButtonActions(widgetContext: WidgetConte
 export declare function noDataMessage(noDataDisplayMessage: string, defaultMessage: string, utils: UtilsService, translate: TranslateService): string;
 export declare function constructTableCssString(widgetConfig: WidgetConfig): string;
 export declare function getHeaderTitle(dataKey: DataKey, keySettings: TableWidgetDataKeySettings, utils: UtilsService): string;
+export declare function buildPageStepSizeValues(pageStepCount: number, pageStepIncrement: number): Array<number>;
 export {};

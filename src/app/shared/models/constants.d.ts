@@ -154,6 +154,8 @@ export declare const HelpLinks: {
         mobileApplication: string;
         mobileBundle: string;
         mobileQrCode: string;
+        calculatedField: string;
+        timewindowSettings: string;
     };
 };
 export interface ValueTypeData {

@@ -10,6 +10,7 @@ export interface VersionCreateConfig {
     saveRelations: boolean;
     saveAttributes: boolean;
     saveCredentials: boolean;
+    saveCalculatedFields: boolean;
 }
 export declare enum VersionCreateRequestType {
     SINGLE_ENTITY = "SINGLE_ENTITY",
@@ -50,6 +51,7 @@ export interface VersionLoadConfig {
     loadRelations: boolean;
     loadAttributes: boolean;
     loadCredentials: boolean;
+    loadCalculatedFields: boolean;
 }
 export declare enum VersionLoadRequestType {
     SINGLE_ENTITY = "SINGLE_ENTITY",
@@ -151,4 +153,6 @@ export interface EntityDataInfo {
     hasRelations: boolean;
     hasAttributes: boolean;
     hasCredentials: boolean;
+    hasCalculatedFields: boolean;
 }
+export declare const typesWithCalculatedFields: Set<EntityType | AliasEntityType>;

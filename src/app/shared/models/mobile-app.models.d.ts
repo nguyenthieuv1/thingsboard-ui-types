@@ -3,6 +3,7 @@ import { BaseData } from '@shared/models/base-data';
 import { MobileAppId } from '@shared/models/id/mobile-app-id';
 import { OAuth2ClientInfo, PlatformType } from '@shared/models/oauth2.models';
 import { MobileAppBundleId } from '@shared/models/id/mobile-app-bundle-id';
+export declare const WEB_URL_REGEX: RegExp;
 export interface QrCodeSettings extends HasTenantId {
     useDefaultApp: boolean;
     mobileAppBundleId: MobileAppBundleId;

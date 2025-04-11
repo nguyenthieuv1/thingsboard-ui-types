@@ -1,4 +1,4 @@
-import { AfterViewInit, ElementRef, OnInit } from '@angular/core';
+import { ElementRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { PageLink } from '@shared/models/page/page-link';
@@ -9,8 +9,9 @@ import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
 import { TranslateService } from '@ngx-translate/core';
 import { FloatLabelType, MatFormFieldAppearance, SubscriptSizing } from '@angular/material/form-field';
+import { MatAutocompleteTrigger } from '@angular/material/autocomplete';
 import * as i0 from "@angular/core";
-export declare class DashboardAutocompleteComponent implements ControlValueAccessor, OnInit, AfterViewInit {
+export declare class DashboardAutocompleteComponent implements ControlValueAccessor, OnInit {
     private store;
     translate: TranslateService;
     private dashboardService;
@@ -33,6 +34,7 @@ export declare class DashboardAutocompleteComponent implements ControlValueAcces
     required: boolean;
     disabled: boolean;
     dashboardInput: ElementRef;
+    dashboardAutocomplete: MatAutocompleteTrigger;
     filteredDashboards: Observable<Array<DashboardInfo>>;
     searchText: string;
     dashboardURL: string;
@@ -43,7 +45,6 @@ export declare class DashboardAutocompleteComponent implements ControlValueAcces
     registerOnChange(fn: any): void;
     registerOnTouched(_fn: any): void;
     ngOnInit(): void;
-    ngAfterViewInit(): void;
     selectFirstDashboardIfNeeded(): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: DashboardInfo | string | null): void;
