@@ -32,8 +32,8 @@ export declare enum EntityType {
     DOMAIN = "DOMAIN",
     MOBILE_APP_BUNDLE = "MOBILE_APP_BUNDLE",
     MOBILE_APP = "MOBILE_APP",
-    CALCULATED_FIELD = "CALCULATED_FIELD"
-    // ENTITY_GROUP = 'ENTITY_GROUP'//HoanNTh: IOTT-209 - Them type cho groups
+    CALCULATED_FIELD = "CALCULATED_FIELD",
+    ENTITY_GROUP = 'ENTITY_GROUP'//HoanNTh: IOTT-209 - Them type cho groups
 }
 export declare enum AliasEntityType {
     CURRENT_CUSTOMER = "CURRENT_CUSTOMER",
