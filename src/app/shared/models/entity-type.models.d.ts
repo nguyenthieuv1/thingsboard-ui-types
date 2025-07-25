@@ -33,7 +33,7 @@ export declare enum EntityType {
     MOBILE_APP_BUNDLE = "MOBILE_APP_BUNDLE",
     MOBILE_APP = "MOBILE_APP",
     CALCULATED_FIELD = "CALCULATED_FIELD",
-    ENTITY_GROUP = 'ENTITY_GROUP', //Bkav ThieuNN
+    ENTITY_GROUP = 'ENTITY_GROUP' //Bkav ThieuNN
 }
 export declare enum AliasEntityType {
     CURRENT_CUSTOMER = "CURRENT_CUSTOMER",
